@@ -346,12 +346,7 @@ public class System_AdminModule {
     
         String userlicense_field = "(//div[@class='MuiBox-root css-1h9gn4j']//div[@data-testid='field-state-wrapper']//div[@class='MuiBox-root css-1a3b6a']//p[@class='MuiTypography-root MuiTypography-body1 css-vw0zfu'])[5]";
         String licenseOptionsList = "//div[@class='MuiBox-root css-x9bosi']";
-        
-        
-        
-        
-        
-        
+      
        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
        Actions a = new Actions(d);
        Robot r = new Robot();
@@ -371,15 +366,11 @@ public class System_AdminModule {
       a.moveToElement(d.findElement(By.xpath(editformtitle))).build().perform();
        a.moveToElement(d.findElement(By.xpath(editformtitle))).click().build().perform();
           // r.mouseWheel(-100);
-      js.executeScript("arguments[0].scrollIntoView(true)",d.findElement(By.xpath(userlicense_field)));
+      js.executeScript("arguments[0].scrollIntoView(true);",d.findElement(By.xpath(userlicense_field)));
 
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(userlicense_field)));
       d.findElement(By.xpath(userlicense_field)).click();
-    
-    
-    
-    
-    }
+  }
   }
     
     

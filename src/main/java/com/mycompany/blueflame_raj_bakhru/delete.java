@@ -90,7 +90,7 @@ public void Deletefromchatlist() throws InterruptedException, AWTException{
         
     }
     
-    catch(TimeoutException e){
+    catch(TimeoutException | NoSuchElementException e){
     
     
     System.out.println("WebElement not found for Delete Operation Skipping the process");

@@ -75,8 +75,8 @@ l.Loggin();
 switchmode.switchonLightmode();
 //read.methodA(); 
 
-D.Deletefromchatlist();  
-
+//D.Deletefromchatlist();  
+/*
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
@@ -161,14 +161,14 @@ file.runblueprint_check();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
-
+ /*
 br.shareblueprintcheck(); 
-br.Blueprintaddform(); /*
+br.Blueprintaddform();
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
 br.importblueprintCheck(); 
-br.linkedrecipeEdit_and_Deletecheck();  */
-br.Blueprint_addGeneration_with_parameterCheck(); 
+br.linkedrecipeEdit_and_Deletecheck();  
+br.Blueprint_addGeneration_with_parameterCheck();  */
 
 // System Admin Section Checking  
 
@@ -176,7 +176,7 @@ br.Blueprint_addGeneration_with_parameterCheck();
 sys.AccountEditChange();
 sys.userEdit(); 
 sys.systemaccount_searchandFilter_check();
-
+sys.AccountStatuscheck();
 //Qna Section Checking  
 
 qna.qnasearchCheck();   

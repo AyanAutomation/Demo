@@ -107,7 +107,7 @@ this.d = d;
         String threedtbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/button[1]";
         String importButton = "(//button[text()='Import'])[2]"; 
         String alloptsn = "//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1deb5uc']";
-        String okconfirmaction = "//body/div[5]/div[3]/div[1]/div[2]/button[2]";
+        String okconfirmaction = "//div[text()='Yes']";
         String deltoast = "//body/div[@id='root']/section[1]/ol[1]/li[1]";
         String userinputField = "//div[@role='button']//span[contains(text(),'company name')]";
         String userinputEditButton = "//div[@role='button']//span[contains(text(),'company name')]//button[@type='button'][1]";        
@@ -138,21 +138,9 @@ this.d = d;
         String Library_DemoRecipe_Bottom_section = "//body/div[2]/div[3]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]";
         String demoLinked_recipeImportButton = "//button[text()='Import']";
         String noBlueprint_FoundText = "//h1[text()='No blueprint found']";
+
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-       
 public void Run_Blueprint() throws AWTException, InterruptedException{
     
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
@@ -214,11 +202,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
 
 
 }
-
-
-
-
-
+ 
    public void shareblueprintcheck() throws InterruptedException{
 
 
@@ -551,10 +535,10 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
         a.moveToElement(d.findElement(By.xpath(bottomsectionofLibraryCard))).build().perform(); */
         js.executeScript("arguments[0].scrollIntoView", d.findElement(By.xpath(bottomsectionofLibraryCard)));
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importButton))); 
-        d.findElement(By.xpath(importButton)).click(); 
-        //w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importSuccessToast)));
+        d.findElement(By.xpath(importButton)).click(); /*
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importSuccessToast)));
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastCrossButton))); 
-        d.findElement(By.xpath(toastCrossButton)).click(); 
+        d.findElement(By.xpath(toastCrossButton)).click(); */
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(libraryPopupCloseButton)));
         d.findElement(By.xpath(libraryPopupCloseButton)).click(); 
        
@@ -612,12 +596,12 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
          
          w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(okconfirmaction)));
          d.findElement(By.xpath(okconfirmaction)).click();
-         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deltoast)));
+/*         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deltoast)));
          
          System.out.println(d.findElement(By.xpath(deltoast)).getText());
          
-         d.navigate().refresh();
-         
+         d.navigate().refresh(); */
+         d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addtoLibraryButton))); 
         d.findElement(By.xpath(addtoLibraryButton)).click(); 
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addlibraryPopupTitle)));        

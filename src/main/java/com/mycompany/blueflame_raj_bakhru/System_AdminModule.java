@@ -58,6 +58,19 @@ public class System_AdminModule {
     String optionBlueprint = "//body/div[@id='select-menu']/div[3]/div[1]/div[1]/div[2]/div[1]/button[1]/div[1]/p[1]/span[2]";
     String statusfieldTitle = "//p[contains(text(),'Status')]";
     String submit_Button = "//div[contains(text(),'Submit')]";
+    String statusShowButtonIn_list = "(//button[@type='button'])[9]";
+    String accountstatOptions = "//div[text()='Account Stats']";
+    String selectAccountforStatToast = "//div[text()='Select at least one account to view Account Stats.']";
+    String AccountOption_SelectCheckbox = "(//input[@type='checkbox'])[13]";
+    String popupCalender_daterangeSelectfield = "//p[text()='Select a Date Range']";
+    String previous_mnth_button = "//button[@class='rdp-button_previous']";
+    String dateselect = "//button[@aria-label='Sunday, September 1st, 2024']";
+    String calenderPopup_title = "//p[text()='Select a range of dates to download account stats.']";
+    String ConfirmButton = "//*[text()='Confirm']";
+    
+    
+    
+    
     
     
     
@@ -291,8 +304,46 @@ public class System_AdminModule {
     }
     }
       
+    
+    public void AccountStatuscheck() throws AWTException{
+    
+       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
+       Actions a = new Actions(d);
+       Robot r = new Robot();
+       JavascriptExecutor js = (JavascriptExecutor)d;  
+        
+     d.navigate().to("https://app-dev.blueflame.ai/dashboard/system-admin");
+    
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
+      d.findElement(By.cssSelector(searchbox)).sendKeys("BlueFlame AI");
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(statusShowButtonIn_list)));
+      d.findElement(By.xpath(statusShowButtonIn_list)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(accountstatOptions)));
+      d.findElement(By.xpath(accountstatOptions)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(selectAccountforStatToast)));
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(AccountOption_SelectCheckbox)));
+      d.findElement(By.xpath(AccountOption_SelectCheckbox)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(statusShowButtonIn_list)));
+      d.findElement(By.xpath(statusShowButtonIn_list)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(accountstatOptions)));
+      d.findElement(By.xpath(accountstatOptions)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popupCalender_daterangeSelectfield)));
+      d.findElement(By.xpath(popupCalender_daterangeSelectfield)).click();  
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(previous_mnth_button)));
+      d.findElement(By.xpath(previous_mnth_button)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(dateselect)));
+      d.findElement(By.cssSelector(dateselect)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(calenderPopup_title)));
+      d.findElement(By.xpath(calenderPopup_title)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmButton)));
+      d.findElement(By.xpath(ConfirmButton)).click();
+      d.navigate().refresh();
       
+      
+        
     }
+    
+      }
     
     
     

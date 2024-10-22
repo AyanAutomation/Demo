@@ -384,6 +384,9 @@ public class System_AdminModule {
               licensetype.click();
               break;
          }
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));
+      d.findElement(By.xpath(submit_Button)).click();
+        
    }
   }
   }

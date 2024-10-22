@@ -379,10 +379,8 @@ public class System_AdminModule {
       
       for(WebElement licensetype : licenseOptions ){
       
-          System.out.println(licensetype.getText());
-          
-          if(licensetype.getText().equalsIgnoreCase("Llm Only")){
-          
+        if(licensetype.getText().equalsIgnoreCase("Llm Only")){
+            System.out.println(licensetype.getText());
               licensetype.click();
               break;
          }

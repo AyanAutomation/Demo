@@ -157,9 +157,15 @@ public class QnA_section {
       d.findElement(By.xpath(favoriteButton)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(favUnfavsuccessToast)));
       System.out.println(d.findElement(By.xpath(favUnfavsuccessToast)).getText());
+      try{
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastCrossButton)));
       d.findElement(By.xpath(toastCrossButton)).click();
-  
+      }
+      
+      catch(StaleElementReferenceException e){
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastCrossButton)));
+      d.findElement(By.xpath(toastCrossButton)).click();
+      }
       }
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(qnaToChatButton)));
       d.findElement(By.xpath(qnaToChatButton)).click();

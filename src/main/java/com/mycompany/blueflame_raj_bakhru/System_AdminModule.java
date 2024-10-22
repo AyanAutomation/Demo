@@ -61,10 +61,10 @@ public class System_AdminModule {
     String statusShowButtonIn_list = "(//button[@type='button'])[9]";
     String accountstatOptions = "//div[text()='Account Stats']";
     String selectAccountforStatToast = "//div[text()='Select at least one account to view Account Stats.']";
-    String AccountOption_SelectCheckbox = "(//input[@type='checkbox'])[13]";
+    String AccountOption_SelectCheckbox = "(//div[@data-testid='select-row-cell-renderer'])[1]//button[@type='button']";
     String popupCalender_daterangeSelectfield = "//p[text()='Select a Date Range']";
     String previous_mnth_button = "//button[@class='rdp-button_previous']";
-    String dateselect = "//button[@aria-label='Sunday, September 1st, 2024']";
+    String dateselect = "(//div[@class='rdp-month']//table[@role='grid']//tbody[@role='rowgroup']//tr[@class='rdp-week']//td[@class='rdp-day']//p[@class='MuiTypography-root MuiTypography-body1 css-vhasw9'])[1]";
     String calenderPopup_title = "//p[text()='Select a range of dates to download account stats.']";
     String ConfirmButton = "//*[text()='Confirm']";
     
@@ -307,7 +307,7 @@ public class System_AdminModule {
     
     public void AccountStatuscheck() throws AWTException{
     
-       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
+       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
        Actions a = new Actions(d);
        Robot r = new Robot();
        JavascriptExecutor js = (JavascriptExecutor)d;  
@@ -331,13 +331,13 @@ public class System_AdminModule {
       d.findElement(By.xpath(popupCalender_daterangeSelectfield)).click();  
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(previous_mnth_button)));
       d.findElement(By.xpath(previous_mnth_button)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(dateselect)));
-      d.findElement(By.cssSelector(dateselect)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dateselect)));
+      d.findElement(By.xpath(dateselect)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(calenderPopup_title)));
       d.findElement(By.xpath(calenderPopup_title)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmButton)));
       d.findElement(By.xpath(ConfirmButton)).click();
-      d.navigate().refresh();;;;;
+      d.navigate().refresh();
       
       
         

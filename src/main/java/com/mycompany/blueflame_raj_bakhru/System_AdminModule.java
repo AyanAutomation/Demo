@@ -31,7 +31,7 @@ public class System_AdminModule {
     String searchbox = "input[aria-invalid='false']";
     String searchboxWith_content = "input[aria-invalid='false']";
     String usercount = "//a[@href='/dashboard/system-admin/users/c0639d2d-d3ba-4418-840d-a68c988723db']";
-    String usereditButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/span[1]/div[1]/div[1]/div[1]/button[1]";
+    String usereditButton = "//div[text()='Edit']";
     String editformtitle = "//form[@data-testid='flex-box']";
     String closeListPopUpOne = "//div[@data-testid='blueflame-hero']"; 
     String enableModuleFieldBox = "//p[contains(text(),'Activities, Analysis, Archive, Blueprints, Calenda')]";
@@ -343,7 +343,7 @@ public class System_AdminModule {
     
     public void useredit_User_licence_Change() throws AWTException{
     
-        String userlicense_field = "(//div[@class='MuiBox-root css-1h9gn4j']//div[@data-testid='field-state-wrapper']//div[@class='MuiBox-root css-1a3b6a']//p[@class='MuiTypography-root MuiTypography-body1 css-vw0zfu'])[5]";
+        String userlicense_field = "(//div[@class='MuiBox-root css-4bhl5l'])[5]";
         String licenseOptionsList = "//div[@class='MuiBox-root css-x9bosi']";
         String userlistgenericxpath = "//div[@class='MuiBox-root css-ehlpcq']";
         
@@ -424,7 +424,7 @@ public class System_AdminModule {
         
    }
   }
-  }
+  }}
     
     
     

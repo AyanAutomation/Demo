@@ -74,4 +74,18 @@
       <type>jar</type>
     </dependency>
 </dependencies>
+<build>
+        <plugins>
+            <!-- Maven Exec Plugin to Run Main Class -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <!-- Replace with your actual main class -->
+                    <mainClass>com.example.MainClass</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

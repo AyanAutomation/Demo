@@ -36,6 +36,7 @@ public class System_AdminModule {
     String editformtitle = "//form[@data-testid='flex-box']";
     String closeListPopUpOne = "//div[@data-testid='blueflame-hero']"; 
     String enableModuleFieldBox = "//p[contains(text(),'Activities, Analysis, Archive, Blueprints, Calenda')]";
+   
     String enableModuleList = "//div[@class='MuiBox-root css-ehlpcq']";
     String nexusOption ="Nexus";
     String outsideform = "//p[contains(text(),'Auth Provider (Optional)')]";
@@ -338,12 +339,48 @@ public class System_AdminModule {
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmButton)));
       d.findElement(By.xpath(ConfirmButton)).click();
       d.navigate().refresh();
-      
-      
-        
     }
     
-      }
+    
+    public void useredit_User_licence_Change() throws AWTException{
+    
+        String userlicense_field = "(//div[@class='MuiBox-root css-1h9gn4j']//div[@data-testid='field-state-wrapper']//div[@class='MuiBox-root css-1a3b6a']//p[@class='MuiTypography-root MuiTypography-body1 css-vw0zfu'])[5]";
+        String licenseOptionsList = "//div[@class='MuiBox-root css-x9bosi']";
+        
+        
+        
+        
+        
+        
+       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
+       Actions a = new Actions(d);
+       Robot r = new Robot();
+       JavascriptExecutor js = (JavascriptExecutor)d;
+    
+    w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
+      d.findElement(By.cssSelector(searchbox)).sendKeys("BlueFlame AI");
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(usercount)));
+      d.findElement(By.xpath(usercount)).click();
+      
+      
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
+      d.findElement(By.cssSelector(searchbox)).sendKeys("AYN Demo");
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(usereditButton)));
+      d.findElement(By.xpath(usereditButton)).click(); 
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(editformtitle)));
+      a.moveToElement(d.findElement(By.xpath(editformtitle))).build().perform();
+       a.moveToElement(d.findElement(By.xpath(editformtitle))).click().build().perform();
+          // r.mouseWheel(-100);
+      js.executeScript("arguments[0].scrollIntoView(true)",d.findElement(By.xpath(userlicense_field)));
+
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(userlicense_field)));
+      d.findElement(By.xpath(userlicense_field)).click();
+    
+    
+    
+    
+    }
+  }
     
     
     

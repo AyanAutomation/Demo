@@ -74,7 +74,7 @@ Screenzoom zoom = new Screenzoom(d);
 l.Loggin(); 
 switchmode.switchonLightmode();
 //read.methodA(); 
-
+/*
 //D.Deletefromchatlist();  
 
 swtch.switchingTodefaultAimodel(); 
@@ -106,8 +106,8 @@ type.tabselectcheck();
 type.copied_textfrom_chat_pasted_inside_parameterbox(); 
 type.multienter_inparameter_notitlechat_creationcheck(); 
 type.prompt_multi_click(); 
-type.multiple_qa_answerinchat_showsource_check();
- //D.Delete_from_top(); 
+//type.multiple_qa_answerinchat_showsource_check();
+ 
 
 //D.Deletefromchatlist(); 
 
@@ -161,12 +161,12 @@ file.runblueprint_check();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
- 
+ */
 br.shareblueprintcheck(); /*
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
-br.blueprint_delete_without_webElementList_method(); 
-br.importblueprintCheck(); 
+br.blueprint_delete_without_webElementList_method(); */
+br.importblueprintCheck(); /*
 br.linkedrecipeEdit_and_Deletecheck();  
 br.Blueprint_addGeneration_with_parameterCheck();  */
 

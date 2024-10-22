@@ -40,8 +40,8 @@ this.d = d;
         String Firstmessage = "//p[contains(text(),'company: 64559-62')]";
         String likebutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/button[2]/*[1]";
         String secondmessage = "//p[contains(text(),'company: 109347-13')]";       
-        String advancedViewbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]"; 
-        String threedot = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/*[1]";
+        String advancedViewbutton = "(//li[@class='MuiListItem-root MuiListItem-gutters css-1tpp0wj'])[2]"; 
+        String threedot = "(//div[@class='MuiBox-root css-1y4lkn8'])[1]//button[@type='button']";
         
         String sidedropdownmenu = "//div[@tabindex='-1']";
         String allmenuitems = "//div[@tabindex='-1']//li[@role='menuitem']";

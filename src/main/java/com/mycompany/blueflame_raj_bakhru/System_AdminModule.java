@@ -382,7 +382,7 @@ public class System_AdminModule {
             System.out.println(licensetype.getText());
               licensetype.click();
               break;
-         }
+         }}
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));
       d.findElement(By.xpath(submit_Button)).click();
       d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
@@ -414,17 +414,15 @@ public class System_AdminModule {
       
       for(WebElement license : licenceOptions ){
       
-        if(licensetype.getText().equalsIgnoreCase("Full")){
+        if(license.getText().equalsIgnoreCase("Full")){
             System.out.println(license.getText());
               license.click();
               break;
-         }
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));
+         }}
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));
       d.findElement(By.xpath(submit_Button)).click();
-        
-   }
   }
-  }}
+  }
     
     
     

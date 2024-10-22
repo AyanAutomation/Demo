@@ -42,7 +42,7 @@ public class Onboarding_Checking {
     String gptfourOptionXpath = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]";
     String applicationListPageTitle = "//p[contains(text(),'Connect your applications')]";
     String recipelistpageTitle = "//p[contains(text(),'Automate your workflows')]";
-    String recipeList = "//h1[contains(text(),'Automate tasks and reporting with recipes.')]";
+    String recipeList = "//h1[contains(text(),'Automate tasks and reporting with blueprints.')]";
     String tellusinteresttextBox = "//textarea[@aria-invalid='false']";
     String TimezoneTitle = "//p[contains(text(),'Set up your profile')]";
     

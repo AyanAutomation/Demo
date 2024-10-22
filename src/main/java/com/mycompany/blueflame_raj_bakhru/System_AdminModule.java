@@ -28,7 +28,6 @@ public class System_AdminModule {
     
     }
     
-    
     String searchbox = "input[aria-invalid='false']";
     String searchboxWith_content = "input[aria-invalid='false']";
     String usercount = "//a[@href='/dashboard/system-admin/users/c0639d2d-d3ba-4418-840d-a68c988723db']";
@@ -68,8 +67,8 @@ public class System_AdminModule {
     String dateselect = "(//div[@class='rdp-month']//table[@role='grid']//tbody[@role='rowgroup']//tr[@class='rdp-week']//td[@class='rdp-day']//p[@class='MuiTypography-root MuiTypography-body1 css-vhasw9'])[1]";
     String calenderPopup_title = "//p[text()='Select a range of dates to download account stats.']";
     String ConfirmButton = "//*[text()='Confirm']";
-    
-    
+    String AImodelButton_in_chat = "//button[@aria-label='GPT-4 (OpenAI)']";
+    String llmModelPresent = "(//li[@class='MuiListItem-root MuiListItem-gutters css-1tpp0wj'])[4]";
     
     
     
@@ -382,6 +381,42 @@ public class System_AdminModule {
         if(licensetype.getText().equalsIgnoreCase("Llm Only")){
             System.out.println(licensetype.getText());
               licensetype.click();
+              break;
+         }
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));
+      d.findElement(By.xpath(submit_Button)).click();
+      d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(AImodelButton_in_chat)));
+      d.findElement(By.xpath(AImodelButton_in_chat)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(llmModelPresent)));
+     System.out.println(d.findElement(By.xpath(llmModelPresent)).getText());
+      d.navigate().to("https://app-dev.blueflame.ai/dashboard/system-admin");
+            w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
+      d.findElement(By.cssSelector(searchbox)).sendKeys("BlueFlame AI");
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(usercount)));
+      d.findElement(By.xpath(usercount)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
+      d.findElement(By.cssSelector(searchbox)).sendKeys("AYN Demo");
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(usereditButton)));
+      d.findElement(By.xpath(usereditButton)).click(); 
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(editformtitle)));
+      a.moveToElement(d.findElement(By.xpath(editformtitle))).build().perform();
+       a.moveToElement(d.findElement(By.xpath(editformtitle))).click().build().perform();
+          // r.mouseWheel(-100);
+      js.executeScript("arguments[0].scrollIntoView(true);",d.findElement(By.xpath(userlicense_field)));
+
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(userlicense_field)));
+      d.findElement(By.xpath(userlicense_field)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(licenseOptionsList)));
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(userlistgenericxpath)));
+       
+      List <WebElement> licenceOptions = d.findElements(By.xpath(userlistgenericxpath));
+      
+      for(WebElement license : licenceOptions ){
+      
+        if(licensetype.getText().equalsIgnoreCase("Full")){
+            System.out.println(license.getText());
+              license.click();
               break;
          }
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));

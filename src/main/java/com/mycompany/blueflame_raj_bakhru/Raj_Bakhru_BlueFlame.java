@@ -161,14 +161,14 @@ file.runblueprint_check();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
- */
-br.shareblueprintcheck(); /*
+ 
+br.shareblueprintcheck(); 
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
-br.blueprint_delete_without_webElementList_method(); */
-br.importblueprintCheck(); /*
+br.blueprint_delete_without_webElementList_method(); 
+br.importblueprintCheck(); 
 br.linkedrecipeEdit_and_Deletecheck();  
-br.Blueprint_addGeneration_with_parameterCheck();  */
+br.Blueprint_addGeneration_with_parameterCheck();  
 
 // System Admin Section Checking  
 
@@ -176,9 +176,10 @@ br.Blueprint_addGeneration_with_parameterCheck();  */
 sys.AccountEditChange();
 sys.userEdit(); 
 sys.systemaccount_searchandFilter_check();  
-sys.AccountStatuscheck();
+sys.AccountStatuscheck(); */
+sys.useredit_User_licence_Change();
 //Qna Section Checking  
-
+/*
 qna.qnasearchCheck();   
 qna.qnafavoritecheck();
 
@@ -187,7 +188,7 @@ switchmode.switchOFFLightmode();
 board.boading(); 
 timezone.timezone_changeto_Local(); 
 
-lgout.exit();
+lgout.exit(); */
 d.quit(); 
  
    

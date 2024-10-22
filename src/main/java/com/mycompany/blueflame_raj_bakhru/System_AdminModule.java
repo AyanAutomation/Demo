@@ -346,18 +346,20 @@ public class System_AdminModule {
     
         String userlicense_field = "(//div[@class='MuiBox-root css-1h9gn4j']//div[@data-testid='field-state-wrapper']//div[@class='MuiBox-root css-1a3b6a']//p[@class='MuiTypography-root MuiTypography-body1 css-vw0zfu'])[5]";
         String licenseOptionsList = "//div[@class='MuiBox-root css-x9bosi']";
-      
+        String userlistgenericxpath = "//div[@class='MuiBox-root css-ehlpcq']";
+        
        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
        Actions a = new Actions(d);
        Robot r = new Robot();
        JavascriptExecutor js = (JavascriptExecutor)d;
+       
+       
+       d.navigate().to("https://app-dev.blueflame.ai/dashboard/system-admin");
     
-    w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
       d.findElement(By.cssSelector(searchbox)).sendKeys("BlueFlame AI");
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(usercount)));
       d.findElement(By.xpath(usercount)).click();
-      
-      
       w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
       d.findElement(By.cssSelector(searchbox)).sendKeys("AYN Demo");
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(usereditButton)));
@@ -370,6 +372,16 @@ public class System_AdminModule {
 
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(userlicense_field)));
       d.findElement(By.xpath(userlicense_field)).click();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(licenseOptionsList)));
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(userlistgenericxpath)));
+       
+      List <WebElement> licenseOptions = d.findElements(By.xpath(userlistgenericxpath));
+      
+      for(WebElement licensetype : licenseOptions ){
+      
+          System.out.println(licensetype.getText());
+      }
+      
   }
   }
     

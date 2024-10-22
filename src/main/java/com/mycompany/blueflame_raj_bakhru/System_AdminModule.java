@@ -337,7 +337,7 @@ public class System_AdminModule {
       d.findElement(By.xpath(calenderPopup_title)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmButton)));
       d.findElement(By.xpath(ConfirmButton)).click();
-      d.navigate().refresh();
+      d.navigate().refresh();;;;;
       
       
         

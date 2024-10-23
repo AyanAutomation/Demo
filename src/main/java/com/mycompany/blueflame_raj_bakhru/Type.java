@@ -575,9 +575,6 @@ public class Type {
         
         
         }
-       
- 
-      
       d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
        
    }
@@ -589,7 +586,7 @@ public class Type {
    String image_chat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='Images Copy Paste check']";
    String Editor_Box = "//p[@data-placeholder = 'Ask me a question' ]";
    String messageBottom_ButtonSection = "//p[contains(text(),'Model changed to BlueFlame AI Agent')]";
-   String copybutton= "(//div[@role='group']//button[@type='button'])[1]";
+   String copybutton= "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-154828r'])[5]";
    String Copysuccessmessage = "//div[contains(text(),'Message Copied Successfully! The content has been ')]";
    String successmessagecrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
    String promptcrossbot = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]/*[1]";
@@ -604,7 +601,7 @@ public class Type {
 "Default";
    String SeeMore_button = "//button[text()='See More']";
    String BlueFlameOption = "//p[text()='BlueFlame AI Agent']";
-   String insidechat =  "(//p[@class='MuiTypography-root MuiTypography-body1 css-u4u768'])[59]";
+   String insidechat =  "(//div[@class='MuiStack-root right_btm css-1ialerq']//button[@type='button'])[1]";
    
    
    
@@ -645,9 +642,10 @@ public class Type {
    
     }
 
-   /*  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(insidechat)));
+     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(insidechat)));
      a.moveToElement(d.findElement(By.xpath(insidechat))).build().perform(); 
-     js.executeScript("arguments[0].scrollIntoView(true)", d.findElement(By.xpath(copybutton))); */
+     js.executeScript("arguments[0].scrollIntoView(true)", d.findElement(By.xpath(copybutton))); 
+     Thread.sleep(1500);
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(copybutton))); 
     d.findElement(By.xpath(copybutton)).click();
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Copysuccessmessage))); 

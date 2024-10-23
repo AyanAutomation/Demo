@@ -34,7 +34,6 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
     this.d = d;
     
 }
-    
     public void switchingTodefaultAimodel() throws InterruptedException, AWTException{
     
     
@@ -167,19 +166,14 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(llmsavebutton)));
     d.findElement(By.xpath(llmsavebutton)).click();
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LLMsuccess_message)));
-    
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastcrosstwo)));
     d.findElement(By.xpath(toastcrosstwo)).click();
-
     d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
     
-    
-    
-    } }
+     } }
  else {
         
         System.out.println("model already default Blueflame model");
-        
         d.navigate().refresh(); 
  }
    

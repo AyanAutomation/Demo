@@ -2,8 +2,11 @@ com\mycompany\blueflame_raj_bakhru\Screenzoom.class
 com\mycompany\blueflame_raj_bakhru\Blueprintrun.class
 com\bfagent\pom\AI_model_Paths.class
 com\mycompany\blueflame_raj_bakhru\Tilereplace.class
+com\bfagent\pom\Mathnotations_paths.class
 com\bfagent\pom\Loginxpaths.class
 com\mycompany\blueflame_raj_bakhru\RSSfeedtest.class
+com\bfagent\pom\Autocompletexpaths.class
+com\bfagent\pom\Onboardingpaths.class
 com\mycompany\blueflame_raj_bakhru\Type.class
 com\mycompany\blueflame_raj_bakhru\Mathnotation.class
 com\mycompany\blueflame_raj_bakhru\Multiparameter.class

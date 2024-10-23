@@ -16,12 +16,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Onboarding_Checking {
     
     WebDriver d;
-    
-    
-    
+  
     public Onboarding_Checking(WebDriver d){
     
     this.d=d;
+    
       }
     
     String searchbox = "input[aria-invalid='false']";
@@ -46,20 +45,10 @@ public class Onboarding_Checking {
     String tellusinteresttextBox = "//textarea[@aria-invalid='false']";
     String TimezoneTitle = "//p[contains(text(),'Set up your profile')]";
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
       public void boading()throws AWTException, InterruptedException{
     
   
-       
-    
        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
        Actions a = new Actions(d);
        Robot r = new Robot();
@@ -81,7 +70,6 @@ public class Onboarding_Checking {
       Every time you open a new browser window or tab during a WebDriver session, 
       it is assigned a unique ID (called a window handle), 
       which allows Selenium to differentiate between multiple browser windows or tabs. */
-      
       
       /* the getWindowHandle() method returns a String that represents the current window's handle 
      (or unique identifier).This handle allows Selenium to keep track of which window or tab is currently 

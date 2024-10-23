@@ -10,8 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class Autocompletexpaths {
-    
-    
+      
     @FindBy(xpath = "(//div[@class='MuiStack-root chat_head css-1hb1q70']//button[@type='button'])[1]")
     public WebElement newchatbutton;
     @FindBy(xpath = "//p[@class='is-empty is-editor-empty']")
@@ -20,30 +19,16 @@ public class Autocompletexpaths {
     public WebElement tileA;
     @FindBy(xpath = "//input[@aria-autocomplete = 'list']")
     public WebElement Autocomplete_box;    
-    @FindBy(xpath = "//ul[@role='listbox']//li[@role='option'][1]")
+    @FindBy(xpath = "(//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAutocomplete-paper css-108iv6z']//ul[@class='MuiAutocomplete-listbox css-ue1yok']//li[@class = 'MuiAutocomplete-option MuiBox-root css-16r7kf5'])[1]")
     public WebElement Autocomplete_list;
-    @FindBy(xpath = "//li[@class = 'MuiAutocomplete-option MuiBox-root css-16r7kf5']")
-    public List <WebElement> List_Generic_xpaths;
+    @FindBy(xpath = "//div[@role='presentation']//ul[@role='listbox']//li[@role='option']")
+    public List<WebElement> Genericxpaths;
     @FindBy(xpath = "//*[@id=\"chat_write_area\"]/div/div[2]/div/div/div/div[1]/button")
     public WebElement promptcrossbot;
     
-    
-    
-    
-    
-    
-    
-    
-    
     public Autocompletexpaths(WebDriver d){
-
-    PageFactory.initElements(d, this);
+    PageFactory.initElements(d,this);
 }
-    
-    public List <WebElement> List_Generic_xpaths(){
-    List <WebElement> List_Generic_xpaths = new ArrayList<>();
-    return List_Generic_xpaths;
- }
     public WebElement newchatbutton(){
     return newchatbutton;
     }
@@ -56,14 +41,11 @@ public class Autocompletexpaths {
     public WebElement Autocomplete_box(){
     return Autocomplete_box;
     }
-    
     public WebElement Autocomplete_list(){
     return Autocomplete_list;
     }
     public WebElement promptcrossbot(){
     return promptcrossbot; 
     }
-    
-    
 
 }

@@ -41,6 +41,7 @@ public class Autocomplete_functions {
     
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     Screenzoom zm = new Screenzoom(d);   
+    Actions a = new Actions(d);
      
      w.until(ExpectedConditions.visibilityOf(folder.newchatbutton())); 
      folder.newchatbutton().click();
@@ -51,40 +52,38 @@ public class Autocomplete_functions {
      folder.promptcrossbot().click();
      w.until(ExpectedConditions.visibilityOf(folder.tileA())); 
      folder.tileA().click();
-     Thread.sleep(1500);
-     w.until(ExpectedConditions.visibilityOf(folder.Autocomplete_box())); 
-     folder.Autocomplete_box().click();
+     zm.zoomout80();
      Thread.sleep(1500);
      
-     zm.zoomout80();
+     w.until(ExpectedConditions.visibilityOf(folder.Autocomplete_box())); 
+     folder.Autocomplete_box().click();
+   
+     Thread.sleep(1500);
+     
      folder.Autocomplete_box().sendKeys("pip");
      
      w.until(ExpectedConditions.visibilityOf(folder.Autocomplete_list()));
+     a.moveToElement(folder.Autocomplete_list()).build().perform();
      
-     List <WebElement> alloptions = folder.List_Generic_xpaths();
      
-     
-     for (WebElement alloption :alloptions){
+     List <WebElement> allptions = folder.Genericxpaths;
+    
+     for (WebElement alloption :allptions){
      
        System.out.println(alloption.getText());
  
       if(alloption.getText().equalsIgnoreCase(Desired_option)){
     
-      
       alloption.click();
       d.navigate().refresh();
       break;
      
-     }
-     
-     }
-   
-    }
+     }}}
     
     
     public void autocompleteoption_backspace_delete_check() throws InterruptedException{
    
-        Autocompletexpaths folder = new Autocompletexpaths(d);
+    Autocompletexpaths folder = new Autocompletexpaths(d);
     
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     JavascriptExecutor js = (JavascriptExecutor)d;   
@@ -103,12 +102,9 @@ public class Autocomplete_functions {
      folder.Autocomplete_box().click();
      Thread.sleep(1500);
      
-    folder.Autocomplete_box().sendKeys("pip");
+     folder.Autocomplete_box().sendKeys("pip");
      
      for(int i=0; i<=2; i++ ){
      folder.Autocomplete_box().sendKeys(Keys.BACK_SPACE);
      Thread.sleep(2500);
-    }
- }
-    
-}
+    }}}

@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.bfagent.pom;
 
-/**
- *
- * @author webskitters
- */
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+
 public class Onboardingpaths {
+    
+    @FindBy(xpath="input[aria-invalid='false']")
+    WebElement searchbox;
     
 }

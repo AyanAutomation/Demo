@@ -26,11 +26,8 @@ public class Autocomplete_functions {
     
     public Autocomplete_functions(WebDriver d){
     
-    
-    this.d =d;
-    
-    
-    
+       this.d =d;
+     
     }
     
     
@@ -106,18 +103,12 @@ public class Autocomplete_functions {
      folder.Autocomplete_box().click();
      Thread.sleep(1500);
      
-     
-     folder.Autocomplete_box().sendKeys("pip");
+    folder.Autocomplete_box().sendKeys("pip");
      
      for(int i=0; i<=2; i++ ){
      folder.Autocomplete_box().sendKeys(Keys.BACK_SPACE);
      Thread.sleep(2500);
     }
-    
-    
-    
-    
-    }
-    
+ }
     
 }

@@ -27,6 +27,14 @@ public class Autocompletexpaths {
     @FindBy(xpath = "//*[@id=\"chat_write_area\"]/div/div[2]/div/div/div/div[1]/button")
     public WebElement promptcrossbot;
     
+    
+    
+    
+    
+    
+    
+    
+    
     public Autocompletexpaths(WebDriver d){
 
     PageFactory.initElements(d, this);
@@ -55,5 +63,7 @@ public class Autocompletexpaths {
     public WebElement promptcrossbot(){
     return promptcrossbot; 
     }
+    
+    
 
 }

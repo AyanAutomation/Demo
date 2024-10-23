@@ -88,7 +88,7 @@ this.d = d;
         String Librarysearch = "//input[@placeholder='Search']";
         String searchboxpost_with_searchword = "input[value='World News Summary']";
         String deleOk = "//div[text()='Yes']";
-        String recipedeleteSuccessToast = "//div[contains(text(),'Recipe Deleted Successfully.')]";
+        String recipedeleteSuccessToast = "//div[contains(text(),'Blueprint Deleted Successfully.')]";
         String deleteToastcrossButton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
         String deleteOptn = "//p[contains(text(),'Delete')]";
         String ChooseUser = "//p[contains(text(),'Choose user')]";

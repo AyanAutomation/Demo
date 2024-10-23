@@ -74,7 +74,7 @@ Screenzoom zoom = new Screenzoom(d);
 l.Loggin(); 
 switchmode.switchonLightmode();
 //read.methodA(); 
-/*
+
 //D.Deletefromchatlist();  
 
 swtch.switchingTodefaultAimodel(); 
@@ -176,10 +176,10 @@ br.Blueprint_addGeneration_with_parameterCheck();
 sys.AccountEditChange();
 sys.userEdit(); 
 sys.systemaccount_searchandFilter_check();  
-sys.AccountStatuscheck(); */
+sys.AccountStatuscheck(); 
 sys.useredit_User_licence_Change();
 //Qna Section Checking  
-/*
+
 qna.qnasearchCheck();   
 qna.qnafavoritecheck();
 
@@ -188,7 +188,7 @@ switchmode.switchOFFLightmode();
 board.boading(); 
 timezone.timezone_changeto_Local(); 
 
-lgout.exit(); */
+lgout.exit(); 
 d.quit(); 
  
    

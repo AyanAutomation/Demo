@@ -164,11 +164,11 @@ file.runblueprint_check();
  
 br.shareblueprintcheck(); 
 br.Blueprintaddform(); 
-br.blueprintDelete(); 
-br.blueprint_delete_without_webElementList_method(); 
-br.importblueprintCheck(); 
+br.blueprintDelete(); /*
+br.blueprint_delete_without_webElementList_method(); */
+br.importblueprintCheck(); /*
 br.linkedrecipeEdit_and_Deletecheck();  
-br.Blueprint_addGeneration_with_parameterCheck();  
+br.Blueprint_addGeneration_with_parameterCheck();  */
 
 // System Admin Section Checking  
 

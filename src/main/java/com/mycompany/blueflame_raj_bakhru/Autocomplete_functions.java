@@ -50,8 +50,8 @@ public class Autocomplete_functions {
      w.until(ExpectedConditions.visibilityOf(folder.Editor_Box())); 
      folder.Editor_Box().click();
      Thread.sleep(1500);
-     w.until(ExpectedConditions.visibilityOf(folder.newchatbutton()));
-     folder.newchatbutton().click();
+     w.until(ExpectedConditions.visibilityOf(folder.promptcrossbot()));
+     folder.promptcrossbot().click();
      w.until(ExpectedConditions.visibilityOf(folder.tileA())); 
      folder.tileA().click();
      Thread.sleep(1500);
@@ -77,49 +77,40 @@ public class Autocomplete_functions {
       alloption.click();
       d.navigate().refresh();
       break;
+     
      }
+     
      }
-   }
+   
+    }
     
     
     public void autocompleteoption_backspace_delete_check() throws InterruptedException{
-    
-    
-    String newchatbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/button[1]";
-    String Editor_Box = "//p[@class='is-empty is-editor-empty']";
-    String tileA = "//span[contains(text(),'@Files')]";
-    String Autocomplete_box = "//input[@aria-autocomplete = 'list']";
-    String Autocomplete_list = "//ul[@role='listbox']//li[@role='option'][1]";
-    
-    String List_Generic_xpaths = "//li[@class = 'MuiAutocomplete-option MuiBox-root css-16r7kf5']"; 
-    String promptcrossbot = "//*[@id=\"chat_write_area\"]/div/div[2]/div/div/div/div[1]/button";
-    String Desired_option = "AEP/Project Vivid/3.0 Products, Customers, Sales & Marketing/3.4 Sales Pipeline/3.4.1 GCI_Consolidated Sales Pipeline_03.03.23_Redacted.xlsx";
-    
-    
+   
+        Autocompletexpaths folder = new Autocompletexpaths(d);
     
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     JavascriptExecutor js = (JavascriptExecutor)d;   
      
-    
-    
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
-     d.findElement(By.xpath(newchatbutton)).click();
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
-     d.findElement(By.xpath(Editor_Box)).click();
+   w.until(ExpectedConditions.visibilityOf(folder.newchatbutton())); 
+     folder.newchatbutton().click();
+     w.until(ExpectedConditions.visibilityOf(folder.Editor_Box())); 
+     folder.Editor_Box().click();
      Thread.sleep(1500);
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promptcrossbot)));
-     d.findElement(By.xpath(promptcrossbot)).click();
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tileA))); 
-     js.executeScript("arguments[0].scrollIntoView(true)", d.findElement(By.xpath(tileA)));
-     d.findElement(By.xpath(tileA)).click();
+     w.until(ExpectedConditions.visibilityOf(folder.promptcrossbot()));
+     folder.promptcrossbot().click();
+     w.until(ExpectedConditions.visibilityOf(folder.tileA())); 
+     folder.tileA().click();
      Thread.sleep(1500);
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Autocomplete_box))); 
-     d.findElement(By.xpath(Autocomplete_box)).click();
+     w.until(ExpectedConditions.visibilityOf(folder.Autocomplete_box())); 
+     folder.Autocomplete_box().click();
      Thread.sleep(1500);
-     d.findElement(By.xpath(Autocomplete_box)).sendKeys("Ayn Demo");
+     
+     
+     folder.Autocomplete_box().sendKeys("pip");
      
      for(int i=0; i<=2; i++ ){
-     d.findElement(By.xpath(Autocomplete_box)).sendKeys(Keys.BACK_SPACE);
+     folder.Autocomplete_box().sendKeys(Keys.BACK_SPACE);
      Thread.sleep(2500);
     }
     

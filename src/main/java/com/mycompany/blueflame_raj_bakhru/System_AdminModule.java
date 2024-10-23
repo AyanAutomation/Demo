@@ -35,7 +35,6 @@ public class System_AdminModule {
     String editformtitle = "//form[@data-testid='flex-box']";
     String closeListPopUpOne = "//div[@data-testid='blueflame-hero']"; 
     String enableModuleFieldBox = "//p[contains(text(),'Activities, Analysis, Archive, Blueprints, Calenda')]";
-   
     String enableModuleList = "//div[@class='MuiBox-root css-ehlpcq']";
     String nexusOption ="Nexus";
     String outsideform = "//p[contains(text(),'Auth Provider (Optional)')]";
@@ -421,6 +420,7 @@ public class System_AdminModule {
          }}
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));
       d.findElement(By.xpath(submit_Button)).click();
+      
   }
   }
     

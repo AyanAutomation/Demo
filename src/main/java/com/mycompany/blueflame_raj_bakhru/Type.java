@@ -212,7 +212,7 @@ public class Type {
         String Send ="//i[@class='ico1']";
         String prompt_option ="//p[contains(text(),'@SFDC Find contacts located in {location}')]";
         String parameterbox = "//textarea[@aria-invalid='false']";
-        String newchatbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/button[1]";
+        String newchatbutton = "(//div[@class='MuiStack-root chat_head css-1hb1q70']//button[@type='button'])[1]";
         String locationparameterinprompt = "//*[@id=\"chat_write_area\"]/div/div[2]/div[3]/div/div/div[2]/div/ul/div/div/div/div/div/div/p";
         
         

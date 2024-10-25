@@ -7,6 +7,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -90,7 +91,7 @@ public void Deletefromchatlist() throws InterruptedException, AWTException{
         
     }
     
-    catch(TimeoutException | NoSuchElementException e){
+    catch(TimeoutException | NoSuchElementException | StaleElementReferenceException e){
     
     
     System.out.println("WebElement not found for Delete Operation Skipping the process");

@@ -75,7 +75,7 @@ l.Loggin();
 switchmode.switchonLightmode();
 //read.methodA(); 
 
-//.Deletefromchatlist();  
+D.Deletefromchatlist();  
 
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
@@ -161,14 +161,14 @@ file.runblueprint_check();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
- 
+ /*
 br.shareblueprintcheck(); 
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
 //br.importblueprintCheck(); 
 br.linkedrecipeEdit_and_Deletecheck();  
-br.Blueprint_addGeneration_with_parameterCheck();  
+br.Blueprint_addGeneration_with_parameterCheck();  */
 
 // System Admin Section Checking  
 

@@ -382,7 +382,6 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       
       
       
-      
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(timeClockIcon)));
       d.findElement(By.xpath(timeClockIcon)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(scheduletimeOkButton)));

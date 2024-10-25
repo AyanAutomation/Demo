@@ -483,7 +483,7 @@ public void non_indexfilechecks() throws InterruptedException{
 
     String foldertext = "//h3[contains(text(),'Folders')]";
     String allfilestext = "//h3[contains(text(),'All files')]";
-    String filecard = "//p[contains(text(),'AAPL-2023-Q2.txt')]";
+    String filecard = "//p[contains(text(),'APPLE_20230804_0000.pdf')]";
     String menulist = "//div[@role='menu']";
     String allmenuoptions = "//div[@class='ContextMenuItem']";
     String qnaerrormessage = "//div[contains(text(),'This file was not yet indexed for Q&A. Please wait')]";
@@ -502,7 +502,7 @@ public void non_indexfilechecks() throws InterruptedException{
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     JavascriptExecutor js = (JavascriptExecutor)d;
 
-     d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AAPL/Transcripts");
+     d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AAPL/Sell%20Side%20Research");
 
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
      

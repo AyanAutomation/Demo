@@ -76,16 +76,16 @@ switchmode.switchonLightmode();
 //read.methodA(); 
 
 //.Deletefromchatlist();  
-/*
+
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
 ai.Ai_model_selectioncheck(); 
 ai.modelchangecheck();  
 swtch.switchingTodefaultAimodel();
-*/
+
 //chat section checking    
-/* type.multi_images_pastecheck(); 
+type.multi_images_pastecheck(); 
 // Checking @tag staying after message is sent   
 
 type.SendMessage(); 
@@ -123,10 +123,10 @@ sl.autofill_qna_check();
  // sl.multifilesselect();  
 
 chl.thirdpartylogocheck();  
-like.likedislikestaytest();  */
+like.likedislikestaytest();  
 zoom.zoomin80(); 
 at.extrafolder_issue_check(); 
-/*
+zoom.zoomin80();
 at.autocompleteoption_backspace_delete_check(); 
 rss.Rssxmlcheck(); 
 chtexpt.chat_export_filename();
@@ -166,7 +166,7 @@ br.shareblueprintcheck();
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
-br.importblueprintCheck(); 
+//br.importblueprintCheck(); 
 br.linkedrecipeEdit_and_Deletecheck();  
 br.Blueprint_addGeneration_with_parameterCheck();  
 
@@ -188,7 +188,7 @@ switchmode.switchOFFLightmode();
 board.boading(); 
 timezone.timezone_changeto_Local(); 
 
-lgout.exit(); */
+lgout.exit();
 d.quit(); 
  
    

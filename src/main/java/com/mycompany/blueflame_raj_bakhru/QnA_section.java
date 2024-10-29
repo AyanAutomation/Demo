@@ -30,7 +30,7 @@ public class QnA_section {
     String sourceSelectBox = "//textarea[@spellcheck='false']";
     String suggestionList = "//ul[@id='tags-standard-listbox']";
     String allOptns = "//li[@class='MuiAutocomplete-option MuiBox-root css-16r7kf5']";
-    String fstoption = "AEP/Project Vivid/3.0 Products, Customers, Sales & Marketing";        
+    String fstoption = "Project Aston/23.15_Legal/23.15.3_Contracts with Top 20 Customers";        
     String questionEnterBox = "//input[@placeholder='Enter your question *']";
     String searchbutton = "//button[@type='submit']";
     String qatoChatButton = "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[3]";
@@ -49,7 +49,7 @@ public class QnA_section {
     String showSourceicon = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/i[1]";
     String showSource_contentOpen = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/button[1]";
     String chatUserIcon = "//i[@class='abs_ico user_ico']";
-    String SourceisSelected_confirmation = "//p[contains(text(),'AEP/Project Vivid/3.0 Products, Customers, Sales &')]";
+    String SourceisSelected_confirmation = "//p[contains(text(),'Project Aston/23.15_Legal/23.15.3_Contracts with Top 20 Customers')]";
     
     
     

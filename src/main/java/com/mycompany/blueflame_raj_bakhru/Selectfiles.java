@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
 
 
@@ -92,7 +93,7 @@ public class Selectfiles {
         String PlusButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/button[1]";
         String SelectFilesoption = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/button[1]";
         
-        String optiontoselect = "PRF/BlueFlame Test Cases/Front-End Pipeline Management/Mandrake Capital Real Estate Fund II_February 2024.pdf";
+        String optiontoselect = "Upload Sample/AAPL-US Piper Sandler Companies 04 Aug '23.pdf";
         String ConfirmselectButton = "/html/body/div[2]/div[3]/div/div[1]/div[2]/div[2]/button[2]";
         String foldertext = "//h3[contains(text(),'Folders')]";
         String searchbox = "//input[@placeholder='search']" ;
@@ -296,8 +297,8 @@ public void File_with_pipesearch_in_filespoup() throws InterruptedException{
           
  for ( WebElement dropedownoption : dropedownoptions ) {
     
-//     System.out.println(dropedownoption.getText());
-    
+     Reporter.log(dropedownoption.getText());
+     
    if(dropedownoption.getText().equalsIgnoreCase(option_to_be_selected)){
          
          
@@ -339,8 +340,9 @@ for(int i=0; i<3 ; i++){
     Thread.sleep(800);
     d.findElement(By.xpath(ConfirmselectButton)).click();
     Thread.sleep(800);
- 
-}}
+    
+}
+}
 
 
 

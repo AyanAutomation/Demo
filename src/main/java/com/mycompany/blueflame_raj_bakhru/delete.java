@@ -65,7 +65,7 @@ public void Deletefromchatlist() throws InterruptedException, AWTException{
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Chatlist)));
 
     a.moveToElement(d.findElement(By.xpath(Chatlist))).build().perform(); 
-    js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    js.executeScript("arguments[0].scrollIntoView(true);",d.findElement(By.xpath(Recentchat_text_inlist)));
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Recentchat_text_inlist)));
        
     
@@ -91,17 +91,30 @@ public void Deletefromchatlist() throws InterruptedException, AWTException{
         
     }
     
-    catch(TimeoutException | NoSuchElementException | StaleElementReferenceException e){
+    catch(TimeoutException e){
     
     
-    System.out.println("WebElement not found for Delete Operation Skipping the process");
+    System.out.println("TimeoutException found");
     
     break;
     
+   
+    }
+    catch(NoSuchElementException e){
+    
+    System.out.println("NoSuchElementException found");
+    
+    break;
     
     }
-     
-
+    catch(StaleElementReferenceException e){
+    
+    System.out.println("StaleElementReferenceException found");
+    
+    break;
+    
+    }
+    
  } 
 
 } 

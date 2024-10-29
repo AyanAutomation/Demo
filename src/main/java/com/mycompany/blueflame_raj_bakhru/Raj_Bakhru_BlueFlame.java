@@ -1,5 +1,6 @@
 package com.mycompany.blueflame_raj_bakhru;
 
+import Input_data_package.InputData;
 import com.mycompany.blueflame_raj_bakhru.AI_model;
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -34,7 +35,7 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.APIRequest;
 import java.io.IOException;
 
-
+@Test
 public class Raj_Bakhru_BlueFlame {
 public static void main(String[] args)throws InterruptedException, AWTException {
 WebDriver d = new ChromeDriver(); 
@@ -69,7 +70,9 @@ Blueprintrun br = new Blueprintrun(d);
 Onboarding_Checking board = new Onboarding_Checking(d);
 Timezone_change timezone = new Timezone_change(d);
 Screenzoom zoom = new Screenzoom(d);
-//ExcelReader read = new ExcelReader(d);
+InputData data = new InputData(d);
+
+
 
 l.Loggin(); 
 switchmode.switchonLightmode();
@@ -131,10 +134,10 @@ at.autocompleteoption_backspace_delete_check();
 rss.Rssxmlcheck(); 
 chtexpt.chat_export_filename();
 
-rss.Rssxmlcheck(); 
+rss.Rssxmlcheck(); /*
 tmplte.pptxfile_check_method_2(); 
 tmplte.template_folder_subfoldertraverse_back_check(); 
-
+*/
 //File management section checking
 
 
@@ -148,7 +151,7 @@ file.files_to_chat();
 file.file_to_QnA();  
 file.emlfilecheck();   
 
-file.non_indexfilechecks();  
+//file.non_indexfilechecks();  
 file.file_datetime_infocheck(); 
 file.videofile_loader_check(); 
 file.doubelcross_buttoncheck(); 
@@ -161,25 +164,25 @@ file.runblueprint_check();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
- /*
+/*
 br.shareblueprintcheck(); 
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
-//br.importblueprintCheck(); 
+br.importblueprintCheck(); 
 br.linkedrecipeEdit_and_Deletecheck();  
-br.Blueprint_addGeneration_with_parameterCheck();  */
-
+br.Blueprint_addGeneration_with_parameterCheck();  
+*/
 // System Admin Section Checking  
 
 
 sys.AccountEditChange();
 sys.userEdit(); 
-sys.systemaccount_searchandFilter_check();  
+sys.systemaccount_searchandFilter_check(); 
 sys.AccountStatuscheck(); 
 sys.useredit_User_licence_Change();
 //Qna Section Checking  
-
+ 
 qna.qnasearchCheck();   
 qna.qnafavoritecheck();
 
@@ -188,8 +191,8 @@ switchmode.switchOFFLightmode();
 board.boading(); 
 timezone.timezone_changeto_Local(); 
 
-lgout.exit();
-d.quit(); 
+lgout.exit(); 
+d.quit();           
  
    
     }

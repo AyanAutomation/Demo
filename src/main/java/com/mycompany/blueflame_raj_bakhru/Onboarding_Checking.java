@@ -1,6 +1,7 @@
 
 package com.mycompany.blueflame_raj_bakhru;
 
+import com.bfagent.pom.Onboardingpaths;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.time.Duration;
@@ -23,46 +24,28 @@ public class Onboarding_Checking {
     
       }
     
-    String searchbox = "input[aria-invalid='false']";
-    String searchboxWith_content = "input[aria-invalid='false']";
-    String usercount = "//a[@href='/dashboard/system-admin/users/c0639d2d-d3ba-4418-840d-a68c988723db']";
-    String loginAsButton = "//div[contains(text(),'Login As')]";
-    String profileDropdownCssselector = "div[aria-haspopup='listbox']";
-    String profilelist = "//body/div[@id='menu-']/div[3]";
-    String profilelistalloptionsGenericXpath = "//ul[@role='listbox']//li[@aria-selected='false']";
+   
     String profileoptiontoSelect = "Investor Relations / Fundraising";
-    String continueButtonxpath = "//button[contains(text(),'Continue')]";
-    String timeZoneFieldClick = "//p[contains(text(),'Asia/Calcutta')]";
-    String timeZoneList = "//ul[@role='listbox']";
-    String timezoneLIstOption_genericXpath = "//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1p4qlti']";
-    String timezonepagetitle = "//p[contains(text(),'Set up your profile')]";
     String timezoneOptiontochoose = "Africa/Cairo";
-    String chatmodelChoosePageTitle = "//p[contains(text(),'Choose Chat model')]";
-    String gptfourOptionXpath = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]";
-    String applicationListPageTitle = "//p[contains(text(),'Connect your applications')]";
-    String recipelistpageTitle = "//p[contains(text(),'Automate your workflows')]";
-    String recipeList = "//h1[contains(text(),'Automate tasks and reporting with blueprints.')]";
-    String tellusinteresttextBox = "//textarea[@aria-invalid='false']";
-    String TimezoneTitle = "//p[contains(text(),'Set up your profile')]";
-    
 
-      public void boading()throws AWTException, InterruptedException{
+    public void boading()throws AWTException, InterruptedException{
     
   
        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
        Actions a = new Actions(d);
        Robot r = new Robot();
        JavascriptExecutor js = (JavascriptExecutor)d;
-    
+       Onboardingpaths onbd = new Onboardingpaths(d);
+       
       d.navigate().to("https://app-dev.blueflame.ai/dashboard/system-admin");
        
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
-      d.findElement(By.cssSelector(searchbox)).sendKeys("BlueFlame AI");
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(usercount)));
-      d.findElement(By.xpath(usercount)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(searchbox)));
-      d.findElement(By.cssSelector(searchbox)).sendKeys("nextjs");
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loginAsButton)));
+      w.until(ExpectedConditions.visibilityOf(onbd.searchbox()));
+      onbd.searchbox().sendKeys("BlueFlame AI");
+      w.until(ExpectedConditions.visibilityOf(onbd.usercount()));
+      onbd.usercount().click();
+      w.until(ExpectedConditions.visibilityOf(onbd.searchbox()));
+      onbd.searchbox().sendKeys("nextjs");
+      w.until(ExpectedConditions.visibilityOf(onbd.loginAsButton()));
       
       
      /*The getWindowHandle() method in Selenium WebDriver is used to retrieve the unique identifier (window handle)
@@ -80,7 +63,7 @@ public class Onboarding_Checking {
      System.out.println(originalTab);
      
       
-      d.findElement(By.xpath(loginAsButton)).click();
+      onbd.loginAsButton().click();
       d.switchTo().window(originalTab);
       
       
@@ -91,13 +74,13 @@ public class Onboarding_Checking {
       // Profile Option select in Onboarding Page
       
       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(profileDropdownCssselector)));
-      d.findElement(By.cssSelector(profileDropdownCssselector)).click();    
+      w.until(ExpectedConditions.visibilityOf(onbd.profileDropdownCssselector()));
+      onbd.profileDropdownCssselector().click();    
       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(profilelist)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(profilelistalloptionsGenericXpath)));
+      w.until(ExpectedConditions.visibilityOf(onbd.profilelist()));
+      w.until(ExpectedConditions.visibilityOfAllElements(onbd.profilelistalloptionsGenericXpath));
       
-     List <WebElement> allprofileoptions = d.findElements(By.xpath(profilelistalloptionsGenericXpath));
+     List <WebElement> allprofileoptions = onbd.profilelistalloptionsGenericXpath;
      
      
      for(WebElement profileoption : allprofileoptions  ){
@@ -112,21 +95,21 @@ public class Onboarding_Checking {
 }
      
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueButtonxpath)));
-     d.findElement(By.xpath(continueButtonxpath)).click();
+     w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
+     onbd.continueButtonxpath().click();
      Thread.sleep(1990);
      
      
      // Timezone Select Page
      
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(timezonepagetitle)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(timeZoneFieldClick)));
-     d.findElement(By.xpath(timeZoneFieldClick)).click();
+     w.until(ExpectedConditions.visibilityOf(onbd.timezonepagetitle()));
+     w.until(ExpectedConditions.visibilityOf(onbd.timeZoneFieldClick()));
+     onbd.timeZoneFieldClick().click();
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(timeZoneList)));
+     w.until(ExpectedConditions.visibilityOf(onbd.timeZoneList()));
       
-     List <WebElement> timezoneoptions = d.findElements(By.xpath(timezoneLIstOption_genericXpath));
+     List <WebElement> timezoneoptions = onbd.timezoneLIstOption_genericXpath;
      
       for(WebElement timezone : timezoneoptions ){
           
@@ -139,40 +122,37 @@ public class Onboarding_Checking {
        timezone.click();
         break; 
   }  } 
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TimezoneTitle)));
-      d.findElement(By.xpath(TimezoneTitle)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueButtonxpath)));
-      d.findElement(By.xpath(continueButtonxpath)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(chatmodelChoosePageTitle)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gptfourOptionXpath)));
-      d.findElement(By.xpath(gptfourOptionXpath)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueButtonxpath)));
-      d.findElement(By.xpath(continueButtonxpath)).click();
+      w.until(ExpectedConditions.visibilityOf(onbd.TimezoneTitle()));
+      
+      w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
+      onbd.continueButtonxpath().click();
+      w.until(ExpectedConditions.visibilityOf(onbd.chatmodelChoosePageTitle()));
+      w.until(ExpectedConditions.visibilityOf(onbd.gptfourOptionXpath()));
+      onbd.gptfourOptionXpath().click();
+      w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
+      onbd.continueButtonxpath().click();
       
       // Application Page in Onboarding
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applicationListPageTitle)));  
+      w.until(ExpectedConditions.visibilityOf(onbd.applicationListPageTitle()));  
       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueButtonxpath)));
-      d.findElement(By.xpath(continueButtonxpath)).click();
+      w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
+      onbd.continueButtonxpath().click();
       
       // Blueprint/recipe List page In onboarding
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(recipelistpageTitle)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(recipeList)));
-      a.moveToElement(d.findElement(By.xpath(recipeList))).build().perform();
+      w.until(ExpectedConditions.visibilityOf(onbd.recipelistpageTitle()));
+      w.until(ExpectedConditions.visibilityOf(onbd.recipeList()));
+      a.moveToElement(onbd.recipeList()).build().perform();
       
       js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueButtonxpath)));
-      d.findElement(By.xpath(continueButtonxpath)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tellusinteresttextBox)));
-       d.findElement(By.xpath(tellusinteresttextBox)).sendKeys("More AI Models needs to be included");
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueButtonxpath)));
-      d.findElement(By.xpath(continueButtonxpath)).click();
+      w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
+      onbd.continueButtonxpath().click();
+      w.until(ExpectedConditions.visibilityOf(onbd.tellusinteresttextBox()));
+      onbd.tellusinteresttextBox().sendKeys("More AI Models needs to be included");
+       w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
+      onbd.continueButtonxpath().click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[contains(text(),'Chat')]")));
-      
-      
-      } 
      
-    
+      } 
  }
     
     

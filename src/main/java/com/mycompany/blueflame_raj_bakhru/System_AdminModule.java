@@ -58,13 +58,13 @@ public class System_AdminModule {
     String statusfieldTitle = "//p[contains(text(),'Status')]";
     String submit_Button = "//div[contains(text(),'Submit')]";
     String statusShowButtonIn_list = "(//button[@type='button'])[9]";
-    String accountstatOptions = "//div[text()='Account Stats']";
-    String selectAccountforStatToast = "//div[text()='Select at least one account to view Account Stats.']";
+    String accountstatOptions = "//div[text()='Usage Stats']";
+    String selectAccountforStatToast = "//div[text()='Select at least one account to view usage stats.']";
     String AccountOption_SelectCheckbox = "(//div[@data-testid='select-row-cell-renderer'])[1]//button[@type='button']";
     String popupCalender_daterangeSelectfield = "//p[text()='Select a Date Range']";
     String previous_mnth_button = "//button[@class='rdp-button_previous']";
     String dateselect = "(//div[@class='rdp-month']//table[@role='grid']//tbody[@role='rowgroup']//tr[@class='rdp-week']//td[@class='rdp-day']//p[@class='MuiTypography-root MuiTypography-body1 css-vhasw9'])[1]";
-    String calenderPopup_title = "//p[text()='Select a range of dates to download account stats.']";
+    String calenderPopup_title = "//p[contains(text(),'Select a range of dates to download')]";
     String ConfirmButton = "//*[text()='Confirm']";
     String AImodelButton_in_chat = "//button[@aria-label='GPT-4 (OpenAI)']";
     String llmModelPresent = "(//li[@class='MuiListItem-root MuiListItem-gutters css-1tpp0wj'])[4]";

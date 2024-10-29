@@ -58,9 +58,9 @@ this.d = d;
         String shareButton = "//button[text()='Share']";
         String shareSuccessMessage = "//li[@aria-live='polite']";
         String shareToastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-        String Create_BlueprntButton = "//button[contains(text(),'Create New')]";
+        String Create_BlueprntButton = "//div[text()='Create New']";
         //body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]
-        String gearButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]";
+        String gearButton = "(//button[@type='button'])[7]";
         String addprmtbt = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/button[1]";
         String prmptbox = "//div[@contenteditable='true']//p[@class='is-empty is-editor-empty']";
         String promptboxWithcontent = "//div[@class='tiptap ProseMirror _tiptap_editor']";
@@ -686,9 +686,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       d.findElement(By.xpath(runButton_inside_confirmationPopUp)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(previewChat_generated)));
       
-      
-      
-  }
+ }
    
    }
 

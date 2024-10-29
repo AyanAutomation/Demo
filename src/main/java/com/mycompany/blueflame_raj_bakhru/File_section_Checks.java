@@ -751,8 +751,8 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
 }
       public void reindexingcheck() throws InterruptedException{
       
-     String allfilesText = "//h3[contains(text(),'All files')]";
-     String file_card = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span/div/button/div[2]";
+     String FoldersText = "//h3[text()='Folders']";
+     String file_card = "//p[text()='Fully Executed Side Letter - First Energ...']";
      String allfiles_select_box = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[1]/span";
      String menulist = "//div[@role='menu']";
      String allmenuoptions = "//div[@class='ContextMenuItem']"; 
@@ -761,13 +761,16 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
 
       Actions a = new Actions(d);
       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
+      JavascriptExecutor js = (JavascriptExecutor)d;
       
-      d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
+      d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");
         
-      
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilesText))); 
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfiles_select_box))); 
-      d.findElement(By.xpath(allfiles_select_box)).click();
+       
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FoldersText))); 
+      js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(file_card)));
+    /* w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfiles_select_box))); 
+      d.findElement(By.xpath(allfiles_select_box)).click(); */
+    
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(file_card)));
       a.moveToElement(d.findElement(By.xpath(file_card)));
         
@@ -814,11 +817,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       Thread.sleep(3500);
       }
 
-
-      
-      
-      
-      
+    
       public void runblueprint_check() throws InterruptedException{
       
      String allfilesText = "//h3[contains(text(),'All files')]";
@@ -861,12 +860,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
            
        menoption.click();
        
-       
-       
        }}
-       
-       
-       
        
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(runBlueprintsubMenu)));
        
@@ -937,8 +931,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
             
    
       }
-      
-      
+ 
       public void multifileupload(){
       
            Actions a = new Actions(d);
@@ -966,9 +959,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       
 //       d.findElement(By.xpath(HiddenFile_uploadElement)).click();
       
-     
-            
-       
+      
   }
       
 }

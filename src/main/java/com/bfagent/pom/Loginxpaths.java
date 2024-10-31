@@ -20,7 +20,7 @@ public class Loginxpaths {
    public WebElement Password_field;
    @FindBy(xpath= "//h3[contains(text(),'Chat')]")
    public WebElement Chat_list_title;
-   @FindBy(xpath= "//*[@id=\"root\"]/div/div/div/div/form/div/div[1]/div/div/div[1]")
+   @FindBy(xpath= "//div[text()='Invalid email or password']")
    public WebElement errorMessage;
    
    

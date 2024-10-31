@@ -4,7 +4,9 @@ package com.mycompany.blueflame_raj_bakhru;
 import static dev.failsafe.internal.util.Assert.isTrue;
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -45,7 +47,11 @@ public void Replacecheck() throws InterruptedException{
                             
     
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
-       
+    JavascriptExecutor js = (JavascriptExecutor)d;    
+    Actions a = new Actions(d);
+    
+    
+    
      
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
      d.findElement(By.xpath(newchatbutton)).click();  
@@ -56,7 +62,8 @@ public void Replacecheck() throws InterruptedException{
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promptcrossbot)));
        
        d.findElement(By.xpath(promptcrossbot)).click();
-      
+       a.moveToElement(d.findElement(By.xpath("//div[@class='MuiCardContent-root css-1qw96cp']"))).build().perform();
+       js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", d.findElement(By.xpath(tileA)));
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tileA)));
        d.findElement(By.xpath(tileA)).click();
        Thread.sleep(1200);

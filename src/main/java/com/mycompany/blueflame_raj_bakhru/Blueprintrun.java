@@ -61,15 +61,15 @@ this.d = d;
         String Create_BlueprntButton = "//div[text()='Create New']";
         //body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]
         String gearButton = "(//button[@type='button'])[7]";
-        String addprmtbt = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/button[1]";
+        String addprmtbt = "//button[text()='Add prompt']";
         String prmptbox = "//div[@contenteditable='true']//p[@class='is-empty is-editor-empty']";
         String promptboxWithcontent = "//div[@class='tiptap ProseMirror _tiptap_editor']";
         String lightMode = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/button[1]"; 
         String summarytoggle = "//input[@aria-label ='controlled']";
         String summarizeResultboxCssselector = "customValues.summarizeText";
-        String saveButtonone = "//*[@id=\"root\"]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div[1]/div[2]/div/button";
+        String saveButtonone = "//div[text()='Save']";
         String saveButtontwo = "//*[@id=\"root\"]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div[1]/div[2]/div/button[2]";
-        String settingsSlidedrawer = "/html/body/div[4]/div[3]/div";
+        String settingsSlidedrawer = "//div[@class='MuiBox-root css-41in74']//button[@type='button']";
         String moveInsideform = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]";        
         String BlueprintnameField = "//textarea[@placeholder='Blueprint name *']";
         String BlueprintDescription_Field = "//textarea[@name='description']";
@@ -78,9 +78,9 @@ this.d = d;
         String createdBlueprintName = "//*[@id=\"root\"]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div[1]/div[1]/nav/ol/li[3]/div/p";
         String blueprintitlename = "//h1[contains(text(),'Blueprints')]";
         String deleteOption = "Delete";
-        String blueprintnametitle = "//body/div[4]/div[3]/div[1]/div[2]/div[1]/div[1]/p[1]";
-        String descriptionNametitle = "//body/div[4]/div[3]/div[1]/div[2]/div[1]/div[2]/p[1]";
-        String promptDeletebutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]";
+        String blueprintnametitle = "//*[@placeholder='Blueprint name *']";
+        String descriptionNametitle = "//textarea[@placeholder='Write what this Blueprint is supposed to do here...']";
+        String promptDeletebutton = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1mknrun'])[1]";
         String generateTextbox = "//textarea[@placeholder='Write what this Blueprint is supposed to do here...']";
         String generateTextButton = "//*[contains(text(),'Generate')]";
         String sideDrawerclose_button = "/html/body/div[4]/div[3]/div/div[1]/button";
@@ -335,9 +335,6 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       d.findElement(By.xpath(promptDeletebutton)).click();
       
  
-      Thread.sleep(1800);
-      a.moveToElement(d.findElement(By.xpath(moveInsideform))).build().perform();
-      r.mouseWheel(-100);
    
       // Summary section in add form is currently hidden
       
@@ -350,7 +347,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(saveButtonone)));
       d.findElement(By.xpath(saveButtonone)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(settingsSlidedrawer)));
-      
+      d.findElement(By.xpath(settingsSlidedrawer)).click();
       // filling Blueprint name field
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(blueprintnametitle)));
       a.moveToElement(d.findElement(By.xpath(blueprintnametitle))).build().perform();
@@ -358,10 +355,10 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       d.findElement(By.xpath(BlueprintnameField)).sendKeys("Blueprint name");
       
        // filling description field
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(descriptionNametitle)));
-       a.moveToElement(d.findElement(By.xpath(descriptionNametitle))).build().perform();
+    
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BlueprintDescription_Field)));
       d.findElement(By.xpath(BlueprintDescription_Field)).sendKeys("blueprint description");
+      
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addscheduleButton)));
       d.findElement(By.xpath(addscheduleButton)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popupScheduleForm)));

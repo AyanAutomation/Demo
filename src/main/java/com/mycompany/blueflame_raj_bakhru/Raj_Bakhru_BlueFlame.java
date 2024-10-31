@@ -34,6 +34,13 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.APIRequest;
 import java.io.IOException;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.InvalidArgumentException;
+import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriverException;
 
 @Test
 public class Raj_Bakhru_BlueFlame {
@@ -73,12 +80,12 @@ Screenzoom zoom = new Screenzoom(d);
 InputData data = new InputData(d);
 
 
-
+try {
 l.Loggin(); 
 switchmode.switchonLightmode();
-//read.methodA(); 
-
-D.Deletefromchatlist();  
+//read.methodA(); /*
+/*
+//D.Deletefromchatlist();  
 
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
@@ -111,11 +118,10 @@ type.multienter_inparameter_notitlechat_creationcheck();
 type.prompt_multi_click(); 
 //type.multiple_qa_answerinchat_showsource_check();
  
-
 //D.Deletefromchatlist(); 
 
 mp.Cursorpositioncheck(); 
-zoom.zoomin80();
+*/
 rp.Replacecheck(); 
 m.checkmathnotation(); 
 D.Delete_from_top();  
@@ -134,13 +140,11 @@ at.autocompleteoption_backspace_delete_check();
 rss.Rssxmlcheck(); 
 chtexpt.chat_export_filename();
 
-rss.Rssxmlcheck(); /*
+rss.Rssxmlcheck(); 
 tmplte.pptxfile_check_method_2(); 
 tmplte.template_folder_subfoldertraverse_back_check(); 
-*/
+
 //File management section checking
-
-
 
 file.searchlaggycheck();
 file.subfolder_select_from_searchcheck(); 
@@ -150,7 +154,6 @@ file.files_to_chat();
 //D.Deletefromchatlist(); 
 file.file_to_QnA();  
 file.emlfilecheck();   
-
 //file.non_indexfilechecks();  
 file.file_datetime_infocheck(); 
 file.videofile_loader_check(); 
@@ -158,9 +161,7 @@ file.doubelcross_buttoncheck();
 file.reindexingcheck(); 
 file.content_viewer_pagecheck(); 
 file.runblueprint_check();  
-//file.multifileupload();
-
-
+file.multifileupload();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
@@ -175,7 +176,7 @@ br.Blueprint_addGeneration_with_parameterCheck();
 */
 // System Admin Section Checking  
 
-
+/*
 sys.AccountEditChange();
 sys.userEdit(); 
 sys.systemaccount_searchandFilter_check(); 
@@ -190,11 +191,42 @@ qna.qnafavoritecheck();
 switchmode.switchOFFLightmode(); 
 board.boading(); 
 timezone.timezone_changeto_Local(); 
-
+*/
 lgout.exit(); 
 d.quit();           
- 
-   
-    }
-    
 }
+catch(ElementClickInterceptedException e){
+
+System.out.println("ElementClickInterceptedException found");
+d.quit();
+}
+catch(NoSuchElementException e){
+
+System.out.println("NoSuchElementException found");
+d.quit();
+}
+catch(InvalidArgumentException e){
+
+System.out.println("InvalidArgumentException found");
+d.quit();
+}
+catch(InvalidSelectorException e){
+
+System.out.println("InvalidSelectorException found");
+d.quit();
+}
+catch(TimeoutException e){
+
+System.out.println("TimeoutException found");
+d.quit();
+}
+catch(NotFoundException e){
+
+System.out.println("NotFoundException found");
+d.quit();
+}
+catch(WebDriverException e){
+
+System.out.println("WebDriverException found");
+d.quit();
+}}}

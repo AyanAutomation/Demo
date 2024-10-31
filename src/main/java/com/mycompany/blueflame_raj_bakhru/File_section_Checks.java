@@ -1,6 +1,7 @@
 
 package com.mycompany.blueflame_raj_bakhru;
 
+import static com.google.common.net.MediaType.JPEG;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.time.Duration;
@@ -8,8 +9,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,7 +21,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
+import sun.awt.www.content.image.jpeg;
 
 
 public class File_section_Checks {
@@ -655,6 +661,9 @@ public void videofile_loader_check() throws InterruptedException{
         JavascriptExecutor js = (JavascriptExecutor)d;
         Actions a = new Actions(d);
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
+        TakesScreenshot shot = (TakesScreenshot)d;
+        
+        
         
          d.navigate().to(videofilepageURL);
          
@@ -664,7 +673,9 @@ public void videofile_loader_check() throws InterruptedException{
          w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(videoFileCard)));
          a.moveToElement(d.findElement(By.xpath(videoFileCard))).build().perform();
          a.moveToElement(d.findElement(By.xpath(videoFileCard))).click().build().perform();
-         Thread.sleep(2000);
+         shot.getScreenshotAs(OutputType.FILE);
+         
+         Thread.sleep(4000);
    /*             
          WebElement videoElement = w.until(ExpectedConditions.presenceOfElementLocated(By.xpath(videopopup)));
          
@@ -937,11 +948,12 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
            Actions a = new Actions(d);
            WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
            JavascriptExecutor js = (JavascriptExecutor)d;
-           String uploadOption = "//span[text()='Upload Folder']";
-           String HiddenFile_uploadElement = "(//input[@type='file'])[3]";
-           String filePath = "C:\\Users\\webskitters\\Desktop\\Sample Demo txt Folder\\7.7-KB.txt";
+           String uploadOption = "(//span[@class='MuiTypography-root MuiTypography-caption css-dukeyb'])[2]";
+           String HiddenFile_uploadElement = "(//input[@type='file'])[2]";
+           String filePath = "C:\\Users\\webskitters\\Desktop\\Demo\\Demo Text.txt";
            
-           
+       
+     try{      
        d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder/Multi%20upload");
           
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedotbutton)));
@@ -949,20 +961,65 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(menuListfromThreeDotButton)));
        
 
-    WebElement uploadElement = w.until(ExpectedConditions.presenceOfElementLocated(By.xpath(HiddenFile_uploadElement)));
-    js.executeScript("arguments[0].style.display='block';", uploadElement);
+    WebElement uploadElement = w.until(ExpectedConditions.presenceOfElementLocated(By.xpath(HiddenFile_uploadElement))); 
+    js.executeScript("arguments[0].style.display='block';", uploadElement); 
        
       //uploadElement.sendKeys(filePath);
+      d.findElement(By.xpath(HiddenFile_uploadElement)).click();
        
-    d.findElement(By.xpath(HiddenFile_uploadElement)).sendKeys(filePath);
+    d.findElement(By.xpath(uploadOption)).sendKeys(filePath);
       
-      
+     
 //       d.findElement(By.xpath(HiddenFile_uploadElement)).click();
       
+     }
+     
+     catch(ElementNotInteractableException e){
+         
+         System.out.println("ElementNotInteractableException found");
+         d.navigate().refresh();
+     }
+     catch (InvalidArgumentException e){
+         System.out.println("InvalidArgumentException found");
+         d.navigate().refresh();
+         
+     }
+     }
       
+      
+      
+      public void folder_create(){
+      
+      
+          
+          d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");
+         Actions a = new Actions(d);
+         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
+         JavascriptExecutor js = (JavascriptExecutor)d;
+         
+         
+         String New_FolderOption = "//span[text()='New Folder']";
+         String FolderCreate_PopInputBox = "//input[@placeholder='Enter Folder Name']";
+         String CreateButton = "//button[text()='Create']";
+         String Folder_Created_Confirmation = "//h5[text()='Please add files or folder to view.']";
+      
+      
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedotbutton)));
+       d.findElement(By.xpath(threedotbutton)).click();
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(menuListfromThreeDotButton)));
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(New_FolderOption)));
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FolderCreate_PopInputBox))); 
+       d.findElement(By.xpath(FolderCreate_PopInputBox)).sendKeys("demo");
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CreateButton))); 
+       d.findElement(By.xpath(CreateButton)).click();
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Folder_Created_Confirmation)));
+         
+       
+      
+      }
   }
       
-}
+
 
 
 

@@ -42,6 +42,7 @@ public class Autocomplete_functions {
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     Screenzoom zm = new Screenzoom(d);   
     Actions a = new Actions(d);
+    JavascriptExecutor js = (JavascriptExecutor)d;
      
      w.until(ExpectedConditions.visibilityOf(folder.newchatbutton())); 
      folder.newchatbutton().click();
@@ -50,6 +51,8 @@ public class Autocomplete_functions {
      Thread.sleep(1500);
      w.until(ExpectedConditions.visibilityOf(folder.promptcrossbot()));
      folder.promptcrossbot().click();
+     a.moveToElement(d.findElement(By.xpath("//div[@class='MuiCardContent-root css-1qw96cp']"))).build().perform();
+     js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", folder.tileA());
      w.until(ExpectedConditions.visibilityOf(folder.tileA())); 
      folder.tileA().click();
      zm.zoomout80();
@@ -86,14 +89,19 @@ public class Autocomplete_functions {
     
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     JavascriptExecutor js = (JavascriptExecutor)d;   
-     
-   w.until(ExpectedConditions.visibilityOf(folder.newchatbutton())); 
+    Actions a = new Actions(d); 
+    
+    
+    
+     w.until(ExpectedConditions.visibilityOf(folder.newchatbutton())); 
      folder.newchatbutton().click();
      w.until(ExpectedConditions.visibilityOf(folder.Editor_Box())); 
      folder.Editor_Box().click();
      Thread.sleep(1500);
      w.until(ExpectedConditions.visibilityOf(folder.promptcrossbot()));
      folder.promptcrossbot().click();
+     a.moveToElement(d.findElement(By.xpath("//div[@class='MuiCardContent-root css-1qw96cp']"))).build().perform();
+     js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", folder.tileA());
      w.until(ExpectedConditions.visibilityOf(folder.tileA())); 
      folder.tileA().click();
      Thread.sleep(1500);

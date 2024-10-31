@@ -30,4 +30,5 @@ com\mycompany\blueflame_raj_bakhru\Template.class
 com\mycompany\blueflame_raj_bakhru\chat_like_dislike.class
 com\mycompany\blueflame_raj_bakhru\Autocomplete_functions.class
 com\mycompany\blueflame_raj_bakhru\LigthmodeSwitch.class
+com\mycompany\blueflame_raj_bakhru\ElementNotSelectableException.class
 com\mycompany\blueflame_raj_bakhru\QnA_section.class

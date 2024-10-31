@@ -62,7 +62,15 @@ public void Replacecheck() throws InterruptedException{
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promptcrossbot)));
        
        d.findElement(By.xpath(promptcrossbot)).click();
-       a.moveToElement(d.findElement(By.xpath("//div[@class='MuiCardContent-root css-1qw96cp']"))).build().perform();
+       
+       
+       a.moveToElement(d.findElement(By.xpath("(//div[@class='MuiCardContent-root css-1qw96cp'])[1]"))).build().perform();
+      
+       // Scroll the container to the target menu item 
+      /* Scroll the element into view using scrollIntoView. 
+       Here, the behavior: 'smooth' parameter enables a smooth scrolling animation, and inline: 
+       'nearest' ensures the container scrolls horizontally or vertically as needed. */
+       
        js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", d.findElement(By.xpath(tileA)));
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tileA)));
        d.findElement(By.xpath(tileA)).click();
@@ -78,15 +86,5 @@ public void Replacecheck() throws InterruptedException{
        Thread.sleep(1200);
        d.navigate().refresh();
                
-
-
-
-
 }
-
-
-
-
-
-
 }

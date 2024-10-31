@@ -34,6 +34,7 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.APIRequest;
 import java.io.IOException;
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.InvalidSelectorException;
@@ -44,11 +45,11 @@ import org.openqa.selenium.WebDriverException;
 
 @Test
 public class Raj_Bakhru_BlueFlame {
-public static void main(String[] args)throws InterruptedException, AWTException {
+public static void main(String[] args)throws InterruptedException, AWTException, EncryptedDocumentException, IOException {
 WebDriver d = new ChromeDriver(); 
 
 
-d.get("https://app-dev.blueflame.ai/login");
+//d.get("https://app-dev.blueflame.ai/login");
      
 d.manage().window().maximize();    
 
@@ -78,13 +79,17 @@ Onboarding_Checking board = new Onboarding_Checking(d);
 Timezone_change timezone = new Timezone_change(d);
 Screenzoom zoom = new Screenzoom(d);
 InputData data = new InputData(d);
+Data_Reader read = new Data_Reader(d);
 
 
-try {
+read.datatobe_read();
+
+
+/*
 l.Loggin(); 
 switchmode.switchonLightmode();
-//read.methodA(); /*
-/*
+//read.methodA(); 
+
 //D.Deletefromchatlist();  
 
 swtch.switchingTodefaultAimodel(); 
@@ -121,7 +126,7 @@ type.prompt_multi_click();
 //D.Deletefromchatlist(); 
 
 mp.Cursorpositioncheck(); 
-*/
+
 rp.Replacecheck(); 
 m.checkmathnotation(); 
 D.Delete_from_top();  
@@ -133,9 +138,9 @@ sl.autofill_qna_check();
 
 chl.thirdpartylogocheck();  
 like.likedislikestaytest();  
-zoom.zoomin80(); 
+
 at.extrafolder_issue_check(); 
-zoom.zoomin80();
+
 at.autocompleteoption_backspace_delete_check(); 
 rss.Rssxmlcheck(); 
 chtexpt.chat_export_filename();
@@ -191,10 +196,10 @@ qna.qnafavoritecheck();
 switchmode.switchOFFLightmode(); 
 board.boading(); 
 timezone.timezone_changeto_Local(); 
-*/
+
 lgout.exit(); 
-d.quit();           
-}
+d.quit();         */  
+/*
 catch(ElementClickInterceptedException e){
 
 System.out.println("ElementClickInterceptedException found");
@@ -229,4 +234,4 @@ catch(WebDriverException e){
 
 System.out.println("WebDriverException found");
 d.quit();
-}}}
+}*/}}

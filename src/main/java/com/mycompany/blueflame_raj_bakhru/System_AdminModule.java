@@ -58,7 +58,7 @@ public class System_AdminModule {
     String statusfieldTitle = "//p[contains(text(),'Status')]";
     String submit_Button = "//div[contains(text(),'Submit')]";
     String statusShowButtonIn_list = "(//button[@type='button'])[9]";
-    String accountstatOptions = "//div[text()='Usage Stats']";
+    String accountstatOptions = "//div[text()='User Access Stats']";
     String selectAccountforStatToast = "//div[text()='Select at least one account to view usage stats.']";
     String AccountOption_SelectCheckbox = "(//div[@data-testid='select-row-cell-renderer'])[1]//button[@type='button']";
     String popupCalender_daterangeSelectfield = "//p[text()='Select a Date Range']";

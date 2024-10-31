@@ -20,7 +20,9 @@ com\mycompany\blueflame_raj_bakhru\AI_model.class
 com\mycompany\blueflame_raj_bakhru\Raj_Bakhru_BlueFlame.class
 com\mycompany\blueflame_raj_bakhru\apptag.class
 com\mycompany\blueflame_raj_bakhru\Selectfiles.class
+com\mycompany\blueflame_raj_bakhru\FileLib.class
 com\mycompany\blueflame_raj_bakhru\Onboarding_Checking.class
+com\bfagent\pom\Rssxmlcheckpaths.class
 com\mycompany\blueflame_raj_bakhru\chatlogo.class
 com\mycompany\blueflame_raj_bakhru\delete.class
 com\mycompany\blueflame_raj_bakhru\Login.class
@@ -29,6 +31,6 @@ com\mycompany\blueflame_raj_bakhru\System_AdminModule.class
 com\mycompany\blueflame_raj_bakhru\Template.class
 com\mycompany\blueflame_raj_bakhru\chat_like_dislike.class
 com\mycompany\blueflame_raj_bakhru\Autocomplete_functions.class
+com\mycompany\blueflame_raj_bakhru\Data_Reader.class
 com\mycompany\blueflame_raj_bakhru\LigthmodeSwitch.class
-com\mycompany\blueflame_raj_bakhru\ElementNotSelectableException.class
 com\mycompany\blueflame_raj_bakhru\QnA_section.class

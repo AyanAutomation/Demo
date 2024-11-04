@@ -43,13 +43,16 @@ import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriverException;
 
-@Test
+
 public class Raj_Bakhru_BlueFlame {
-public static void main(String[] args)throws InterruptedException, AWTException, EncryptedDocumentException, IOException {
+    
+    
+@Test(priority = 0)   
+public void allfunctions()throws InterruptedException, AWTException, EncryptedDocumentException, IOException {
+
+    
 WebDriver d = new ChromeDriver(); 
-
-
-//d.get("https://app-dev.blueflame.ai/login");
+d.get("https://app-dev.blueflame.ai/login");
      
 d.manage().window().maximize();    
 
@@ -82,10 +85,10 @@ InputData data = new InputData(d);
 Data_Reader read = new Data_Reader(d);
 
 
-read.datatobe_read();
+//read.datatobe_read();
 
 
-/*
+
 l.Loggin(); 
 switchmode.switchonLightmode();
 //read.methodA(); 
@@ -177,11 +180,11 @@ br.blueprintDelete();
 br.blueprint_delete_without_webElementList_method(); 
 br.importblueprintCheck(); 
 br.linkedrecipeEdit_and_Deletecheck();  
-br.Blueprint_addGeneration_with_parameterCheck();  
-*/
+br.Blueprint_addGeneration_with_parameterCheck();  */
+
 // System Admin Section Checking  
 
-/*
+
 sys.AccountEditChange();
 sys.userEdit(); 
 sys.systemaccount_searchandFilter_check(); 
@@ -198,7 +201,7 @@ board.boading();
 timezone.timezone_changeto_Local(); 
 
 lgout.exit(); 
-d.quit();         */  
+d.quit();         
 /*
 catch(ElementClickInterceptedException e){
 

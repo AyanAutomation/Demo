@@ -32,5 +32,6 @@ com\mycompany\blueflame_raj_bakhru\Template.class
 com\mycompany\blueflame_raj_bakhru\chat_like_dislike.class
 com\mycompany\blueflame_raj_bakhru\Autocomplete_functions.class
 com\mycompany\blueflame_raj_bakhru\Data_Reader.class
+com\bfagent\pom\TilerReplaceCheck.class
 com\mycompany\blueflame_raj_bakhru\LigthmodeSwitch.class
 com\mycompany\blueflame_raj_bakhru\QnA_section.class

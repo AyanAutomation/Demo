@@ -34,14 +34,20 @@ public class Template {
     String Desiredoption = "Templates";
     String Template_list = "//body/div[@id='demoPopover']/div[3]";
     String Templateoptions = "//li[@class='MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1wtv3nt']";
-    
-    
-    
+    String template_folder = "//li[contains(text(),'Templates')]";
+    String templateSubSub_folder = "//p[contains(text(),'Template')]";
+    String templatesubfolder = "//p[contains(text(),'AYn Demo Folder')]";
+    String template_file = "//p[contains(text(),'Template.IC.Phase.1.Deck.pptx')]";
+    String success_message = "//div[contains(text(),'You will receive an em')]";
+    String toast_cancel = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
+    String templateSubSubfolder = "//p[contains(text(),'Template')]";
+    String templateSuBfolder = "//p[contains(text(),'AYn Demo Folder')]";
+    String gobackbutton= "//button[normalize-space()='Go Back']";
+
+
     public void pptxfile_check() throws InterruptedException{
-    
    
-    
-     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
+        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
        
      
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Export_button))); 
@@ -85,13 +91,7 @@ public class Template {
     
         
         
-        String template_folder = "//li[contains(text(),'Templates')]";
-        String templateSubSub_folder = "//p[contains(text(),'Template')]";
-        String templatesubfolder = "//p[contains(text(),'AYn Demo Folder')]";
-        String template_file = "//p[contains(text(),'Template.IC.Phase.1.Deck.pptx')]";
-        String success_message = "//div[contains(text(),'You will receive an em')]";
-        String toast_cancel = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-        
+  
      WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
        
      
@@ -128,11 +128,7 @@ public class Template {
      
          delete dels = new delete(d);
          
-        String template_folder = "//li[contains(text(),'Templates')]";
-        String templateSubSubfolder = "//p[contains(text(),'Template')]";
-        String templateSuBfolder = "//p[contains(text(),'AYn Demo Folder')]";
-        String template_file = "//p[contains(text(),'Template.IC.Phase.1.Deck.pptx')]";
-        String gobackbutton= "//button[normalize-space()='Go Back']";
+
        
         
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));

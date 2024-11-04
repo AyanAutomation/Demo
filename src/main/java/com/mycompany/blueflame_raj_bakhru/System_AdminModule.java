@@ -13,19 +13,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class System_AdminModule {
-    
-    
+public class System_AdminModule { 
     WebDriver d;
-    
-    
-    
     public System_AdminModule(WebDriver d){
-    
-    
     this.d = d;
-    
-    
     }
     
     String searchbox = "input[aria-invalid='false']";

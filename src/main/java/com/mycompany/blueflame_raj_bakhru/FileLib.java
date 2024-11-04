@@ -4,6 +4,7 @@ package com.mycompany.blueflame_raj_bakhru;
 import com.ibiz.excel.picture.support.model.Workbook;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
@@ -11,14 +12,12 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class FileLib {
     
     
-      public String getExcelData(String sheetName,int row,int cell) throws EncryptedDocumentException, IOException {
-		
-          
-          
-                FileInputStream fis=new FileInputStream("./Demo/ip.xlsx");
-		 org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
-	String data =wb.getSheet(sheetName).getRow(row).getCell(cell).getStringCellValue();
-                return data;
+      public String getPropertyData(String key) throws IOException {
+		FileInputStream fis = new FileInputStream("C:\\Users\\webskitters\\Documents\\NetBeansProjects\\BlueFlame_Raj_Bakhru\\src\\main\\java\\input\\data.properties");
+		Properties p = new Properties();
+		p.load(fis);
+		String data = p.getProperty(key);
+		return data;
 		}
     
     

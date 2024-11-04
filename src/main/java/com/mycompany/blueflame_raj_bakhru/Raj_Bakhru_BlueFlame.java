@@ -45,16 +45,16 @@ import org.openqa.selenium.WebDriverException;
 
 
 public class Raj_Bakhru_BlueFlame {
-    
-    
-@Test(priority = 0)   
-public void allfunctions()throws InterruptedException, AWTException, EncryptedDocumentException, IOException {
+   
+public static void main(String[] args)throws InterruptedException, AWTException, EncryptedDocumentException, IOException {
 
     
 WebDriver d = new ChromeDriver(); 
+
+
 d.get("https://app-dev.blueflame.ai/login");
      
-d.manage().window().maximize();    
+d.manage().window().maximize();     
 
 Login l = new Login(d);
 delete D = new delete(d);
@@ -82,10 +82,10 @@ Onboarding_Checking board = new Onboarding_Checking(d);
 Timezone_change timezone = new Timezone_change(d);
 Screenzoom zoom = new Screenzoom(d);
 InputData data = new InputData(d);
-Data_Reader read = new Data_Reader(d);
 
 
-//read.datatobe_read();
+
+//Data_Reader.datatobe_read();
 
 
 
@@ -201,7 +201,7 @@ board.boading();
 timezone.timezone_changeto_Local(); 
 
 lgout.exit(); 
-d.quit();         
+d.quit();        
 /*
 catch(ElementClickInterceptedException e){
 

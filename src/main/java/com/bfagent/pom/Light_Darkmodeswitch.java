@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Light_Darkmodeswitch {
   
-    @FindBy(xpath="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/button[1]")
+    @FindBy(xpath="(//ul[@class='MuiList-root MuiList-padding switch_div css-1ontqvh']//button[@type='button'])[1]")
     WebElement lightMode;
     @FindBy(xpath="(//ul[@class='MuiList-root MuiList-padding switch_div css-1ontqvh']//button[@type='button'])[2]")
     WebElement darkmodebutton;

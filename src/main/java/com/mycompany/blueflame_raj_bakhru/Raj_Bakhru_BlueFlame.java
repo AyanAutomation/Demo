@@ -33,13 +33,18 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.APIRequest;
+import java.io.File;
 import java.io.IOException;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.NoSuchContextException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriverException;
 
@@ -78,6 +83,13 @@ Onboarding_Checking board = new Onboarding_Checking(d);
 Timezone_change timezone = new Timezone_change(d);
 Screenzoom zoom = new Screenzoom(d);
 FileLib f = new FileLib();
+usageAnalysis analysis = new usageAnalysis(d);
+TakesScreenshot shot = (TakesScreenshot)d;
+
+
+
+
+
 
 
 
@@ -178,8 +190,8 @@ br.blueprintDelete();
 br.blueprint_delete_without_webElementList_method(); 
 br.importblueprintCheck(); 
 br.linkedrecipeEdit_and_Deletecheck();  
-br.Blueprint_addGeneration_with_parameterCheck();  */
-
+br.Blueprint_addGeneration_with_parameterCheck();  
+*/
 // System Admin Section Checking  
 
 
@@ -197,42 +209,15 @@ qna.qnafavoritecheck();
 switchmode.switchOFFLightmode(); 
 board.boading(); 
 timezone.timezone_changeto_Local(); 
-
-lgout.exit(); 
+switchmode.switchonLightmode();
+analysis.usageAna();
+//lgout.exit(); 
 d.quit();        
 /*
-catch(ElementClickInterceptedException e){
+catch(Exception e){
 
-System.out.println("ElementClickInterceptedException found");
+FileUtils.copyFile(shot.getScreenshotAs(OutputType.FILE),new File("C:\\Users\\webskitters\\Documents\\NetBeansProjects\\Screenshot\\exception.jpeg"));
+System.out.println("exception found");
 d.quit();
-}
-catch(NoSuchElementException e){
-
-System.out.println("NoSuchElementException found");
-d.quit();
-}
-catch(InvalidArgumentException e){
-
-System.out.println("InvalidArgumentException found");
-d.quit();
-}
-catch(InvalidSelectorException e){
-
-System.out.println("InvalidSelectorException found");
-d.quit();
-}
-catch(TimeoutException e){
-
-System.out.println("TimeoutException found");
-d.quit();
-}
-catch(NotFoundException e){
-
-System.out.println("NotFoundException found");
-d.quit();
-}
-catch(WebDriverException e){
-
-System.out.println("WebDriverException found");
-d.quit();
-}*/}}
+}*/
+}}

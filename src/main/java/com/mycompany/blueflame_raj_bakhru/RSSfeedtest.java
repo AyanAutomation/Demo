@@ -26,12 +26,6 @@ public class RSSfeedtest {
     
     public void Rssxmlcheck() throws InterruptedException{
     
-        String newchatbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/button[1]";
-        String Rssoption = "//p[contains(text(),'@BlueFlame Read the RSS feed at {RSS} for articles')]";
-        String parameter_boxarea = "//textarea[@aria-invalid= 'false']";
-        String Send ="//i[@class='ico1']";
-        String Editor_Box = "//p[@data-placeholder = 'Ask me a question' ]";
-        String Export_button = "//div[@class='MuiStack-root repl_share css-u4p24i']//button[@type='button']";
         
         
          Rssxmlcheckpaths rss = new Rssxmlcheckpaths(d);

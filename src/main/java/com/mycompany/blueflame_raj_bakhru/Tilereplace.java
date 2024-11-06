@@ -1,6 +1,7 @@
 
 package com.mycompany.blueflame_raj_bakhru;
 
+import com.bfagent.pom.TilerReplaceCheck;
 import static dev.failsafe.internal.util.Assert.isTrue;
 import java.time.Duration;
 import org.openqa.selenium.By;
@@ -27,41 +28,22 @@ this.d =d;
 
 public void Replacecheck() throws InterruptedException{
 
-
-      //@files Search internal files in 
-    
-    String tileA = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]";
-    
-    //Prepare me for my next meeting
-    String tileB = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]";
-    
-    //@O365 Summarize my emails from the past 12 hours a
-    String tileC = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]";
-    //Run Company Research on {company name}
-    String tileD = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]";
-    String promptcrossbot = "//*[@id=\"chat_write_area\"]/div/div[2]/div/div/div/div[1]/button";
-    
-    String Send ="//i[@class='ico1']";
-    String Editor_Boxtwo = "//p[@data-placeholder = 'Ask me a question' ]";
-    String newchatbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/button[1]/*[1]";
-                            
-    
+ 
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     JavascriptExecutor js = (JavascriptExecutor)d;    
     Actions a = new Actions(d);
+    TilerReplaceCheck rp = new TilerReplaceCheck(d);
     
     
-    
-     
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
-     d.findElement(By.xpath(newchatbutton)).click();  
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Boxtwo))); 
-      d.findElement(By.xpath(Editor_Boxtwo)).clear();
+    w.until(ExpectedConditions.visibilityOf(rp.newchatbutton())); 
+    rp.newchatbutton().click();  
+    w.until(ExpectedConditions.visibilityOf(rp.Editor_Boxtwo())); 
+    rp.Editor_Boxtwo().clear();
         
-        d.findElement(By.xpath(Editor_Boxtwo)).sendKeys("Testing ");
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promptcrossbot)));
+    rp.Editor_Boxtwo().sendKeys("Testing");
+    w.until(ExpectedConditions.visibilityOf(rp.promptcrossbot()));
        
-       d.findElement(By.xpath(promptcrossbot)).click();
+       rp.promptcrossbot().click();
        
        
        a.moveToElement(d.findElement(By.xpath("(//div[@class='MuiCardContent-root css-1qw96cp'])[1]"))).build().perform();
@@ -71,18 +53,18 @@ public void Replacecheck() throws InterruptedException{
        Here, the behavior: 'smooth' parameter enables a smooth scrolling animation, and inline: 
        'nearest' ensures the container scrolls horizontally or vertically as needed. */
        
-       js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", d.findElement(By.xpath(tileA)));
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tileA)));
-       d.findElement(By.xpath(tileA)).click();
+       js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", rp.tileA());
+       w.until(ExpectedConditions.visibilityOf(rp.tileA()));
+       rp.tileA().click();
        Thread.sleep(1200);
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tileB)));
-       d.findElement(By.xpath(tileB)).click();
+       w.until(ExpectedConditions.visibilityOf(rp.tileB()));
+       rp.tileB().click();
        Thread.sleep(1200);
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tileC)));
-       d.findElement(By.xpath(tileC)).click();
+       w.until(ExpectedConditions.visibilityOf(rp.tileC()));
+       rp.tileC().click();
        Thread.sleep(1200);
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tileD)));
-       d.findElement(By.xpath(tileD)).click();
+       w.until(ExpectedConditions.visibilityOf(rp.tileD()));
+       rp.tileD().click();
        Thread.sleep(1200);
        d.navigate().refresh();
                

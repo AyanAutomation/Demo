@@ -411,7 +411,8 @@ public class System_AdminModule {
          }}
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_Button)));
       d.findElement(By.xpath(submit_Button)).click();
-      
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@aria-label='Close toast']")));
+      d.findElement(By.xpath("//button[@aria-label='Close toast']")).click();
   }
   }
     

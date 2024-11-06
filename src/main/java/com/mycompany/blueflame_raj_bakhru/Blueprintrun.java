@@ -68,7 +68,7 @@ this.d = d;
         String summarytoggle = "//input[@aria-label ='controlled']";
         String summarizeResultboxCssselector = "customValues.summarizeText";
         String saveButtonone = "//div[text()='Save']";
-        String saveButtontwo = "//*[@id=\"root\"]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div[1]/div[2]/div/button[2]";
+        String saveButtontwo = "//div[text()='Save']";
         String settingsSlidedrawer = "//div[@class='MuiBox-root css-41in74']//button[@type='button']";
         String moveInsideform = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]";        
         String BlueprintnameField = "//textarea[@placeholder='Blueprint name *']";
@@ -120,7 +120,7 @@ this.d = d;
         String parameterinputBoxforrun = "//input[@placeholder='Type here']";
         String runButton_inside_confirmationPopUp = "/html/body/div[4]/div[3]/div/div/div[2]/button[2]";
         String previewChat_generated = "//p[contains(text(),'Today')]";
-        String addscheduleButton = "//body/div[4]/div[3]/div[1]/div[2]/div[1]/div[7]/button[1]";
+        String addscheduleButton = "//button[text()='Add Schedule']";
         String popupScheduleForm = "//body/div[@id='schedule-list-add']/div[3]/div[1]";
         String timeClockIcon = "//body/div[@id='schedule-list-add']/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/*[1]";
         String scheduleFrequencyButton = "//div[@id='mui-component-select-frequency']";
@@ -129,7 +129,7 @@ this.d = d;
         String monDay = "Mo";        
         String scheduleSaveButton = "//div[@class='MuiStack-root css-1b138w3']//button[contains(text(),'Save')]";
         String scheduletimeval = "//body/div[6]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[7]";
-        String scheduletimeOkButton = "//body/div[6]/div[2]/div[1]/div[2]/button[1]";
+        String scheduletimeOkButton = "//button[text()='OK']";
         String shareLibaryOptions_GenericXpath = "//div[@class='MuiBox-root css-ehlpcq']";
         String shareLib_seconduserOption = "(//div[@class='MuiBox-root css-1qdy2zr']//div[@class='MuiBox-root css-ehlpcq']//button[@type='button']//p[@class='MuiTypography-root MuiTypography-body1 css-newj2o'])[2]";
         String AccountLiboption = "Account Library";
@@ -346,9 +346,9 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
    
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(saveButtonone)));
       d.findElement(By.xpath(saveButtonone)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(settingsSlidedrawer)));
+      /*w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(settingsSlidedrawer)));
       d.findElement(By.xpath(settingsSlidedrawer)).click();
-      // filling Blueprint name field
+      // filling Blueprint name field*/
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(blueprintnametitle)));
       a.moveToElement(d.findElement(By.xpath(blueprintnametitle))).build().perform();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BlueprintnameField)));
@@ -358,7 +358,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
     
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BlueprintDescription_Field)));
       d.findElement(By.xpath(BlueprintDescription_Field)).sendKeys("blueprint description");
-      
+      js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(addscheduleButton)));
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addscheduleButton)));
       d.findElement(By.xpath(addscheduleButton)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popupScheduleForm)));
@@ -390,9 +390,9 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       // hitting side Drawer close button and regenerating prompt 
       
       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sideDrawerclose_button)));
+/*      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sideDrawerclose_button)));
       d.findElement(By.xpath(sideDrawerclose_button)).click();
-      
+      */
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(generateTextbox)));
       d.findElement(By.xpath(generateTextbox)).sendKeys("world news");
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(generateTextButton)));

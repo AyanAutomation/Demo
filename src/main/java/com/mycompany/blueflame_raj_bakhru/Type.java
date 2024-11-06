@@ -593,7 +593,7 @@ public class Type {
    String Imagesabovechatbox = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]";
    String chatboxwithcontent = "//div[@contenteditable='true']";
    String Prompt_firstoption = "//p[contains(text(),'Prepare me for my next meeting')]";
-   String firstimagecard = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]";
+   String firstimagecard = "(//div[@class='MuiBox-root css-12elng1'])[1]";
    String imageremovebutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]";
    String Aimodeltab = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/button[1]";
    String defaultModel = "//body/div[2]/div[3]/div[1]/button[1]";
@@ -673,7 +673,9 @@ public class Type {
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(imageremovebutton)));
      
      for(int i=0 ; i<=4 ; i++){
-    
+         
+    a.moveToElement(d.findElement(By.xpath(firstimagecard))).build().perform();
+     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(imageremovebutton)));
       d.findElement(By.xpath(imageremovebutton)).click();
     
       Thread.sleep(500);

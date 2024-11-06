@@ -1,6 +1,6 @@
 package com.mycompany.blueflame_raj_bakhru;
 
-import Input_data_package.InputData;
+
 import com.mycompany.blueflame_raj_bakhru.AI_model;
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -48,12 +48,8 @@ public class Raj_Bakhru_BlueFlame {
    
 public static void main(String[] args)throws InterruptedException, AWTException, EncryptedDocumentException, IOException {
 
-    
 WebDriver d = new ChromeDriver(); 
 
-
-d.get("https://app-dev.blueflame.ai/login");
-     
 d.manage().window().maximize();     
 
 Login l = new Login(d);
@@ -81,13 +77,15 @@ Blueprintrun br = new Blueprintrun(d);
 Onboarding_Checking board = new Onboarding_Checking(d);
 Timezone_change timezone = new Timezone_change(d);
 Screenzoom zoom = new Screenzoom(d);
-InputData data = new InputData(d);
+FileLib f = new FileLib();
 
 
+
+String URL = f.getPropertyData("url");
+
+d.get(URL);
 
 //Data_Reader.datatobe_read();
-
-
 
 l.Loggin(); 
 switchmode.switchonLightmode();
@@ -173,8 +171,8 @@ file.multifileupload();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
-/*
-br.shareblueprintcheck(); 
+
+br.shareblueprintcheck(); /*
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
@@ -191,10 +189,10 @@ sys.systemaccount_searchandFilter_check();
 sys.AccountStatuscheck(); 
 sys.useredit_User_licence_Change();
 //Qna Section Checking  
- 
+/* 
 qna.qnasearchCheck();   
 qna.qnafavoritecheck();
-
+*/
 //D.Delete_from_top();   
 switchmode.switchOFFLightmode(); 
 board.boading(); 

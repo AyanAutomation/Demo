@@ -35,13 +35,13 @@ public class Selectfiles {
     public void selectchatfiles() throws InterruptedException{
     
         
-        String PlusButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/button[1]";
-        String SelectFilesoption = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/button[1]";
+        String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
+        String SelectFilesoption = "//button[text()='Select From Files']";
         String SelectInputButton = "(//span[@class='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-13v7le'])[1]";
         
         String ConfirmselectButton = "/html/body/div[2]/div[3]/div/div[1]/div[2]/div[2]/button[2]";
         String foldertext = "//h3[contains(text(),'Folders')]";
-        String againplusbutton = "//*[@id=\"chat_write_area\"]/div/div[2]/div[2]/div/button";
+        String againplusbutton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
         
         
         
@@ -90,8 +90,8 @@ public class Selectfiles {
   
     public void autofill_qna_check() throws InterruptedException{
     
-        String PlusButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/button[1]";
-        String SelectFilesoption = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/button[1]";
+        String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
+        String SelectFilesoption = "//button[text()='Select From Files']";
         
         String optiontoselect = "Upload Sample/AAPL-US Piper Sandler Companies 04 Aug '23.pdf";
         String ConfirmselectButton = "/html/body/div[2]/div[3]/div/div[1]/div[2]/div[2]/button[2]";
@@ -169,8 +169,8 @@ public class Selectfiles {
     
     public void multifilesselect() throws InterruptedException, AWTException{
     
-    String PlusButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/button[1]";
-    String SelectFilesoption = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/button[1]";
+    String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
+    String SelectFilesoption = "//button[text()='Select From Files']";
     String foldertext = "//h3[contains(text(),'Folders')]";
     String Aynfolder = "/html/body/div[2]/div[3]/div/div[1]/div[3]/div[1]/span/div/div/div[10]/span/div/div[2]";
     String Foldertitletext = "//a[contains(text(),'AYn Demo Folder')]";
@@ -266,8 +266,8 @@ public class Selectfiles {
 public void File_with_pipesearch_in_filespoup() throws InterruptedException{
 
 
-    String PlusButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/button[1]";
-    String SelectFilesoption = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/button[1]";
+    String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
+    String SelectFilesoption = "//button[text()='Select From Files']";
     String foldertext = "//h3[contains(text(),'Folders')]";
     String searchbox = "//input[@placeholder='search']" ;
     String searchdropdownmenulist = "//ul[@role='listbox']";

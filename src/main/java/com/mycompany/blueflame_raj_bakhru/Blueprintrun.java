@@ -46,7 +46,7 @@ this.d = d;
         String sidedropdownmenu = "//div[@tabindex='-1']";
         String allmenuitems = "//div[@tabindex='-1']//li[@role='menuitem']";
         String shareOption = "Share";
-        String addtoLibraryOption = "//p[contains(text(),'Choose library')]";
+        String addtoLibraryOption = "//p[contains(text(),'Select Library')]";
         String accountOption ="//div[contains(text(),'Select Account')]";
         String popOutModal = "//div[@role='dialog']";
         String promptlockButton = "";
@@ -54,8 +54,8 @@ this.d = d;
         String blueflameaiOption = "//li[@data-value='c0639d2d-d3ba-4418-840d-a68c988723db']";
         String selectUser = "//body/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]";
         String webSkitterdevoption = "Webskitters test Dev";
-        String popovercloser = "(//div[@role='presentation'])[3]//div[@role='dialog']//h2[@class='MuiTypography-root MuiTypography-h6 MuiDialogTitle-root css-grrkzz']";
-        String shareButton = "//button[text()='Share']";
+        String popovercloser = "//p[text()='Share Company Research on {company name}']";
+        String shareButton = "//div[text()='Share']";
         String shareSuccessMessage = "//li[@aria-live='polite']";
         String shareToastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
         String Create_BlueprntButton = "//div[text()='Create New']";
@@ -91,7 +91,7 @@ this.d = d;
         String recipedeleteSuccessToast = "//div[contains(text(),'Blueprint Deleted Successfully.')]";
         String deleteToastcrossButton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
         String deleteOptn = "//p[contains(text(),'Delete')]";
-        String ChooseUser = "//p[contains(text(),'Choose user')]";
+        String ChooseUser = "//p[contains(text(),'Search by name')]";
         String addtoLibraryButton = "//button[contains(text(),'Add from library')]";
         String addlibraryPopupTitle = "//p[contains(text(),'Add from library')]";
         String insideRecipeList = "//body/div[2]/div[3]/div[1]/div[2]/div[1]/div[2]/div[2]";
@@ -133,7 +133,7 @@ this.d = d;
         String shareLibaryOptions_GenericXpath = "//div[@class='MuiBox-root css-ehlpcq']";
         String shareLib_seconduserOption = "(//div[@class='MuiBox-root css-1qdy2zr']//div[@class='MuiBox-root css-ehlpcq']//button[@type='button']//p[@class='MuiTypography-root MuiTypography-body1 css-newj2o'])[2]";
         String AccountLiboption = "Account Library";
-        String userforSharing = "Ed Chu";
+        String userforSharing = "Webskitters test Dev";
         String library_DemoLinked_recipeXpath = "//h3[text()='Demo Recipe linked']";
         String Library_DemoRecipe_Bottom_section = "//body/div[2]/div[3]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]";
         String demoLinked_recipeImportButton = "//button[text()='Import']";
@@ -210,7 +210,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
        String allUserFetchingGenericXpath = "//ul[@role='listbox']//li[@role='option']";
        
        
-        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
+        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
         Actions a = new Actions(d);
       d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(advancedViewbutton))); 
@@ -257,13 +257,13 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       
       }
       
-      }
-     
+      } 
+     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='BlueFlame AI']")));
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ChooseUser)));
      d.findElement(By.xpath(ChooseUser)).click();
+      a.moveToElement(d.findElement(By.xpath("//input[@placeholder='Search']"))).build().perform();
+     d.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("Web");
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(shareLibaryOptions_GenericXpath)));
-     a.moveToElement(d.findElement(By.xpath(shareLib_seconduserOption))).build().perform();
-     
      List <WebElement> userOptions = d.findElements(By.xpath(shareLibaryOptions_GenericXpath));
      
       for(WebElement userOpts : userOptions){

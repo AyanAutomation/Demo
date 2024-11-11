@@ -365,9 +365,9 @@ public class Type {
     
     
     String Editor_Box = "//p[@data-placeholder = 'Ask me a question' ]";
-    String PlusButton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/button[1]";
-    String App_option = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/button[1]";
-    String FMPappoption_in_list = "//span[contains(text(),'FMP')]";
+    String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
+    String App_option = "//button[text()='Use Apps']";
+    String FMPappoption_in_list = "//p[contains(text(),'FMP')]";
     String promptoption = "//p[contains(text(),'@O365 Summarize my emails from the past 12 hours a')]";
     
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));

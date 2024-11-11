@@ -29,7 +29,7 @@ public class chat_like_dislike {
       
     String capiqchat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='CAP IQ Logo Message']";
     String gratachat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='Grata Logo Chat']";
-    String likebutton ="//*[@id=\"4cfb26f4-41c4-4164-8f4d-281448b3b5e5_panel\"]/div/div/div/div/div[4]/div[1]/div/div/button[2]";
+    String likebutton ="(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-177eotx'])[1]";
     
     
     

@@ -35,7 +35,7 @@ public class File_section_Checks {
     String menu_option = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]";
     String File_option_menu ="//a[@href='/dashboard/file-management']";
     String Searchbox = "//input[@placeholder='search']";
-    String Searchoptionvalue = "//li[contains(text(),'AYn Demo Folder/Economics/Shadow Oil Fleet Funding War Laid Bare - Newsweek.pdf')]";
+    String Searchoptionvalue = "//li[text()='AYn Demo Folder/Economics/Shadow Oil Fleet Funding War Laid Bare - Newsweek.pdf']";
     String Subfolder_name_in_breadcrumb = "//a[contains(text(),'AYn Demo Folder')]";
     String filetext = "//p[contains(text(),'Shadow Oil Fleet Funding War Laid Bare -...')]";
     String chaterrorMessageText = "//div[contains(text(),'This file was not yet indexed for chat. Please wai')]";
@@ -1013,10 +1013,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CreateButton))); 
        d.findElement(By.xpath(CreateButton)).click();
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Folder_Created_Confirmation)));
-         
-       
-      
-      }
+        }
   }
       
 

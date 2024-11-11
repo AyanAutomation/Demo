@@ -85,9 +85,7 @@ Screenzoom zoom = new Screenzoom(d);
 FileLib f = new FileLib();
 usageAnalysis analysis = new usageAnalysis(d);
 TakesScreenshot shot = (TakesScreenshot)d;
-
-
-
+SystemUsage usage = new SystemUsage(d);
 
 
 
@@ -104,7 +102,6 @@ switchmode.switchonLightmode();
 //read.methodA(); 
 
 //D.Deletefromchatlist();  
-
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
@@ -183,8 +180,8 @@ file.multifileupload();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
-
-br.shareblueprintcheck(); /*
+br.shareblueprintcheck(); 
+/*
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
@@ -201,17 +198,19 @@ sys.systemaccount_searchandFilter_check();
 sys.AccountStatuscheck(); 
 sys.useredit_User_licence_Change();
 //Qna Section Checking  
-/* 
+/*
 qna.qnasearchCheck();   
 qna.qnafavoritecheck();
 */
 //D.Delete_from_top();   
+
 switchmode.switchOFFLightmode(); 
 board.boading(); 
 timezone.timezone_changeto_Local(); 
 switchmode.switchonLightmode();
-analysis.usageAna();
-//lgout.exit(); 
+analysis.usageAna(); 
+usage.systemUsaGe();
+lgout.exit(); 
 d.quit();        
 /*
 catch(Exception e){

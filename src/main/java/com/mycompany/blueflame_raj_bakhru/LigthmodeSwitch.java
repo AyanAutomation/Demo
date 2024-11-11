@@ -24,7 +24,9 @@ public class LigthmodeSwitch {
     
     public void switchonLightmode(){
  Light_Darkmodeswitch sw = new Light_Darkmodeswitch(d);
+        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
         
+      w.until(ExpectedConditions.visibilityOf(sw.lightMode()));
         boolean  modeStatus = sw.lightMode().isSelected();
         
          //System.out.println(modeStatus);

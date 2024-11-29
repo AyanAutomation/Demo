@@ -10,24 +10,24 @@ import org.openqa.selenium.support.PageFactory;
 public class TilerReplaceCheck {
     
     //@files Search internal files in 
-    @FindBy(xpath="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath=" //span[text()='@Files']")
     public WebElement tileA;
     //Prepare me for my next meeting
-    @FindBy(xpath="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath="//p[text()='Prepare me for my next meeting']")
     public WebElement tileB;
     //@O365 Summarize my emails from the past 12 hours a
-    @FindBy(xpath="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath="//span[text()='@O365']")
     public WebElement tileC;
-    //Run Company Research on {company name}
-    @FindBy(xpath="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    //Show me my agenda for today with people profiles
+    @FindBy(xpath="//p[text()='Show me my agenda for today with people profiles']")
     public WebElement tileD;
-    @FindBy(xpath="//*[@id=\"chat_write_area\"]/div/div[2]/div/div/div/div[1]/button")
+    @FindBy(xpath="//div[@class='MuiBox-root css-b8tfif']")
     public WebElement promptcrossbot;
     @FindBy(xpath="//i[@class='ico1']")
     public WebElement Send;
     @FindBy(xpath="//div[@contenteditable=\"true\"]")
     public WebElement Editor_Boxtwo;
-    @FindBy(xpath="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath="//div[@class='chat_head_add MuiBox-root css-0']//button[@tabindex='0']")
     public WebElement newchatbutton;
     
     public TilerReplaceCheck(WebDriver d){
@@ -82,12 +82,5 @@ public class TilerReplaceCheck {
     return newchatbutton;
         
     }
-    
-    
-    
-    
-    
-    
-    
     
 }

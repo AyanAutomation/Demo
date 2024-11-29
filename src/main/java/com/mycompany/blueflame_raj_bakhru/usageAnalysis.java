@@ -41,7 +41,7 @@ public class usageAnalysis {
         
         //System.out.println(user.getText());
         
-        if(user.getText().equals("Matt Winters")){
+        if(user.getText().equals("Tim Estrada")){
         
         user.click();
         break;

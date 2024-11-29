@@ -27,6 +27,7 @@ com\mycompany\blueflame_raj_bakhru\FileLib.class
 com\mycompany\blueflame_raj_bakhru\Onboarding_Checking.class
 com\bfagent\pom\Rssxmlcheckpaths.class
 com\mycompany\blueflame_raj_bakhru\chatlogo.class
+com\mycompany\blueflame_raj_bakhru\Screenshot_Class.class
 com\mycompany\blueflame_raj_bakhru\delete.class
 com\mycompany\blueflame_raj_bakhru\Login.class
 com\bfagent\pom\UsageAnalysisPaths.class

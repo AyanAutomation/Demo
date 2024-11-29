@@ -20,11 +20,11 @@ public class Blueflamemodel_defaultmodel_switch {
     
    public WebDriver d;
     
-String Aimodeltab = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/button[1]";
+String Aimodeltab = "//div[@class='MuiBox-root css-q69oui']//button[@type='button']";
 String Gpt4model = "//p[contains(text(),'GPT-4 (OpenAI)')]";
-String Aigpt4tab = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/button[1]";
+String Aigpt4tab = "//*[@aria-label='GPT-4 (OpenAI)']";
 String Light_mode = "//img[@src='/assets/images/lightButton.svg']";
-String defaultmodel = "//body/div[2]/div[3]/div[1]/button[1]";
+String defaultmodel = "//*[@aria-label='You can change your default in the settings']";
 String defaultModelSearchBox = "//input[@placeholder='Search']";
 
 
@@ -37,7 +37,7 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
     public void switchingTodefaultAimodel() throws InterruptedException, AWTException{
     
     
-     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
+     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
      JavascriptExecutor js = (JavascriptExecutor)d;
      
      d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
@@ -67,8 +67,8 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
         
   
   d.navigate().refresh();
-  String Profileicon = "//div[@class='profile_drop MuiBox-root css-0']";
-  String Profileoption = "//body/div[@id='simple-popover']/div[3]/li[1]/p[1]";
+  String Profileicon = "//div[@class='MuiBox-root css-teec7v']";
+  String Profileoption = "//li[@role='menuitem']//p[text()='Profile']";
   String Default_model_editbutton = "(//p[text()='Edit'])[2]";
   String Defaultoption = "//p[@class='MuiTypography-root MuiTypography-body1 css-vw0zfu']";
   String defaultListOptions = "//div[@class='MuiBox-root css-evipjh']//div[@data-testid='flex-box']//div[@class='MuiBox-root css-ehlpcq']//button[@type='button']//div[@class='MuiBox-root css-1o4wo1x']//p[@class='MuiTypography-root MuiTypography-body1 css-newj2o']";
@@ -83,7 +83,7 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
   String LLMsuccess_message = "//div[contains(text(),'Direct LLM Updated Successfully.')]";
   String toastcrosstwo = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
   String llmsavebutton = "//tbody/tr[@id='default-direct']/td[3]/div[1]/button[1]";
-  String tablebodyxpath = "//*[@id=\"root\"]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[2]";
+  String tablebodyxpath = "//table[@aria-label='account-table']";
   String value_of_DefaultWebChatModel = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1uz0oep'])[10]";
   
   

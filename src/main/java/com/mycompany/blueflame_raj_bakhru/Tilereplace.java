@@ -46,7 +46,7 @@ public void Replacecheck() throws InterruptedException{
        rp.promptcrossbot().click();
        
        
-       a.moveToElement(d.findElement(By.xpath("(//div[@class='MuiCardContent-root css-1qw96cp'])[1]"))).build().perform();
+      
       
        // Scroll the container to the target menu item 
       /* Scroll the element into view using scrollIntoView. 

@@ -14,13 +14,13 @@ public class AI_model_Paths {
 public WebElement Aimodeltab;
 @FindBy(xpath="//p[contains(text(),'GPT-4 (OpenAI)')]")
  public WebElement Gpt4model;
-@FindBy(xpath= "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/button[1]")
+@FindBy(xpath= "//*[@aria-label='GPT-4 (OpenAI)']")
 public WebElement  Aigpt4tab;
 @FindBy(xpath="//img[@src='/assets/images/lightButton.svg']")
 public WebElement Light_mode;
-@FindBy(xpath="//div[@class='profile_drop MuiBox-root css-0']")
+@FindBy(xpath="//div[@class='MuiBox-root css-teec7v']")
 public WebElement Profileicon;
-@FindBy(xpath="//p[contains(text(),'Profile')]")
+@FindBy(xpath="//li[@role='menuitem']//p[text()='Profile']")
 public WebElement Profileoption;
 @FindBy(xpath="(//p[text()='Edit'])[2]")
 public WebElement Default_model_editbutton;
@@ -46,9 +46,9 @@ public WebElement LLMsavebutton;
 public WebElement LLMsuccess_message;
 @FindBy(xpath="//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]")
 public WebElement toastcrosstwo;
-@FindBy(xpath="//span[contains(text(),'Chat')]")
+@FindBy(xpath="//p[contains(text(),'Chat')]")
 public WebElement Chatoption_in_menu;
-@FindBy(xpath="//*[@id=\"chat_write_area\"]/div/div[1]/button")
+@FindBy(xpath="//div[@class='MuiBox-root css-q69oui']//button[@type='button']")
 public WebElement Modelbutton;
 @FindBy(xpath="//body/div[@id='select-menu']/div[3]/div[1]/div[2]/div[6]/button[1]")
 public WebElement seconddefault;

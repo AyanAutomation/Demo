@@ -32,7 +32,7 @@ this.d = d;
 String Option_button = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[2]/div[1]/div[1]/div[1]/span[1]";
 String Delete = "//p[contains(text(),'Delete')]";
 String Ok = "/html/body/div[2]/div[3]/div/div[2]/button[2]";
-String Chatlist = "//div[@id='chat_list_ced1482c-d5b7-4eaf-a365-ff648f8fb64d']";
+String Chatlist = "//div[@class='pinned_list MuiBox-root css-0']";
 String Messagetext = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[2]/div[1]/div[1]/div[1]/span[1]";
 String Recentchat_text_inlist = "//p[contains(text(),'Recent')]";
 

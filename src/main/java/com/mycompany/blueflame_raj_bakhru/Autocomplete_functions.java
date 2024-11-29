@@ -52,7 +52,7 @@ public class Autocomplete_functions {
      w.until(ExpectedConditions.visibilityOf(folder.promptcrossbot()));
      folder.promptcrossbot().click();
    
-     a.moveToElement(d.findElement(By.xpath("(//div[@class='MuiCardContent-root css-1qw96cp'])[1]"))).build().perform();
+   //  a.moveToElement(d.findElement(By.xpath("(//div[@class='MuiCardContent-root css-1qw96cp'])[1]"))).build().perform();
 //     js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", folder.tileA());
      w.until(ExpectedConditions.visibilityOf(folder.tileA())); 
      folder.tileA().click();
@@ -101,7 +101,7 @@ public class Autocomplete_functions {
      Thread.sleep(1500);
      w.until(ExpectedConditions.visibilityOf(folder.promptcrossbot()));
      folder.promptcrossbot().click();
-     a.moveToElement(d.findElement(By.xpath("(//div[@class='MuiCardContent-root css-1qw96cp'])[1]"))).build().perform();
+//     a.moveToElement(d.findElement(By.xpath("(//div[@class='MuiCardContent-root css-1qw96cp'])[1]"))).build().perform();
 //     js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });", folder.tileA());
      w.until(ExpectedConditions.visibilityOf(folder.tileA())); 
      folder.tileA().click();

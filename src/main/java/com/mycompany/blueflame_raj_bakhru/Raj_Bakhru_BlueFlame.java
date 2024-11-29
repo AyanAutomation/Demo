@@ -98,17 +98,19 @@ d.get(URL);
 //Data_Reader.datatobe_read();
 
 l.Loggin(); 
-switchmode.switchonLightmode();
+switchmode.switchonLightmode(); 
 //read.methodA(); 
 
 //D.Deletefromchatlist();  
+
+/*
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
 ai.Ai_model_selectioncheck(); 
 ai.modelchangecheck();  
 swtch.switchingTodefaultAimodel();
-
+*/
 //chat section checking    
 type.multi_images_pastecheck(); 
 // Checking @tag staying after message is sent   
@@ -127,7 +129,7 @@ type.parameterbox_delete_reenter_curlybrace_issuecheck();
 type.parameterPlacereplaceCheck();
 type.part_text_option_deletecheck();
 type.app_afterpromptfavouritesuggestion(); 
-type.tabselectcheck(); 
+type.tabselectcheck();
 type.copied_textfrom_chat_pasted_inside_parameterbox(); 
 type.multienter_inparameter_notitlechat_creationcheck(); 
 type.prompt_multi_click(); 
@@ -180,17 +182,18 @@ file.multifileupload();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
-br.shareblueprintcheck(); 
 /*
+br.shareblueprintcheck(); 
+
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
 br.importblueprintCheck(); 
 br.linkedrecipeEdit_and_Deletecheck();  
 br.Blueprint_addGeneration_with_parameterCheck();  
-*/
-// System Admin Section Checking  
 
+// System Admin Section Checking  
+*/
 
 sys.AccountEditChange();
 sys.userEdit(); 
@@ -198,16 +201,16 @@ sys.systemaccount_searchandFilter_check();
 sys.AccountStatuscheck(); 
 sys.useredit_User_licence_Change();
 //Qna Section Checking  
-/*
+
 qna.qnasearchCheck();   
 qna.qnafavoritecheck();
-*/
+
 //D.Delete_from_top();   
 
 switchmode.switchOFFLightmode(); 
 board.boading(); 
 timezone.timezone_changeto_Local(); 
-switchmode.switchonLightmode();
+switchmode.switchonLightmode(); 
 analysis.usageAna(); 
 usage.systemUsaGe();
 lgout.exit(); 

@@ -181,7 +181,7 @@ public class File_section_Checks {
    //*[@id="radix-:r2l:"]/ul/div[1]/div[1]/button
    String Menu_list = "//div[@role='menu']";
    String Menu_items = "//div[@role='menu']//div[@role='menuitem']";
-   String Submenu_items = "//div[@class='MuiFormGroup-root css-1h7anqn']//label[@class='MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1jaw3da']";
+   String Submenu_items = "//div[@class='MuiFormGroup-root css-1h7anqn']//label[@class='MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1877ww2']";
    String myoption = "Reclassify";
    String Submenu = "//div[@class='MuiFormGroup-root css-1h7anqn']";
    String Submenuoptions = "//label[@class='MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-kswqkt']";
@@ -233,7 +233,6 @@ public class File_section_Checks {
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Submenu)));
        
        List <WebElement> submenuoptions = d.findElements(By.xpath(Submenu_items));
-       WebElement saveButton = d.findElement(By.xpath(save_button));
        
        for (WebElement submenuoption : submenuoptions ){
        
@@ -246,7 +245,7 @@ public class File_section_Checks {
        
        try{
            
-     
+       WebElement saveButton = d.findElement(By.xpath(save_button));
     
        saveButton.click();
        System.out.println("save button shown clicking save button");
@@ -257,6 +256,7 @@ public class File_section_Checks {
        
         
        submenuoption.click();
+       WebElement saveButton = d.findElement(By.xpath(save_button));
        saveButton.click();
        
        
@@ -274,7 +274,10 @@ public class File_section_Checks {
       
       catch(TimeoutException e){
       
-      
+          
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//label['MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1877ww2'])[1]")));    
+      d.findElement(By.xpath("(//label['MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1877ww2'])[1]")).click();
+      WebElement saveButton = d.findElement(By.xpath(save_button));
       saveButton.click();
     
       }
@@ -446,8 +449,8 @@ public void file_to_QnA() throws AWTException, InterruptedException{
     String Menulist = "//div[@role='menu']";
     String Menuitems = "//div[@role='menu']//div[@role='menuitem']";
     String qaoption = "Q&A";
-    String Qabannertext = "//h3[contains(text(),'QnA')]";
-    String searchbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/button[1]";
+    String Qabannertext = "//p[text()='Questions & Answers']";
+    String searchbutton = "//div[text()='Search']";
     
 
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(40));

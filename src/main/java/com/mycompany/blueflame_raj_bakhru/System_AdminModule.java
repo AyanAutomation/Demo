@@ -58,7 +58,7 @@ public class System_AdminModule {
     String calenderPopup_title = "//p[contains(text(),'Select a range of dates to download')]";
     String ConfirmButton = "//*[text()='Confirm']";
     String AImodelButton_in_chat = "//button[@aria-label='GPT-4 (OpenAI)']";
-    String llmModelPresent = "(//li[@class='MuiListItem-root MuiListItem-gutters css-1tpp0wj'])[4]";
+    String llmModelPresent = "(//li[@class='MuiListItem-root MuiListItem-gutters css-1tpp0wj'])";
     
     
     

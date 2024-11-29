@@ -23,7 +23,7 @@ public class Autocompletexpaths {
     public WebElement Autocomplete_list;
     @FindBy(xpath = "//div[@role='presentation']//ul[@role='listbox']//li[@role='option']")
     public List<WebElement> Genericxpaths;
-    @FindBy(xpath = "//*[@id=\"chat_write_area\"]/div/div[2]/div/div/div/div[1]/button")
+    @FindBy(xpath = "//div[@class='MuiBox-root css-b8tfif']")
     public WebElement promptcrossbot;
     
     public Autocompletexpaths(WebDriver d){

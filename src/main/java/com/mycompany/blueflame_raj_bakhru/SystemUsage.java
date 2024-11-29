@@ -28,7 +28,7 @@ public class SystemUsage {
     
        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(15));
        SystemUsagePaths syspaths = new SystemUsagePaths(d);
-       TakesScreenshot shot = (TakesScreenshot)d;
+       Screenshot_Class ss = new Screenshot_Class(d);
        FileLib Flb = new FileLib();
       
        String pageurl = Flb.getPropertyData("SystemUsageURL");
@@ -42,7 +42,7 @@ public class SystemUsage {
       syspaths.userListInfoIcon().click();
       w.until(ExpectedConditions.visibilityOf(syspaths.userDataPopup()));
       System.out.println(syspaths.userDataPopup().getText());
-      FileUtils.copyFile(shot.getScreenshotAs(OutputType.FILE),new File("C:\\Users\\webskitters\\Documents\\NetBeansProjects\\Screenshot\\Systemusage.jpeg"));
+      ss.systemusageScreenshot();
       d.navigate().refresh();
 
       w.until(ExpectedConditions.visibilityOf(syspaths.ExportButton()));
@@ -62,12 +62,16 @@ public class SystemUsage {
         
       for(WebElement user : users){
           
-         System.out.println(user.getText());
-         
-         if(user.getText().equals(usr)){
-         
+         System.out.println(user.getText()); 
+       if(user.getText().equalsIgnoreCase(usr)){
+        
              user.click();
+             break;
          }}
+      
+      w.until(ExpectedConditions.visibilityOf(syspaths.userUsageTab()));
+      syspaths.userUsageTab().click();
+      
       String chatpageurl = Flb.getPropertyData("url");
       d.navigate().to(chatpageurl);
    }

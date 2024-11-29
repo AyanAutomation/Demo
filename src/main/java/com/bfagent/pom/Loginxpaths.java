@@ -14,11 +14,11 @@ public class Loginxpaths {
     private WebElement Login_SubmitButton_xpath;
    @FindBy(xpath= "//input[@placeholder='Email Address']")
     private WebElement Email_id_Field;
-   @FindBy(xpath= "(//button[@type='button'])[2]")
+   @FindBy(xpath= "//div[@class='MuiStack-root css-18unnoa']")
    private WebElement Email_submit_button;
-   @FindBy(xpath= "//*[@id=\"outlined-basic\"]")
+   @FindBy(xpath= "//*[@placeholder='Password']")
    private WebElement Password_field;
-   @FindBy(xpath= "//h3[contains(text(),'Chat')]")
+   @FindBy(xpath= "//p[contains(text(),'Chat')]")
    private WebElement Chat_list_title;
    @FindBy(xpath= "//div[text()='Invalid email or password']")
    private WebElement errorMessage;

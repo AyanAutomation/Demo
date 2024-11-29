@@ -18,7 +18,7 @@ public class Login_Creds {
     
     //private: Restricts access to the defining class itself.
     
-    @FindBy(xpath ="//*[@id=\"outlined-basic\"]")
+    @FindBy(xpath ="//*[@placeholder='Password']")
     
     private WebElement Password_Field;
     

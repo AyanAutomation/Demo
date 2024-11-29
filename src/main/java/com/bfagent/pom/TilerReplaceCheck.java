@@ -23,11 +23,11 @@ public class TilerReplaceCheck {
     public WebElement tileD;
     @FindBy(xpath="//div[@class='MuiBox-root css-b8tfif']")
     public WebElement promptcrossbot;
-    @FindBy(xpath="//i[@class='ico1']")
+    @FindBy(xpath="//*[@class='MuiStack-root css-kmv9ap']//*[@type='button']")
     public WebElement Send;
     @FindBy(xpath="//div[@contenteditable=\"true\"]")
     public WebElement Editor_Boxtwo;
-    @FindBy(xpath="//div[@class='chat_head_add MuiBox-root css-0']//button[@tabindex='0']")
+    @FindBy(xpath="(//div[@class='MuiStack-root css-esnk64']//button[@type='button'])[1]")
     public WebElement newchatbutton;
     
     public TilerReplaceCheck(WebDriver d){

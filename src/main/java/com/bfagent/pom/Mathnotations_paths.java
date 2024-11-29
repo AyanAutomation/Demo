@@ -9,10 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Mathnotations_paths {
     
-    @FindBy(xpath = "//i[@class='ico1']")
+    @FindBy(xpath = "//*[@class='MuiStack-root css-kmv9ap']//*[@type='button']")
     public WebElement Send;
     
-    @FindBy(xpath="//div[@class='MuiStack-root repl_share css-u4p24i']//button[@type='button']")
+    @FindBy(xpath="//div[@class='MuiStack-root css-7iwxlc']//button[@type='button']")
     public WebElement Export_button;
    
     public Mathnotations_paths(WebDriver d){

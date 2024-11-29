@@ -32,20 +32,24 @@ public class Selectfiles {
     
     }
     
+    String popuptitletext = "//p[text()='My uploads']";
+    String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
+    String SelectFilesoption = "//button[text()='Select From Files']";
+    String ConfirmselectButton = "//div[text()='Confirm Selection']"; 
+    String searchbox = "(//input[@placeholder='Search'])[2]" ;
+    String Searchresult= "//p[text()='Search results']";
+    String filecheckboxselect = "(//div[@class='MuiBox-root css-1in6zbs']//span[@class='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-15na89n'])[2]";
+    
+    
+    
+    
+    
     public void selectchatfiles() throws InterruptedException{
     
         
-        String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
-        String SelectFilesoption = "//button[text()='Select From Files']";
-        String SelectInputButton = "(//span[@class='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-13v7le'])[1]";
+     String SelectInputButton = "(//div[@class='MuiBox-root css-1in6zbs']//span[@class='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-15na89n'])[1]";
         
-        String ConfirmselectButton = "/html/body/div[2]/div[3]/div/div[1]/div[2]/div[2]/button[2]";
-        String foldertext = "//h3[contains(text(),'Folders')]";
-        String againplusbutton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
-        
-        
-        
-    WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(50));
+     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(50));
   
   
     
@@ -54,30 +58,20 @@ public class Selectfiles {
   Thread.sleep(800); 
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SelectFilesoption)));      
   d.findElement(By.xpath(SelectFilesoption)).click();
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(foldertext)));
-
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popuptitletext)));
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SelectInputButton)));      
   d.findElement(By.xpath(SelectInputButton)).click();
- 
-  
-  
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmselectButton)));  
   Thread.sleep(1500);
   d.findElement(By.xpath(ConfirmselectButton)).click();
   Thread.sleep(1500);
-  
-
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(againplusbutton)));
-  d.findElement(By.xpath(againplusbutton)).click();
-   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SelectFilesoption)));      
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PlusButton)));
+  d.findElement(By.xpath(PlusButton)).click();
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SelectFilesoption)));      
   d.findElement(By.xpath(SelectFilesoption)).click();
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(foldertext)));
-
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popuptitletext)));
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SelectInputButton)));      
   d.findElement(By.xpath(SelectInputButton)).click();
- 
-  
-  
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmselectButton)));  
   Thread.sleep(2500);
   d.findElement(By.xpath(ConfirmselectButton)).click();
@@ -90,70 +84,25 @@ public class Selectfiles {
   
     public void autofill_qna_check() throws InterruptedException{
     
-        String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
-        String SelectFilesoption = "//button[text()='Select From Files']";
-        
-        String optiontoselect = "Upload Sample/AAPL-US Piper Sandler Companies 04 Aug '23.pdf";
-        String ConfirmselectButton = "/html/body/div[2]/div[3]/div/div[1]/div[2]/div[2]/button[2]";
-        String foldertext = "//h3[contains(text(),'Folders')]";
-        String searchbox = "//input[@placeholder='search']" ;
-        String searchdropdown_menu_list = "//ul[@role='listbox']";
-        String dropdown_menu_all_options = "//ul[@role='listbox']//li[@class='MuiAutocomplete-option MuiBox-root css-16r7kf5']";
-        String allfilestext= "//h3[contains(text(),'All files')]";
-        String Checkboxselect = "//body/div[2]/div[3]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/span[1]";
-
-        String editorbox = "//p[@data-placeholder = 'Ask me a question']";
+      
+       String editorbox = "//p[@data-placeholder = 'Ask me a question']";
         String qnaoption = "//p[contains(text(),'/qna {location}')]";
+        String checkbox ="(//div[@class='MuiBox-root css-1in6zbs']//span[@class='MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-15na89n'])[1]";
         
-        
-        
-        
-        
-     
- WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(40));
+     Actions a = new Actions(d);     
+    WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(40));
         
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PlusButton)));
   d.findElement(By.xpath(PlusButton)).click();
   Thread.sleep(1000); 
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SelectFilesoption)));      
   d.findElement(By.xpath(SelectFilesoption)).click();
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(foldertext)));
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popuptitletext)));
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchbox)));      
-  d.findElement(By.xpath(searchbox)).sendKeys("pip"); 
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchdropdown_menu_list)));      
- 
-  List <WebElement> dropdown_options = d.findElements(By.xpath(dropdown_menu_all_options));
-          
-          
- for ( WebElement dropdown_option : dropdown_options ) {
-     
-    
-   if(dropdown_option.getText().equalsIgnoreCase(optiontoselect)){
-         
-         
-     dropdown_option.click();
-     break;
-     
-     }
-     
- }
-    
-    Actions a = new Actions(d);
-    
-    
-    
-    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
-     a.moveToElement(d.findElement(By.xpath(allfilestext))).build().perform();
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Checkboxselect)));
-     a.moveToElement(d.findElement(By.xpath(Checkboxselect))).build().perform();
-     d.findElement(By.xpath(Checkboxselect)).click();
-
-
-    
-
-
-    
+  a.moveToElement(d.findElement(By.xpath(searchbox))).click().sendKeys("pip").build().perform(); 
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Searchresult)));      
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(checkbox))); 
+  d.findElement(By.xpath(checkbox)).click();
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmselectButton)));  
   Thread.sleep(2500);
   d.findElement(By.xpath(ConfirmselectButton)).click();
@@ -268,72 +217,34 @@ public void File_with_pipesearch_in_filespoup() throws InterruptedException{
 
     String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
     String SelectFilesoption = "//button[text()='Select From Files']";
-    String foldertext = "//h3[contains(text(),'Folders')]";
-    String searchbox = "//input[@placeholder='search']" ;
-    String searchdropdownmenulist = "//ul[@role='listbox']";
-    String dropdownmenualloptions = "//ul[@role='listbox']//li[@class='MuiAutocomplete-option MuiBox-root css-16r7kf5']";
-    String option_to_be_selected = "AYn Demo Folder/dummyIdummy2.pdf";
-    String filecheckboxselect = "//body/div[2]/div[3]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/span[1]";
-    String ConfirmselectButton = "/html/body/div[2]/div[3]/div/div[1]/div[2]/div[2]/button[2]"; 
-    String allfilestext= "//h3[contains(text(),'All files')]";
+    
+    
+    
+    
+    
 
     
-    
+  Actions a = new Actions(d);  
   WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
-        
+  LigthmodeSwitch switchmode = new LigthmodeSwitch(d);
+  
+  
+  
+  switchmode.switchonLightmode();
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PlusButton)));
   d.findElement(By.xpath(PlusButton)).click();
   Thread.sleep(1000); 
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SelectFilesoption)));      
   d.findElement(By.xpath(SelectFilesoption)).click();
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(foldertext)));
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchbox)));      
-  d.findElement(By.xpath(searchbox)).sendKeys("dummy"); 
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchdropdownmenulist)));      
-  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dropdownmenualloptions)));
-  
-  List <WebElement> dropedownoptions = d.findElements(By.xpath(dropdownmenualloptions));
-          
-          
- for ( WebElement dropedownoption : dropedownoptions ) {
-    
-     Reporter.log(dropedownoption.getText());
-     
-   if(dropedownoption.getText().equalsIgnoreCase(option_to_be_selected)){
-         
-         
-     dropedownoption.click();
-     
-    break;
-   }
- }
-   
-   Actions a = new Actions(d);
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popuptitletext)));
+  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchbox)));
+  a.moveToElement(d.findElement(By.xpath(searchbox))).click().sendKeys("dummy").build().perform();
 
-    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
-
-    Thread.sleep(1800);
+   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Searchresult)));   
    
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(filecheckboxselect))); 
-    
-for(int i=0; i<3 ; i++){
-    
-    try{
-        
-      //a.moveToElement(d.findElement(By.xpath(filecheckboxselect))).build().perform(); 
-      for(int j=0 ; j<2 ; j++){
-           
-     a.moveToElement(d.findElement(By.xpath(filecheckboxselect))).click().build().perform();
-     break;
-      }}
-    
-    catch(StaleElementReferenceException e){
-    
-            System.out.println("element still stale not visible");
-            
-            }}
-    
-    //d.findElement(By.xpath(filecheckboxselect)).click();
+ 
+    d.findElement(By.xpath(filecheckboxselect)).click();
     System.out.println(d.findElement(By.xpath(filecheckboxselect)).isSelected());
     
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmselectButton)));  

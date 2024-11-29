@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Autocompletexpaths {
       
-    @FindBy(xpath = "(//div[@class='MuiStack-root chat_head css-1hb1q70']//button[@type='button'])[1]")
+    @FindBy(xpath = "(//div[@class='MuiStack-root css-esnk64']//button[@type='button'])[1]")
     public WebElement newchatbutton;
     @FindBy(xpath = "//p[@class='is-empty is-editor-empty']")
     public WebElement Editor_Box;

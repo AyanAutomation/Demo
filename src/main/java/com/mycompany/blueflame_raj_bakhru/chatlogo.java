@@ -26,10 +26,10 @@ public class chatlogo {
     
     public void thirdpartylogocheck() throws InterruptedException, AWTException{
     
-String pitchbookchat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='PitchBook Logo Message']";
-String gratachat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='Grata Logo Chat']";
-String dealcloudchat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='DealCLoud Logo Message']";
-String capiqchat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='CAP IQ Logo Message']";
+String pitchbookchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='PitchBook Logo Message']";
+String gratachat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='Grata Logo Chat']";
+String dealcloudchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='DealCLoud Logo Message']";
+String capiqchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='CAP IQ Logo Message']";
 String copyButton = "//*[@id=\"33942305-cabd-4539-bd1a-2b92ab37497c_panel\"]/div/div/div/div/div[4]/div[1]/div/div/button[1]";
 String Pitchbooklogo = "//p[contains(text(),'Model changed to BlueFlame AI Agent')]";                     
                       //*[@id="bae693ab-02bd-4fc2-b853-cd8e4299dadc_panel"]/div/div/div  
@@ -37,9 +37,7 @@ String Pitchbooklogo = "//p[contains(text(),'Model changed to BlueFlame AI Agent
 String capIQInside_ChatElement_xpath = "//*[@id=\"f541d944-8953-461e-ad1a-3368f65e16a7_panel\"]/div/div/div/div/div[4]/div[1]/div/div/button[1]";
                      
                      
-/*String threedotbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[2]/div[1]/div[1]/div[1]/span[1]";
-String Top_delete_button = "//button[@aria-label='Delete Chat']";
-String delete_success_toast = "//body/div[@id='root']/section[1]/ol[1]/li[1]"; */
+
         
         
         
@@ -74,9 +72,6 @@ String delete_success_toast = "//body/div[@id='root']/section[1]/ol[1]/li[1]"; *
  //d.findElement(By.xpath(Messagetext)).click();
  Thread.sleep(2000);
  js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath("//button[@aria-label='Rostec Corporation']")));
- 
- 
- 
  
  Thread.sleep(2400); 
     

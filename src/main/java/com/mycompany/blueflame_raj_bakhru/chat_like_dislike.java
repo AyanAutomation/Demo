@@ -27,8 +27,8 @@ public class chat_like_dislike {
     
     
       
-    String capiqchat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='CAP IQ Logo Message']";
-    String gratachat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='Grata Logo Chat']";
+    String capiqchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='CAP IQ Logo Message']";
+    String gratachat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='Grata Logo Chat']";
     String likebutton ="(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-177eotx'])[1]";
     
     

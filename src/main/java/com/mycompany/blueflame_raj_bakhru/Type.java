@@ -164,7 +164,7 @@ public class Type {
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
         
         d.findElement(By.xpath(Editor_Box)).sendKeys("PitchBook Show me a profile");
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Export_button)));         
+              
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prompt_option))); 
         d.findElement(By.xpath(prompt_option)).click();
         
@@ -213,9 +213,10 @@ public class Type {
         d.findElement(By.xpath(prompt_option)).click();
         
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(parameterbox))); 
-        d.findElement(By.xpath(parameterbox)).click();
+       
+        a.moveToElement(d.findElement(By.xpath(parameterbox))).click().keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).build().perform();
         
-        a.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).build().perform();
+        
         
        try{ 
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box)));
@@ -491,12 +492,12 @@ public class Type {
     String prompt_option ="//p[contains(text(),'@Pitchbook Show me a profile on {company}')]";
     String parameterbox = "//textarea[@aria-invalid='false']"; 
     String bottomMessage_copyButton = "//ul[@node='[object Object]']//strong[contains(text(),'Ownership Status:')]";
-    String copybutton= "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/button[2]";
+    String copybutton= "(//div[@role='group']//button[@type='button'])[15]";
     String Copysuccessmessage = "//div[contains(text(),'Message Copied Successfully! The content has been ')]";
     String successmessagecrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-    String parameterchat = "//div[@class = 'text_box MuiBox-root css-0']//p[@aria-label='Parameter paste chat check']";
+    String parameterchat = "//p[text()='Parameter paste chat check']";
     
-    String messageList = "//div[@class = 'pinned_list MuiBox-root css-0']";
+    String messageList = "//ul[@class='MuiList-root MuiList-padding css-1rcxn9b']";
     
     
     
@@ -508,7 +509,7 @@ public class Type {
     
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(messageList))); 
     a.moveToElement(d.findElement(By.xpath(messageList))).build().perform();
-    js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(parameterchat)));
+   // js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(parameterchat)));
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(parameterchat))); 
     d.findElement(By.xpath(parameterchat)).click();
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
@@ -528,7 +529,7 @@ public class Type {
      Focus on Element: The arguments[0] in the JavaScript refers to the element that is passed as a parameter.
     */
     
-    js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(copybutton)));
+   // js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(copybutton)));
  
     
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(copybutton))); 

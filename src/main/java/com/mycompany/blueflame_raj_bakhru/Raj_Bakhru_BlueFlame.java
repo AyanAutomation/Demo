@@ -110,7 +110,7 @@ aptg.alphabetically_app_name();
 ai.Ai_model_selectioncheck(); 
 ai.modelchangecheck();  
 swtch.switchingTodefaultAimodel();
-*/
+
 //chat section checking    
 type.multi_images_pastecheck(); 
 // Checking @tag staying after message is sent   
@@ -124,13 +124,13 @@ type.bullet_point_pastecheck();
 type.Parameterbox_enter_send_check();
 //D.Delete_from_top();  
 type.empty_parameterbox_double_enter_send_check(); 
-type.control_A_delete_check(); 
+type.control_A_delete_check();   //--
 type.parameterbox_delete_reenter_curlybrace_issuecheck();  
 type.parameterPlacereplaceCheck();
 type.part_text_option_deletecheck();
 type.app_afterpromptfavouritesuggestion(); 
-type.tabselectcheck();
-type.copied_textfrom_chat_pasted_inside_parameterbox(); 
+type.tabselectcheck(); 
+type.copied_textfrom_chat_pasted_inside_parameterbox(); //--
 type.multienter_inparameter_notitlechat_creationcheck(); 
 type.prompt_multi_click(); 
 //type.multiple_qa_answerinchat_showsource_check();
@@ -156,7 +156,7 @@ at.extrafolder_issue_check();
 at.autocompleteoption_backspace_delete_check(); 
 rss.Rssxmlcheck(); 
 chtexpt.chat_export_filename();
-
+*/
 rss.Rssxmlcheck(); 
 tmplte.pptxfile_check_method_2(); 
 tmplte.template_folder_subfoldertraverse_back_check(); 

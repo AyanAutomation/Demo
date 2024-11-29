@@ -31,12 +31,12 @@ this.d = d;
 
 String Option_button = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[2]/div[1]/div[1]/div[1]/span[1]";
 String Delete = "//p[contains(text(),'Delete')]";
-String Ok = "/html/body/div[2]/div[3]/div/div[2]/button[2]";
-String Chatlist = "//div[@class='pinned_list MuiBox-root css-0']";
+String Ok = "//button[text()='Ok']";
+String Chatlist = "(//div[@class='MuiBox-root css-0']//div[@class='MuiStack-root css-6dfyo3'])[1]";
 String Messagetext = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[2]/div[1]/div[1]/div[1]/span[1]";
-String Recentchat_text_inlist = "//p[contains(text(),'Recent')]";
+String Recentchat_text_inlist = "//p[text()='Recent']";
 
-String threedotbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[2]/div[1]/div[2]/button[1]";
+String threedotbutton = "(//div[@class='MuiBox-root css-1jnh1ax']//button)[1]";
 String Top_delete_button = "//button[@aria-label='Delete Chat']";
 String delete_success_toast = "//div[contains(text(),'Chat Deleted Successfully.')]";
 String delete_success_toastcancelbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";

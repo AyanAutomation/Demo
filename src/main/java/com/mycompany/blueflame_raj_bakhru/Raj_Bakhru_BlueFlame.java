@@ -103,7 +103,7 @@ switchmode.switchonLightmode();
 
 //D.Deletefromchatlist();  
 
-/*
+
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
@@ -156,7 +156,7 @@ at.extrafolder_issue_check();
 at.autocompleteoption_backspace_delete_check(); 
 rss.Rssxmlcheck(); 
 chtexpt.chat_export_filename();
-*/
+
 rss.Rssxmlcheck(); 
 tmplte.pptxfile_check_method_2(); 
 tmplte.template_folder_subfoldertraverse_back_check(); 

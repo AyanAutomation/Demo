@@ -617,7 +617,7 @@ public class Type {
    
    String messageBottom_ButtonSection = "//p[contains(text(),'Model changed to BlueFlame AI Agent')]";
    String copybutton= "(//div[@class='MuiButtonGroup-root MuiButtonGroup-outlined css-13iz54z']//button[@type='button'])[1]";
-   String Copysuccessmessage = "//div[contains(text(),'Message Copied Successfully! The content has been ')]";
+   String Copysuccessmessage = "//div[contains(text(),'Message Copied Successfully! The content has been saved to your clipboard')]";
    String successmessagecrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
    
    String Imagesabovechatbox = "(//*[@class='MuiBox-root css-1j4fru5'])[1]";

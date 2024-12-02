@@ -148,7 +148,7 @@ public class Template {
      d.findElement(By.xpath(templateSubSubfolder)).click(); 
 
      
-     for(int i=0 ; i<2 ; i++ ){
+     for(int i=0 ; i<1 ; i++ ){
      
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gobackbutton))); 
      d.findElement(By.xpath(gobackbutton)).click();

@@ -32,7 +32,7 @@ public class File_section_Checks {
     
     
     
-    String menu_option = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]";
+    String menu_option = "//ul[@class='MuiList-root MuiList-padding css-1lgx6ry']";
     String File_option_menu ="//a[@href='/dashboard/file-management']";
     String Searchbox = "//input[@placeholder='search']";
     String Searchoptionvalue = "//li[text()='AYn Demo Folder/Economics/Shadow Oil Fleet Funding War Laid Bare - Newsweek.pdf']";
@@ -44,16 +44,10 @@ public class File_section_Checks {
     String menuListfromThreeDotButton = "//ul[@role='menu']";
     String allitemsinmenu = "//ul[@role='menu']//li[@role='menuitem']";
     
-    
-    
-    
-    
-    public  File_section_Checks(WebDriver d){
+   public  File_section_Checks(WebDriver d){
     
     
     this.d = d;
-    
-    
     
     }
     

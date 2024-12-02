@@ -101,9 +101,9 @@ l.Loggin();
 switchmode.switchonLightmode(); 
 //read.methodA(); 
 
-//D.Deletefromchatlist();  
+D.Deletefromchatlist();  
 
-
+/*
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
@@ -162,7 +162,7 @@ tmplte.pptxfile_check_method_2();
 tmplte.template_folder_subfoldertraverse_back_check(); 
 
 //File management section checking
-
+*/
 file.searchlaggycheck();
 file.subfolder_select_from_searchcheck(); 
 file.reclassify_check();  

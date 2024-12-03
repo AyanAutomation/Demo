@@ -2,6 +2,7 @@
 package com.mycompany.blueflame_raj_bakhru;
 
 
+import com.bfagent.pom.Chat_Export_xpaths;
 import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -28,15 +29,7 @@ this.d = d;
     
 public void chat_export_filename() throws InterruptedException{
 
-String Export_button = "//div[@class='MuiStack-root css-7iwxlc']//button[@type='button']";
-                         
-String optionspaths = "//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1p4qlti']";
-String exportlist = "//ul[@role='menu']//li[@role='menuitem'][1]";  
-String myoption = "/html/body/div[2]/div[3]/ul/li[2]";
-String downloadstartmessage = "//div[contains(text(),'Download Started')]";
-String downloadsuccessmessage = "//div[contains(text(),'Download Completed')]";
-
-String Success_message_crossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
+Chat_Export_xpaths paths = new Chat_Export_xpaths(d);
 
 
     delete del = new delete(d);
@@ -44,19 +37,19 @@ String Success_message_crossbutton = "//body/div[@id='root']/section[1]/ol[1]/li
      WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
        
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Export_button))); 
-     d.findElement(By.xpath(Export_button)).click();  
+     w.until(ExpectedConditions.visibilityOf(paths.Export_button())); 
+     paths.Export_button().click();  
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(exportlist)));
+     w.until(ExpectedConditions.visibilityOf(paths.exportlist()));
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(myoption))); 
-     d.findElement(By.xpath(myoption)).click();
+     w.until(ExpectedConditions.visibilityOf(paths.myoption())); 
+     paths.myoption().click();
 
-    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(downloadstartmessage)));
+    w.until(ExpectedConditions.visibilityOf(paths.downloadstartmessage()));
     
     try{
     
-    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(downloadsuccessmessage)));
+    w.until(ExpectedConditions.visibilityOf(paths.downloadsuccessmessage()));
     }
      catch(TimeoutException e){
      
@@ -71,9 +64,4 @@ String Success_message_crossbutton = "//body/div[@id='root']/section[1]/ol[1]/li
    
  d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
 
-}    
-    
-    
-    
-    
-}
+}}

@@ -33,7 +33,7 @@ public class usageAnalysis {
        
         w.until(ExpectedConditions.visibilityOf(up.userBox()));
         up.userBox().click();
-        w.until(ExpectedConditions.visibilityOf(up.thirdoption()));
+        //w.until(ExpectedConditions.visibilityOf(up.thirdoption()));
         
         List <WebElement>  users = up.userListGenericXpath;
         

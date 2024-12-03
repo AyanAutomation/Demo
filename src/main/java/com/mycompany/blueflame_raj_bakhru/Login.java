@@ -29,21 +29,18 @@ public Login(WebDriver driver){
 
 public void Loggin() throws IOException{
    
-    Loginxpaths path = new Loginxpaths(d);
-    Login_Creds creds = new Login_Creds(d);
-    FileLib f= new FileLib();
+     Loginxpaths path = new Loginxpaths(d);
+     Login_Creds creds = new Login_Creds(d);
+     FileLib f= new FileLib();
     
-    String email = f.getPropertyData("emailid");
-    String pwd = f.getPropertyData("password");
      WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(50));
      TakesScreenshot sc = (TakesScreenshot)d;
      
-      
      w.until(ExpectedConditions.visibilityOf(path.Email_id_Field()));
-     creds.setEmail(email);
+     creds.setEmail(f.getPropertyData("emailid"));
      path.Email_submit_button().click();
      w.until(ExpectedConditions.visibilityOf(path.Password_field()));
-     creds.setPassword(pwd);
+     creds.setPassword(f.getPropertyData("password"));
      path.Login_SubmitButton_xpath().click();  
      w.until(ExpectedConditions.visibilityOf(path.Chat_list_title()));
      FileUtils.copyFile(sc.getScreenshotAs(OutputType.FILE), new File("C:\\Users\\webskitters\\Desktop\\Rj bakru modification\\sc.png"));

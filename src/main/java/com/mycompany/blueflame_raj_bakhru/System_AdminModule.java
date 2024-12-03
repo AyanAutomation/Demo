@@ -54,7 +54,7 @@ public class System_AdminModule {
     String AccountOption_SelectCheckbox = "(//div[@data-testid='select-row-cell-renderer'])[1]//button[@type='button']";
     String popupCalender_daterangeSelectfield = "//p[text()='Select a Date Range']";
     String previous_mnth_button = "//button[@class='rdp-button_previous']";
-    String dateselect = "(//div[@class='rdp-month']//table[@role='grid']//tbody[@role='rowgroup']//tr[@class='rdp-week']//td[@class='rdp-day']//p[@class='MuiTypography-root MuiTypography-body1 css-vhasw9'])[1]";
+    String dateselect = "(//div[@class='rdp-month']//table[@role='grid']//tbody[@role='rowgroup']//tr[@class='rdp-week']//td[@class='rdp-day']//button)[1]";
     String calenderPopup_title = "//p[contains(text(),'Select a range of dates to download')]";
     String ConfirmButton = "//*[text()='Confirm']";
     String AImodelButton_in_chat = "//button[@aria-label='GPT-4 (OpenAI)']";

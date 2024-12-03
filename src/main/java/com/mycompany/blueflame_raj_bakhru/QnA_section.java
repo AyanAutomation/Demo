@@ -52,15 +52,15 @@ public class QnA_section {
     String FavcardToSelect = "show me details";
     String HistorycardToSelect = "sphere";
     String threedotButton = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-b8uu0t'])[1]";
-    String favoriteButton = "(//div[contains(text(),'Favorites')])[2]";
+    String favoriteButton = "(//div[@tabindex='-1']//div[@data-testid='flex-box']//div[@class='MuiBox-root css-1o4wo1x'])[1]";
     
     String favUnfavsuccessToast = "//body/div[@id='root']/section[1]/ol[1]/li[1]";
     String toastCrossButton = "//button[@aria-label='Close toast']";
-    String chatTitle = "//h3[contains(text(),'File Q&A')]";
+    String chatTitle = "//div[@class='MuiStack-root css-q1mfq2']//p[contains(text(),'File Q&A')]";
     String showSourceicon = "//button[text()='Show Sources']";
-    String showSource_contentOpen = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/button[1]";
-    String chatUserIcon = "//i[@class='abs_ico user_ico']";
-    String SourceisSelected_confirmation = "//p[contains(text(),'Project Aston/23.15_Legal/23.15.3_Contracts with Top 20 Customers')]";
+    String showSource_contentOpen = "//*[@class='MuiBox-root css-1h2lvk']";
+    String chatUserIcon = "(//*[@class='MuiBox-root css-vr5l65']//i)[6]";
+    String SourceisSelected_confirmation = "//div[@aria-label='Project Aston/23.15_Legal/23.15.3_Contracts with Top 20 Customers']";
     
     
     
@@ -91,12 +91,7 @@ public class QnA_section {
         d.findElement(By.xpath(confirmSelectionButton)).click();
         
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SourceisSelected_confirmation)));
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(questionEnterBox)));
-       d.findElement(By.xpath(questionEnterBox)).sendKeys("tom");
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchbutton)));
-       d.findElement(By.xpath(searchbutton)).click();
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(qatoChatButton)));
- 
+       
        d.findElement(By.xpath(searchBox_withContent)).clear();
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(questionEnterBox)));
        d.findElement(By.xpath(questionEnterBox)).sendKeys("Item Analysis Report");
@@ -163,14 +158,11 @@ public class QnA_section {
  }
 }
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(historyanswerfetched)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedotButton)));
-      d.findElement(By.xpath(threedotButton)).click();
-      Thread.sleep(2950);
-      
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(favoriteButton)));
+
       
       for(int i=0 ; i<2; i++ ){
-      
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedotButton)));
+      d.findElement(By.xpath(threedotButton)).click();
       d.findElement(By.xpath(favoriteButton)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(favUnfavsuccessToast)));
       System.out.println(d.findElement(By.xpath(favUnfavsuccessToast)).getText());

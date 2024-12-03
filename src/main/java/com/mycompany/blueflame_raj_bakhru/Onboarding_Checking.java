@@ -122,7 +122,7 @@ public class Onboarding_Checking {
        timezone.click();
         break; 
   }  } 
-      w.until(ExpectedConditions.visibilityOf(onbd.TimezoneTitle()));
+      w.until(ExpectedConditions.visibilityOf(onbd.timezonepagetitle()));
       
       w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
       onbd.continueButtonxpath().click();
@@ -150,7 +150,7 @@ public class Onboarding_Checking {
       onbd.tellusinteresttextBox().sendKeys("More AI Models needs to be included");
        w.until(ExpectedConditions.visibilityOf(onbd.continueButtonxpath()));
       onbd.continueButtonxpath().click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[contains(text(),'Chat')]")));
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='MuiStack-root css-1hb8d47']//p[contains(text(),'Chat')]")));
      
       } 
  }

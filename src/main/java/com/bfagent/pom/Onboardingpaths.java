@@ -19,36 +19,35 @@ public class Onboardingpaths {
     public WebElement usercount ;
     @FindBy(xpath="//div[contains(text(),'Login As')]")
     public WebElement loginAsButton;
-    @FindBy(css = "div[aria-haspopup='listbox']")
+    @FindBy(css = "div[data-testid='select']")
     public WebElement profileDropdownCssselector;
-    @FindBy(xpath="//body/div[@id='menu-']/div[3]")
+    @FindBy(xpath="//div[@data-testid='flex-box']")
     public WebElement profilelist;
-    @FindBy(xpath="//ul[@role='listbox']//li[@aria-selected='false']")
+    @FindBy(xpath="//div[@data-testid='flex-box']//button")
     public List <WebElement> profilelistalloptionsGenericXpath;
-    @FindBy(xpath="//button[contains(text(),'Continue')]")
+    @FindBy(xpath="//div[contains(text(),'Continue')]")
     public WebElement continueButtonxpath;
     @FindBy(xpath="//p[contains(text(),'Asia/Calcutta')]")
     public WebElement timeZoneFieldClick;
-    @FindBy(xpath="//ul[@role='listbox']")
+    @FindBy(xpath="//div[@data-testid='flex-box']")
     public WebElement timeZoneList;
-    @FindBy(xpath="//li[@role='option']")
+    @FindBy(xpath="//div[@data-testid='flex-box']//button")
     public List <WebElement> timezoneLIstOption_genericXpath;
-    @FindBy(xpath="//p[contains(text(),'Set up your profile')]")
+    @FindBy(xpath="//p[contains(text(),'Setup your profile')]")
     public WebElement timezonepagetitle;
-    @FindBy(xpath="//p[contains(text(),'Choose Chat model')]")
+    @FindBy(xpath="//p[contains(text(),'Choose your chat model')]")
     public WebElement chatmodelChoosePageTitle;
-    @FindBy(xpath="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]")
+    @FindBy(xpath="(//*[@class='MuiStack-root css-16r5w70'])[3]")
     public WebElement gptfourOptionXpath;
     @FindBy(xpath="//p[contains(text(),'Connect your applications')]")
     public WebElement applicationListPageTitle;
     @FindBy(xpath="//p[contains(text(),'Automate your workflows')]")
     public WebElement recipelistpageTitle;
-    @FindBy(xpath="//h1[contains(text(),'Automate tasks and reporting with blueprints.')]")
+    @FindBy(xpath="//*[contains(text(),'Automate tasks and reporting with blueprints.')]")
     public WebElement recipeList;
     @FindBy(xpath="//textarea[@aria-invalid='false']")
     public WebElement tellusinteresttextBox;
-    @FindBy(xpath="//p[contains(text(),'Set up your profile')]")
-    public WebElement TimezoneTitle;
+
 
   
     public Onboardingpaths(WebDriver d){
@@ -100,9 +99,7 @@ public class Onboardingpaths {
      public WebElement tellusinteresttextBox(){
      return tellusinteresttextBox;
      }
-     public WebElement TimezoneTitle(){
-     return TimezoneTitle;
-     }
+
       public WebElement applicationListPageTitle(){
      return applicationListPageTitle;
      }

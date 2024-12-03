@@ -9,15 +9,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UsageAnalysisPaths {
     
-    @FindBy(xpath = "(//div[@role='combobox'])[2]")
+    @FindBy(xpath = "(//div[@data-testid='select'])[2]")
     
     private WebElement userBox;
     
-    @FindBy(css = "ul[role='listbox']")
+    @FindBy(css = "div[class='MuiBox-root css-1qdy2zr']")
     
     private WebElement userList;
     
-    @FindBy(xpath = "(//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-62n9qd'])")
+    @FindBy(xpath = "//div[@class='MuiBox-root css-1qdy2zr']//div//button")
     
     public List<WebElement> userListGenericXpath ;
     
@@ -36,11 +36,11 @@ public class UsageAnalysisPaths {
     
     private WebElement exportButton;
     
-   @FindBy(xpath = "(//li[@tabindex='-1'])[3]")
+   @FindBy(xpath = "(//div[@class='MuiBox-root css-1qdy2zr']//div//button)[3]")
     
     private WebElement thirdoption;
    
-  @FindBy(xpath = "(//div[@role='combobox'])[1]")
+  @FindBy(xpath = "(//div[@data-testid='select'])[1]")
     
     private WebElement dateRange_box;
     

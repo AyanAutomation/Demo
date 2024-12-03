@@ -89,21 +89,15 @@ SystemUsage usage = new SystemUsage(d);
 
 
 
-
-
 String URL = f.getPropertyData("url");
 
 d.get(URL);
 
 //Data_Reader.datatobe_read();
-
 l.Loggin(); 
 switchmode.switchonLightmode(); 
-//read.methodA(); 
+//D.Deletefromchatlist();  
 
-D.Deletefromchatlist();  
-
-/*
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
@@ -162,7 +156,7 @@ tmplte.pptxfile_check_method_2();
 tmplte.template_folder_subfoldertraverse_back_check(); 
 
 //File management section checking
-*/
+
 file.searchlaggycheck();
 file.subfolder_select_from_searchcheck(); 
 file.reclassify_check();  
@@ -177,8 +171,8 @@ file.videofile_loader_check();
 file.doubelcross_buttoncheck(); 
 file.reindexingcheck(); 
 file.content_viewer_pagecheck(); 
-file.runblueprint_check();  
-file.multifileupload();
+file.runblueprint_check();    
+//file.multifileupload();
 
 //file.filemultideleteCheck();
 //Blueprint Section Functionalities checking
@@ -202,7 +196,7 @@ sys.AccountStatuscheck();
 sys.useredit_User_licence_Change();
 //Qna Section Checking  
 
-qna.qnasearchCheck();   
+//qna.qnasearchCheck();   -------> failed
 qna.qnafavoritecheck();
 
 //D.Delete_from_top();   

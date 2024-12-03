@@ -4,6 +4,7 @@ package com.mycompany.blueflame_raj_bakhru;
 import static com.google.common.net.MediaType.JPEG;
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +32,6 @@ public class File_section_Checks {
     WebDriver d;
     
     
-    
     String menu_option = "//ul[@class='MuiList-root MuiList-padding css-1lgx6ry']";
     String File_option_menu ="//a[@href='/dashboard/file-management']";
     String Searchbox = "//input[@placeholder='search']";
@@ -40,9 +40,13 @@ public class File_section_Checks {
     String filetext = "//p[contains(text(),'Shadow Oil Fleet Funding War Laid Bare -...')]";
     String chaterrorMessageText = "//div[contains(text(),'This file was not yet indexed for chat. Please wai')]";
     String folder_Before_Folder_to_choose = "//div[@class='heading MuiBox-root css-0']";
-    String threedotbutton = "(//button[@type='button'])[12]";
+    String threedotbutton = "(//div[@class='MuiStack-root css-18jqwfu']//button)[2]";
     String menuListfromThreeDotButton = "//ul[@role='menu']";
     String allitemsinmenu = "//ul[@role='menu']//li[@role='menuitem']";
+    String allfiles_select_box = "(//div[@class='MuiBox-root css-1hx2chv']//span)[1]";
+    String allfilestext = "//p[contains(text(),'All files')]";
+    
+    
     
    public  File_section_Checks(WebDriver d){
     
@@ -88,12 +92,12 @@ public class File_section_Checks {
     
         
         String eml_fileindrodownoption = "//li[contains(text(),'verity/21410/2024_06_15_JZ_Weekly.eml')]";
-        String eml_filecard = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/button[1]/div[2]";
+        String eml_filecard = "//div[@class='MuiBox-root css-kr2xbr']";
         String crossbutton_of_opened_file = "//div[@class='MuiStack-root css-5vauxo']//button[@type='button']";
         String Dropdwnlist = "//ul[@role='listbox']";
         String alloptions_in_dropdown = "//ul[@role='listbox']//li[@class='MuiAutocomplete-option MuiBox-root css-16r7kf5']";
         String emlfile_in_option = "verity/21414/RE__CHRW_Refresh.eml";
-        String allfilestext = "//h3[contains(text(),'All files')]";
+     
         
         
         
@@ -166,13 +170,12 @@ public class File_section_Checks {
        }
    
    
-   public void reclassify_check() throws InterruptedException, AWTException{
+   public void reclassify_check() throws InterruptedException, AWTException, IOException{
    
    
-   String allfiles_select_box = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[1]/span";
-   String file_card = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span/div/button/div[2]";
-   String save_button = "//button[contains(text(),'Save')]"; 
-   //*[@id="radix-:r2l:"]/ul/div[1]/div[1]/button
+   
+   String file_card = "(//div[@class='MuiBox-root css-kr2xbr'])[1]";
+   String save_button = "//div[contains(text(),'Save')]"; 
    String Menu_list = "//div[@role='menu']";
    String Menu_items = "//div[@role='menu']//div[@role='menuitem']";
    String Submenu_items = "//div[@class='MuiFormGroup-root css-1h7anqn']//label[@class='MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1877ww2']";
@@ -180,16 +183,18 @@ public class File_section_Checks {
    String Submenu = "//div[@class='MuiFormGroup-root css-1h7anqn']";
    String Submenuoptions = "//label[@class='MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-kswqkt']";
    String mysubmenuoption = "Capital Call";
-
-   String allfilestext = "//h3[contains(text(),'All files')]";
+   
    String SaveSuccesstoast ="//div[contains(text(),'File document types have been updated')]";
-   String toastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-  
+   String toastcrossbutton = "//button[@aria-label='Close toast']";
    String Reclassifyoption = "Reclassify";
    
    
    
-     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
+       FileLib data = new FileLib();
+       d.navigate().to(data.getPropertyData("myfolderPageURL"));
+       
+       
+     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
        
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
        
@@ -276,20 +281,18 @@ public class File_section_Checks {
     
       }
       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastcrossbutton)));
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastcrossbutton)));
        d.findElement(By.xpath(toastcrossbutton)).click();
        
        //r.mouseWheel(6);
        d.navigate().refresh();
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
+       a.moveToElement(d.findElement(By.xpath(allfilestext))).build().perform();
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfiles_select_box))); 
-       d.findElement(By.xpath(allfiles_select_box)).click(); 
-       
-     
-       
+       a.moveToElement(d.findElement(By.xpath(allfiles_select_box))).click().build().perform(); 
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedotbutton)));
        d.findElement(By.xpath(threedotbutton)).click();
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(menuListfromThreeDotButton)));
-       
        List<WebElement> items = d.findElements(By.xpath(allitemsinmenu));
                
        for(WebElement item :items){
@@ -301,14 +304,15 @@ public class File_section_Checks {
        item.click();
        break;
        
-       }}        
-       
+       }}
+      
 
         Thread.sleep(3500);
         
           d.navigate().refresh();
 
-   
+    
+       
        }
 
 
@@ -316,12 +320,12 @@ public class File_section_Checks {
 public void add_to_nexus() throws InterruptedException, AWTException{
 
 
-String allfiles_select_box = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[1]/span";
-String file_card = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span/div/button/div[2]";
+
+String file_card = "(//div[@class='MuiBox-root css-kr2xbr'])[1]";
 String Menu_list = "//div[@role='menu']";
 String Menu_items = "//div[@role='menu']//div[@role='menuitem']";
 String nexusoption = "Add to Nexus";
-String allfilestext = "//h3[contains(text(),'All files')]";
+
 String okbutton = "//button[contains(text(),'Ok')]";
 String addSuccesstoast ="//div[contains(text(),'A Nexus data set is not setup for documents classi')]";
 String nexustoastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]";
@@ -331,7 +335,7 @@ String nexustoastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/bu
 
 
 
- WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
+ WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
        
  d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
  
@@ -385,13 +389,12 @@ d.navigate().refresh();
 
 public void files_to_chat()throws InterruptedException, AWTException{
 
-String allfiles_select_box = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[1]/span";
-String file_card = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span/div/button/div[2]";
+
+String file_card = "(//div[@class='MuiBox-root css-kr2xbr'])[1]";
 String Menu_list = "//div[@role='menu']";
 String Menu_items = "//div[@role='menu']//div[@role='menuitem']";
 String chatoption = "Chat";
-String allfilestext = "//h3[contains(text(),'All files')]";
-String newchat_banner = "//h3[contains(text(),'Chat')]";
+String newchat_banner = "(//*[contains(text(),'Chat')])[2]";
 
 WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
        
@@ -437,13 +440,13 @@ WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
 public void file_to_QnA() throws AWTException, InterruptedException{
 
     
-    String Folder_to_choose = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[1]/span/div/div/div[13]/div/span/div";
-    String all_files_selectbox = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/span[1]";
-    String filecard = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span/div/button";
+    
+    
+    String filecard = "(//div[@class='MuiBox-root css-kr2xbr'])[1]";
     String Menulist = "//div[@role='menu']";
     String Menuitems = "//div[@role='menu']//div[@role='menuitem']";
     String qaoption = "Q&A";
-    String Qabannertext = "//p[text()='Questions & Answers']";
+    String Qabannertext = "//*[text()='Advanced Options']";
     String searchbutton = "//div[text()='Search']";
     
 
@@ -485,7 +488,7 @@ public void file_to_QnA() throws AWTException, InterruptedException{
 public void non_indexfilechecks() throws InterruptedException{
 
     String foldertext = "//h3[contains(text(),'Folders')]";
-    String allfilestext = "//h3[contains(text(),'All files')]";
+
     String filecard = "//p[contains(text(),'APPLE_20230804_0000.pdf')]";
     String menulist = "//div[@role='menu']";
     String allmenuoptions = "//div[@class='ContextMenuItem']";
@@ -616,11 +619,11 @@ List <WebElement> opn = d.findElements(By.xpath(allmenuoptions));
 
 public void file_datetime_infocheck() throws AWTException, InterruptedException{
 
-    String Folder_to_choose = "//p[contains(text(),'AYn Demo Folder')]";
-    String all_files_selectbox = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/span[1]";
-    String infobutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/button[1]/div[1]/button[1]";
-    String createdsection = "//body/div[2]/div[3]/div[1]/div[2]/div[2]/p[5]";
-    String Lastloadtimesection = "//body/div[2]/div[3]/div[1]/div[2]/div[2]/p[3]";
+    
+    
+    String infobutton = "(//div[@class='MuiBox-root css-1qq0lyx']//button)[1]";
+    String createdsection = "(//div[@class='MuiBox-root css-1wdu9wv']//p)[11]";
+    String Lastloadtimesection = "(//div[@class='MuiBox-root css-1wdu9wv']//p)[9]";
 
     
     
@@ -650,8 +653,8 @@ public void videofile_loader_check() throws InterruptedException{
 
     
         String videofilepageURL = "https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder/For%20Uploads/for%20uploading";
-        String allfilesText = "//h3[contains(text(),'All files')]";
-        String videoFileCard = "//div[@class='file_btm MuiBox-root css-0']//p[@aria-label='What If We Become a Type 1 Civilization_.mp4']";
+       
+        String videoFileCard = "//div[@class='MuiBox-root css-xi606m']//p[@aria-label='What If We Become a Type 1 Civilization_.mp4']";
         String videopopup = "//div[@data-testid='video-player']";
         String Videoplaybutton = "//button[@title='Play Video']";
         
@@ -700,11 +703,12 @@ public void videofile_loader_check() throws InterruptedException{
 public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
    
     
-       String allfilesText = "//h3[contains(text(),'All files')]";
+       
        String pyFileCard = "p[aria-label='sample1.py']";
        String Folder_to_choose = "//p[contains(text(),'AYn Demo Folder')]";
-       String crossbutton = "//body/div[3]/div[2]/div[1]/div[1]/button[1]";
-       String crossbuttontwo = "//body/div[2]/div[3]/div[1]/div[1]/button[1]/*[1]";
+       
+       String crossbutton = "//div[@class='MuiStack-root css-5vauxo']//button";
+       String crossbuttontwo = "(//*[@class='MuiBox-root css-1o4wo1x'])[2]";
        String odtfilecard = "p[aria-label='file-sample_500kB.odt']";
        
        
@@ -721,7 +725,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
 
          
       
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilesText)));
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
       
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
       
@@ -740,7 +744,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
         
         js.executeScript("window.scrollTo(0, 0);");
         
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilesText)));
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
         w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(odtfilecard))); 
         d.findElement(By.cssSelector(odtfilecard)).click();
         
@@ -750,18 +754,18 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
         
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(crossbutton))); 
         d.findElement(By.xpath(crossbutton)).click();
-        
+        /*
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(crossbuttontwo))); 
-        d.findElement(By.xpath(crossbuttontwo)).click();
+        d.findElement(By.xpath(crossbuttontwo)).click(); */
         d.navigate().refresh();
         
 
 }
       public void reindexingcheck() throws InterruptedException{
       
-     String FoldersText = "//h3[text()='Folders']";
+     String FoldersText = "//*[text()='Folders']";
      String file_card = "//p[text()='Fully Executed Side Letter - First Energ...']";
-     String allfiles_select_box = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[1]/span";
+     
      String menulist = "//div[@role='menu']";
      String allmenuoptions = "//div[@class='ContextMenuItem']"; 
      String reindex= "Re-Index";
@@ -828,13 +832,13 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
     
       public void runblueprint_check() throws InterruptedException{
       
-     String allfilesText = "//h3[contains(text(),'All files')]";
-     String file_card = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span/div/button/div[2]";
-     String runBlueprintsubMenu = "//h6[contains(text(),'Blueprints')]";
+     
+     String file_card = "(//div[@class='MuiBox-root css-kr2xbr'])[1]";
+     String runBlueprintsubMenu = "(//*[contains(text(),'Blueprints')])[2]";
      String menulist = "//div[@role='menu']";
-     String allmenuoptions = "//div[@class='ContextMenuItem']"; 
+     String allmenuoptions = "//div[@role='menuitem']"; 
      String runBluePrint= "Run Blueprint";
-     String runBlueprintsubMenu_optns = "//li[@class='MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1e5ulwe']";
+     String runBlueprintsubMenu_optns = "//div[@class='MuiStack-root css-uxlw8']//li";
      String playButton = "button[aria-label='Run Multipline /n/ Blueprint']";
      String inputPopupbox = "//body/div[4]/div[3]/div[1]";
      String cancelButton = "//body/div[4]/div[3]/div[1]/div[2]/button[1]";
@@ -848,7 +852,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       
       
       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilesText))); 
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext))); 
 
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(file_card)));
       a.moveToElement(d.findElement(By.xpath(file_card)));
@@ -894,11 +898,11 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       
           
     
-    String allfilestext = "//h3[contains(text(),'All files')]";
+
     String filecard = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/button[1]/div[2]";
     String menulist = "//div[@role='menu']";
     String allmenuoptions = "//div[@class='ContextMenuItem']";
-    String allfiles_select_box = "//*[@id=\"simple-tabpanel-0\"]/div[1]/div[2]/div[2]/div[1]/span";  
+     
     String deleteOption = "Delete";
     String yesConfirmmessage = "//p[contains(text(),'Yes')]";
     
@@ -987,9 +991,8 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       
       public void folder_create(){
       
-      
-          
-          d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");
+       
+         d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");
          Actions a = new Actions(d);
          WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
          JavascriptExecutor js = (JavascriptExecutor)d;

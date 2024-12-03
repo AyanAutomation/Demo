@@ -21,22 +21,16 @@ this.d = d;
 
 }
 
-String Profileicon = "//div[@class='profile_drop MuiBox-root css-0']";
-String Profileoption = "//body/div[@id='simple-popover']/div[3]/li[1]/p[1]";
-String timezone_editButtin = "//tbody/tr[@id='timezone']/td[3]/button[1]/div[1]";
+String Profileicon = "//div[@class='MuiBox-root css-teec7v']";
+String Profileoption = "//li[@role='menuitem']//p[text()='Profile']";
+String timezone_editButtin = "(//p[text()='Edit'])[1]";
 String timezone_fieldXpath = "//div[@class='MuiBox-root css-1a3b6a']";
 String timezoneOption_searchbox = "//input[@placeholder='Search']";       
 String kolkataOption = "//span[contains(text(),'Kolkata')]"; 
 String saveButton = "//p[contains(text(),'Save')]";
-String successToast = "//div[contains(text(),'Timezone updated successfully! Your settings have ')]";
-String toastCrossbot = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";        
+String successToast = "//div[text()='Timezone updated successfully! Your settings have been saved and the new timezone is now in effect.']";
+String toastCrossbot = "//button[@aria-label='Close toast']";        
         
-        
-        
-        
-        
-        
-
 
 
 public void timezone_changeto_Local(){
@@ -48,10 +42,8 @@ public void timezone_changeto_Local(){
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Profileicon)));
   a.moveToElement(d.findElement(By.xpath(Profileicon))).build().perform();
   d.findElement(By.xpath(Profileicon)).click();
-
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Profileoption)));
   d.findElement(By.xpath(Profileoption)).click();
-
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(timezone_editButtin)));
   d.findElement(By.xpath(timezone_editButtin)).click();
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(timezone_fieldXpath)));
@@ -67,18 +59,4 @@ public void timezone_changeto_Local(){
   d.findElement(By.xpath(toastCrossbot)).click(); 
   d.get("https://app-dev.blueflame.ai/dashboard/chat");
 
-
-
-
-
-
-}
-
-
-
-
-
-
-
-    
-}
+}}

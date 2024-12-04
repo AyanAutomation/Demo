@@ -25,7 +25,7 @@ private WebElement threedotbutton;
 private WebElement Top_delete_button;
 @FindBy(xpath="//div[contains(text(),'Chat Deleted Successfully.')]")
 private WebElement delete_success_toast;
-@FindBy(xpath="//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]")
+@FindBy(xpath="//button[@aria-label='Close toast']")
 private WebElement delete_success_toastcancelbutton;  
     
 public Delete_Xpaths(WebDriver d){

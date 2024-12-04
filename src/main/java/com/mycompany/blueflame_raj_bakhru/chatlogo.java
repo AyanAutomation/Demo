@@ -26,10 +26,10 @@ public class chatlogo {
     
     public void thirdpartylogocheck() throws InterruptedException, AWTException{
     
-String pitchbookchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='PitchBook Logo Message']";
-String gratachat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='Grata Logo Chat']";
-String dealcloudchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='DealCLoud Logo Message']";
-String capiqchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='CAP IQ Logo Message']";
+String pitchbookchat = "//*[@aria-label='PitchBook Logo Message']";
+String gratachat = "//*[@aria-label='Grata Logo Chat']";
+String dealcloudchat = "//*[@aria-label='DealCLoud Logo Message']";
+String capiqchat = "//*[@aria-label='CAP IQ Logo Message']";
 String copyButton = "//*[@id=\"33942305-cabd-4539-bd1a-2b92ab37497c_panel\"]/div/div/div/div/div[4]/div[1]/div/div/button[1]";
 String Pitchbooklogo = "//p[contains(text(),'Model changed to BlueFlame AI Agent')]";                     
                       //*[@id="bae693ab-02bd-4fc2-b853-cd8e4299dadc_panel"]/div/div/div  

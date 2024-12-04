@@ -284,7 +284,7 @@ public class Type {
    
    String title = "//p[contains(text(),'SALESFORCE')]";
    String configurationoptioninmenu = "//p[contains(text(),'Configuration')]";
-   String menu_option = "//ul[@class='MuiList-root MuiList-padding css-1lgx6ry']";
+   String menu_option = "//div[@class='MuiBox-root css-15x4ckx']//ul";
 
    String Chat_option = "//span[contains(text(),'Chat')]";
    
@@ -356,7 +356,7 @@ public class Type {
        String Copysuccessmessage = "//div[contains(text(),'Message Copied Successfully! The content has been ')]";
        String successmessagecrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
        
-       String capiqchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='CAP IQ Logo Message']";
+       String capiqchat = "//*[@aria-label='CAP IQ Logo Message']";
        String Messagetext = "//button[@title='Rostec Corporation']";
        
    
@@ -613,20 +613,16 @@ public class Type {
    public void multi_images_pastecheck() throws AWTException, InterruptedException{
    
    
-   String image_chat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='Images Copy Paste check']";
+   String image_chat = "//*[@aria-label='Images Copy Paste check']";
    
    String messageBottom_ButtonSection = "//p[contains(text(),'Model changed to BlueFlame AI Agent')]";
    String copybutton= "(//div[@class='MuiButtonGroup-root MuiButtonGroup-outlined css-13iz54z']//button[@type='button'])[1]";
    String Copysuccessmessage = "//div[contains(text(),'Message Copied Successfully! The content has been saved to your clipboard')]";
-   String successmessagecrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-   
+   String successmessagecrossbutton = "//button[@aria-label='Close toast']";
    String Imagesabovechatbox = "(//*[@class='MuiBox-root css-1j4fru5'])[1]";
    String chatboxwithcontent = "//div[@contenteditable='true']";
    String Prompt_firstoption = "//p[contains(text(),'Prepare me for my next meeting')]";
-  
    String imageremovebutton = "(//*[@class='MuiBox-root css-1j4fru5']//button[@type='button'])[1]";
-   
-   
    String DefaultModelStatus = "BlueFlame AI Agent\n" +
 "Default";
    String SeeMore_button = "//button[text()='See More']";
@@ -634,13 +630,11 @@ public class Type {
    String insidechat =  "(//div[@class='MuiButtonGroup-root MuiButtonGroup-outlined css-13iz54z'])[2]";
    
    
-   
-   
-   
-       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
-       Actions a = new Actions(d);
-       JavascriptExecutor js = (JavascriptExecutor)d;
-       Blueflamemodel_defaultmodel_switch Switch = new Blueflamemodel_defaultmodel_switch(d);
+   WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
+       
+   Actions a = new Actions(d);
+   JavascriptExecutor js = (JavascriptExecutor)d;
+   Blueflamemodel_defaultmodel_switch Switch = new Blueflamemodel_defaultmodel_switch(d);
        
        
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(image_chat))); 

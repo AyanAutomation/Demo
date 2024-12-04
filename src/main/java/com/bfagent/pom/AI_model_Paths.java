@@ -20,7 +20,7 @@ public WebElement  Aigpt4tab;
 public WebElement Light_mode;
 @FindBy(xpath="//div[@class='MuiBox-root css-teec7v']")
 public WebElement Profileicon;
-@FindBy(xpath="//li[@role='menuitem']//p[text()='Profile']")
+@FindBy(xpath="//p[text()='Profile']")
 public WebElement Profileoption;
 @FindBy(xpath="(//p[text()='Edit'])[2]")
 public WebElement Default_model_editbutton;
@@ -32,7 +32,7 @@ public WebElement Lamaoption;
 public WebElement Savebutton;
 @FindBy(xpath="//div[contains(text(),'Default Web Chat Model Updated Successfully.')]")
 public WebElement savesuccessmessage;
-@FindBy(xpath="//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]")
+@FindBy(xpath="//button[@aria-label='Close toast']")
 public WebElement toastcrossone;
 @FindBy(xpath="//*[@id=\"default-direct\"]/td[3]/button")
 public WebElement LLM_editbutton;
@@ -44,7 +44,7 @@ public WebElement LLMoptiontochoose;
 public WebElement LLMsavebutton;
 @FindBy(xpath="//div[contains(text(),'Direct LLM Updated Successfully.')]")
 public WebElement LLMsuccess_message;
-@FindBy(xpath="//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]")
+@FindBy(xpath="//button[@aria-label='Close toast']")
 public WebElement toastcrosstwo;
 @FindBy(xpath="//p[contains(text(),'Chat')]")
 public WebElement Chatoption_in_menu;

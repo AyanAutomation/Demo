@@ -491,8 +491,8 @@ public class Type {
     
     String prompt_option ="//p[contains(text(),'@Pitchbook Show me a profile on {company}')]";
     String parameterbox = "//textarea[@aria-invalid='false']"; 
-    String bottomMessage_copyButton = "//ul[@node='[object Object]']//strong[contains(text(),'Ownership Status:')]";
-    String copybutton= "(//div[@role='group']//button[@type='button'])[15]";
+    String bottomMessage_copyButton = "(//div[@class='css-us5t5t']//button)[1]";
+    String copybutton= "(//div[@role='group']//button[@type='button'])[17]";
     String Copysuccessmessage = "//div[contains(text(),'Message Copied Successfully! The content has been ')]";
     String successmessagecrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
     String parameterchat = "//p[text()='Parameter paste chat check']";

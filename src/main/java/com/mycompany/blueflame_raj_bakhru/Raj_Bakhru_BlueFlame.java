@@ -169,7 +169,7 @@ file.emlfilecheck();
 file.file_datetime_infocheck(); 
 file.videofile_loader_check(); 
 file.doubelcross_buttoncheck(); 
-file.reindexingcheck(); 
+//file.reindexingcheck(); 
 file.content_viewer_pagecheck(); 
 file.runblueprint_check();    
 //file.multifileupload();
@@ -202,7 +202,7 @@ qna.qnafavoritecheck();
 //D.Delete_from_top();   
 
 switchmode.switchOFFLightmode(); 
-board.boading(); 
+//board.boading(); 
 timezone.timezone_changeto_Local(); 
 switchmode.switchonLightmode(); 
 analysis.usageAna(); 

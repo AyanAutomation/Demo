@@ -39,7 +39,7 @@ public class Template {
     String templatesubfolder = "//p[contains(text(),'AYn Demo Folder')]";
     String template_file = "//p[contains(text(),'Template.IC.Phase.1.Deck.pptx')]";
     String success_message = "//div[contains(text(),'You will receive an em')]";
-    String toast_cancel = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
+    String toast_cancel = "//button[@aria-label='Close toast']";
     String templateSubSubfolder = "//p[contains(text(),'Template')]";
     String templateSuBfolder = "//p[contains(text(),'AYn Demo Folder')]";
     String gobackbutton= "//button[normalize-space()='Go Back']";

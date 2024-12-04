@@ -54,7 +54,7 @@ public class QnA_section {
     String threedotButton = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-b8uu0t'])[1]";
     String favoriteButton = "(//div[@tabindex='-1']//div[@data-testid='flex-box']//div[@class='MuiBox-root css-1o4wo1x'])[1]";
     
-    String favUnfavsuccessToast = "//body/div[@id='root']/section[1]/ol[1]/li[1]";
+    String favUnfavsuccessToast = "//li[@aria-live='polite']";
     String toastCrossButton = "//button[@aria-label='Close toast']";
     String chatTitle = "//div[@class='MuiStack-root css-q1mfq2']//p[contains(text(),'File Q&A')]";
     String showSourceicon = "//button[text()='Show Sources']";

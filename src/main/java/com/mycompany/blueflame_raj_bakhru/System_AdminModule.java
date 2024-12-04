@@ -31,7 +31,7 @@ public class System_AdminModule {
     String outsideform = "//p[contains(text(),'Auth Provider (Optional)')]";
     String submitButton = "//div[contains(text(),'Submit')]";
     String toastMessage = "//div[contains(text(),'User modified successfully')]";
-    String toastcancelButton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
+    String toastcancelButton = "//button[@aria-label='Close toast']";
     String sortFilter = "//p[contains(text(),'Active, Trial')]";
     String reselectsortFilterButton  = "//p[contains(text(),'Active, Canceled, Trial')]";
     String filterListOption = "//div[@class='MuiBox-root css-ehlpcq']";

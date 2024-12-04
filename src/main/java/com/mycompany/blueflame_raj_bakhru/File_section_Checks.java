@@ -32,7 +32,7 @@ public class File_section_Checks {
     WebDriver d;
     
     
-    String menu_option = "//ul[@class='MuiList-root MuiList-padding css-1lgx6ry']";
+    String menu_option = "//div[@class='MuiBox-root css-15x4ckx']//ul";
     String File_option_menu ="//a[@href='/dashboard/file-management']";
     String Searchbox = "//input[@placeholder='search']";
     String Searchoptionvalue = "//li[text()='AYn Demo Folder/Economics/Shadow Oil Fleet Funding War Laid Bare - Newsweek.pdf']";
@@ -45,7 +45,7 @@ public class File_section_Checks {
     String allitemsinmenu = "//ul[@role='menu']//li[@role='menuitem']";
     String allfiles_select_box = "(//div[@class='MuiBox-root css-1hx2chv']//span)[1]";
     String allfilestext = "//p[contains(text(),'All files')]";
-    
+    String toast_messagecancel_button = "//button[@aria-label='Close toast']";
     
     
    public  File_section_Checks(WebDriver d){
@@ -185,7 +185,7 @@ public class File_section_Checks {
    String mysubmenuoption = "Capital Call";
    
    String SaveSuccesstoast ="//div[contains(text(),'File document types have been updated')]";
-   String toastcrossbutton = "//button[@aria-label='Close toast']";
+  
    String Reclassifyoption = "Reclassify";
    
    
@@ -281,8 +281,8 @@ public class File_section_Checks {
     
       }
       
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastcrossbutton)));
-       d.findElement(By.xpath(toastcrossbutton)).click();
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toast_messagecancel_button)));
+       d.findElement(By.xpath(toast_messagecancel_button)).click();
        
        //r.mouseWheel(6);
        d.navigate().refresh();
@@ -328,7 +328,7 @@ String nexusoption = "Add to Nexus";
 
 String okbutton = "//button[contains(text(),'Ok')]";
 String addSuccesstoast ="//div[contains(text(),'A Nexus data set is not setup for documents classi')]";
-String nexustoastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]";
+
 
 
 
@@ -378,8 +378,8 @@ String nexustoastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/bu
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(okbutton))); 
        d.findElement(By.xpath(okbutton)).click(); 
     //   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addSuccesstoast))); 
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(nexustoastcrossbutton)));
-       d.findElement(By.xpath(nexustoastcrossbutton)).click(); 
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toast_messagecancel_button)));
+       d.findElement(By.xpath(toast_messagecancel_button)).click(); 
 
      Thread.sleep(3900);
 
@@ -498,7 +498,7 @@ public void non_indexfilechecks() throws InterruptedException{
     String qnaoption = "Q&A";
     String chatoption = "Chat";
     String toast = "//body/div[@id='root']/section[1]/ol[1]/li[1]";
-    String toast_messagecancel_button = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
+    
     String File_option_menu_Localised = "//span[contains(text(),'Files')]";
     
     
@@ -706,15 +706,11 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
        
        String pyFileCard = "p[aria-label='sample1.py']";
        String Folder_to_choose = "//p[contains(text(),'AYn Demo Folder')]";
-       
        String crossbutton = "//div[@class='MuiStack-root css-5vauxo']//button";
-       String crossbuttontwo = "(//*[@class='MuiBox-root css-1o4wo1x'])[2]";
+       String crossbuttontwo = "(//*[@class='MuiBox-root css-1o4wo1x'])[3]";
        String odtfilecard = "p[aria-label='file-sample_500kB.odt']";
        
-       
-       
-       
-       
+
         JavascriptExecutor js = (JavascriptExecutor)d;
         Actions a = new Actions(d);
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
@@ -766,8 +762,8 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
      String FoldersText = "//*[text()='Folders']";
      String file_card = "//p[text()='Fully Executed Side Letter - First Energ...']";
      
-     String menulist = "//div[@role='menu']";
-     String allmenuoptions = "//div[@class='ContextMenuItem']"; 
+     String menulist = "//div[@role='menu']//div[@role='menuitem']";
+     String allmenuoptions = "(//div[@role='menuitem'])"; 
      String reindex= "Re-Index";
 
 
@@ -973,9 +969,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
      
 //       d.findElement(By.xpath(HiddenFile_uploadElement)).click();
       
-     }
-     
-     catch(ElementNotInteractableException e){
+     } catch(ElementNotInteractableException e){
          
          System.out.println("ElementNotInteractableException found");
          d.navigate().refresh();
@@ -987,9 +981,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
      }
      }
       
-      
-      
-      public void folder_create(){
+     public void folder_create(){
       
        
          d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");

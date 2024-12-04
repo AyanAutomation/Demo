@@ -17,21 +17,15 @@ public class chat_like_dislike {
     
     this.d =d;
     
-    
-    
     }
     
    public void likedislikestaytest() throws InterruptedException{
     
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     
-    
-      
-    String capiqchat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='CAP IQ Logo Message']";
-    String gratachat = "//div[@class = 'MuiBox-root css-1myck0y']//p[@aria-label='Grata Logo Chat']";
+    String capiqchat = "//*[@aria-label='CAP IQ Logo Message']";
+    String gratachat = "//*[@aria-label='Grata Logo Chat']";
     String likebutton ="(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-177eotx'])[1]";
-    
-    
     
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gratachat)));
      d.findElement(By.xpath(gratachat)).click();
@@ -50,10 +44,4 @@ public class chat_like_dislike {
      d.findElement(By.xpath(gratachat)).click();
      Thread.sleep(4800);
      
-     
-    }
-    
-    
-    
-    
-}
+     }}

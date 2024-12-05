@@ -169,16 +169,13 @@ file.emlfilecheck();
 file.file_datetime_infocheck(); 
 file.videofile_loader_check(); 
 file.doubelcross_buttoncheck(); 
-//file.reindexingcheck(); 
+file.reindexingcheck(); 
 file.content_viewer_pagecheck(); 
 file.runblueprint_check();    
-//file.multifileupload();
 
-//file.filemultideleteCheck();
-//Blueprint Section Functionalities checking
-/*
+
+
 br.shareblueprintcheck(); 
-
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
@@ -187,7 +184,6 @@ br.linkedrecipeEdit_and_Deletecheck();
 br.Blueprint_addGeneration_with_parameterCheck();  
 
 // System Admin Section Checking  
-*/
 
 sys.AccountEditChange();
 sys.userEdit(); 
@@ -195,12 +191,9 @@ sys.systemaccount_searchandFilter_check();
 sys.AccountStatuscheck(); 
 sys.useredit_User_licence_Change();
 //Qna Section Checking  
-
 //qna.qnasearchCheck();   -------> failed
 qna.qnafavoritecheck();
-
 //D.Delete_from_top();   
-
 switchmode.switchOFFLightmode(); 
 //board.boading(); 
 timezone.timezone_changeto_Local(); 

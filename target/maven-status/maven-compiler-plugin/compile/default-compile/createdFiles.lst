@@ -19,6 +19,7 @@ com\mycompany\blueflame_raj_bakhru\Login.class
 com\bfagent\pom\Logoutxpaths.class
 com\mycompany\blueflame_raj_bakhru\Autocomplete_functions.class
 com\mycompany\blueflame_raj_bakhru\SystemUsage.class
+com\bfagent\pom\Timezone_xpaths.class
 com\mycompany\blueflame_raj_bakhru\Blueprintrun.class
 com\bfagent\pom\AI_model_Paths.class
 com\mycompany\blueflame_raj_bakhru\Tilereplace.class

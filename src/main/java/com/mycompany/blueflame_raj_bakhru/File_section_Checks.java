@@ -306,14 +306,11 @@ public class File_section_Checks {
        
        }}
       
-
-        Thread.sleep(3500);
+    Thread.sleep(3500);
         
           d.navigate().refresh();
 
-    
-       
-       }
+     }
 
 
 
@@ -331,18 +328,12 @@ String addSuccesstoast ="//div[contains(text(),'A Nexus data set is not setup fo
 
 
 
-
-
-
-
  WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
        
  d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
  
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
-       
        Robot r = new Robot();
-       
        r.mouseWheel(-16);
        
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfiles_select_box))); 
@@ -761,10 +752,12 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       
      String FoldersText = "//*[text()='Folders']";
      String file_card = "//p[text()='Fully Executed Side Letter - First Energ...']";
-     
      String menulist = "//div[@role='menu']//div[@role='menuitem']";
      String allmenuoptions = "(//div[@role='menuitem'])"; 
-     String reindex= "Re-Index";
+     String reindex= "RAG - Re-Index";
+     String PopupBox = "//p[text()='Re-Index RAG']";
+     String yesButton = "//*[text()='Yes']";
+     
 
 
       Actions a = new Actions(d);
@@ -791,20 +784,18 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
        
        for (WebElement menuoption : menuoptions ){
        
-       //System.out.println(menuoption.getText());
-       
-       
+      
        if(menuoption.getText().equalsIgnoreCase(reindex)){
-       
+       //System.out.println(menuoption.getText());
        menuoption.click();
        
        break;
-       
        }}
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PopupBox)));
+       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(yesButton)));
+       d.findElement(By.xpath(yesButton)).click();
       
-       Thread.sleep(3600);
-      
-      
+      Thread.sleep(2500);
       }
 
       public void content_viewer_pagecheck() throws InterruptedException{
@@ -898,7 +889,6 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
     String filecard = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/button[1]/div[2]";
     String menulist = "//div[@role='menu']";
     String allmenuoptions = "//div[@class='ContextMenuItem']";
-     
     String deleteOption = "Delete";
     String yesConfirmmessage = "//p[contains(text(),'Yes')]";
     
@@ -989,12 +979,10 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
          WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
          JavascriptExecutor js = (JavascriptExecutor)d;
          
-         
          String New_FolderOption = "//span[text()='New Folder']";
          String FolderCreate_PopInputBox = "//input[@placeholder='Enter Folder Name']";
          String CreateButton = "//button[text()='Create']";
          String Folder_Created_Confirmation = "//h5[text()='Please add files or folder to view.']";
-      
       
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedotbutton)));
        d.findElement(By.xpath(threedotbutton)).click();

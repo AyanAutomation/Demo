@@ -31,6 +31,4 @@ JavascriptExecutor js = (JavascriptExecutor)d;
 // Page Zoom in to 80%
 js.executeScript("document.body.style.zoom='110%'");
 
-
-
-}   }
+}}

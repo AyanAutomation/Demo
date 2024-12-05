@@ -40,16 +40,8 @@ public class Type {
         String defaultModel = "//*[@aria-label='You can change your default in the settings']";
         String Export_button = "//div[@class='MuiStack-root css-7iwxlc']//button[@type='button']";
         
+    Tilereplace rp = new Tilereplace(d);
         
-        
-        
-        
-        
-        
-        
-        
-        
-    
    void SendMessage() throws InterruptedException{
     
        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
@@ -85,26 +77,17 @@ public class Type {
      
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
         d.findElement(By.xpath(newchatbutton)).click();
-     
-             
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
         d.findElement(By.xpath(Editor_Box)).click();
-        
-         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(appbutton))); 
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(appbutton))); 
         d.findElement(By.xpath(appbutton)).click();
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prompt_option))); 
         d.findElement(By.xpath(prompt_option)).click();
         Thread.sleep(3600);
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Textbox))); 
         d.findElement(By.xpath(Textbox)).sendKeys("Show me my open tasks ");
-        
-   
         Thread.sleep(3600);
         d.navigate().refresh();
-   
-   
    }
    
    void Parameterbox_enter_send_check() throws InterruptedException{

@@ -12,18 +12,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LigthmodeSwitch {
     
     WebDriver d;
-    
+   
     public LigthmodeSwitch(WebDriver d){
-    
-    
+   
     this.d = d;
  }
-    
-    
-   
-    
+
     public void switchonLightmode(){
- Light_Darkmodeswitch sw = new Light_Darkmodeswitch(d);
+        
+        Light_Darkmodeswitch sw = new Light_Darkmodeswitch(d);
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(20));
         
       w.until(ExpectedConditions.visibilityOf(sw.lightMode()));

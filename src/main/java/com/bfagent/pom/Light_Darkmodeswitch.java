@@ -9,9 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 public class Light_Darkmodeswitch {
   
     @FindBy(xpath="(//div[@class='MuiBox-root css-1t5dhby']//button[@type='button'])[1]")
-    WebElement lightMode;
+     private WebElement lightMode;
     @FindBy(xpath="(//div[@class='MuiBox-root css-1t5dhby']//button[@type='button'])[2]")
-    WebElement darkmodebutton;
+    private WebElement darkmodebutton;
     
     public Light_Darkmodeswitch(WebDriver d){
     

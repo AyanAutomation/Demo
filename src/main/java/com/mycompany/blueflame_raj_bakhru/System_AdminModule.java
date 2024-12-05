@@ -25,7 +25,7 @@ public class System_AdminModule {
     String usereditButton = "//div[text()='Edit']";
     String editformtitle = "//form[@data-testid='flex-box']";
     String closeListPopUpOne = "//div[@data-testid='blueflame-hero']"; 
-    String enableModuleFieldBox = "//p[contains(text(),'Activities, Analysis, Archive, Blueprints, Calenda')]";
+    String enableModuleFieldBox = "(//div[@data-testid='field-state-wrapper']//div[@aria-invalid='false']//div[@data-testid='select'])[7]";
     String enableModuleList = "//div[@class='MuiBox-root css-ehlpcq']";
     String nexusOption ="Nexus";
     String outsideform = "//p[contains(text(),'Auth Provider (Optional)')]";

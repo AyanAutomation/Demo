@@ -45,8 +45,6 @@ public void Replacecheck() throws InterruptedException{
        
        rp.promptcrossbot().click();
        
-       
-      
       
        // Scroll the container to the target menu item 
       /* Scroll the element into view using scrollIntoView. 

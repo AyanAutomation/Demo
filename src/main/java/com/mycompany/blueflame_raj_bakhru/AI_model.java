@@ -14,11 +14,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AI_model {
     
-    
     WebDriver d;
-    
+  
 public AI_model(WebDriver d){
-
 
 this.d =d;
 
@@ -57,7 +55,6 @@ public void modelchangecheck(){
   w.until(ExpectedConditions.visibilityOf(ai.Profileicon()));
   a.moveToElement(ai.Profileicon()).build().perform();
   ai.Profileicon().click();
-
   w.until(ExpectedConditions.visibilityOf(ai.Profileoption()));
   ai.Profileoption().click();
   w.until(ExpectedConditions.visibilityOf(ai.Default_model_editbutton()));
@@ -69,7 +66,6 @@ public void modelchangecheck(){
   w.until(ExpectedConditions.visibilityOf(ai.Savebutton()));
   ai.Savebutton().click();
   w.until(ExpectedConditions.visibilityOf(ai.savesuccessmessage()));
-
   w.until(ExpectedConditions.visibilityOf(ai.toastcrossone()));
   ai.toastcrossone().click();
   w.until(ExpectedConditions.visibilityOf(ai.LLM_editbutton()));
@@ -81,7 +77,6 @@ public void modelchangecheck(){
   w.until(ExpectedConditions.visibilityOf(ai.LLMsavebutton()));
   ai.LLMsavebutton().click();
   w.until(ExpectedConditions.visibilityOf(ai.LLMsuccess_message()));
-  
   w.until(ExpectedConditions.visibilityOf(ai.toastcrosstwo()));
   ai.toastcrosstwo().click();
   w.until(ExpectedConditions.visibilityOf(ai.Chatoption_in_menu()));
@@ -91,11 +86,9 @@ public void modelchangecheck(){
   w.until(ExpectedConditions.visibilityOf(ai.Lamaoption()));
   w.until(ExpectedConditions.visibilityOf(ai.Defaultoption()));
   d.navigate().refresh();
-  
   w.until(ExpectedConditions.visibilityOf(ai.Profileicon()));
   a.moveToElement(ai.Profileicon()).build().perform();
   ai.Profileicon().click();
-
   w.until(ExpectedConditions.visibilityOf(ai.Profileoption()));
   ai.Profileoption().click();
   w.until(ExpectedConditions.visibilityOf(ai.Default_model_editbutton()));
@@ -119,26 +112,23 @@ public void modelchangecheck(){
    w.until(ExpectedConditions.visibilityOf(ai.Savebutton()));
    ai.Savebutton().click();
    w.until(ExpectedConditions.visibilityOf(ai.savesuccessmessage()));
-
-    w.until(ExpectedConditions.visibilityOf(ai.toastcrossone()));
-    ai.toastcrossone().click();
-    w.until(ExpectedConditions.visibilityOf(ai.LLM_editbutton()));
-    ai.LLM_editbutton().click();
-    w.until(ExpectedConditions.visibilityOf(ai.rechoose()));
-    ai.rechoose().click();  
+   w.until(ExpectedConditions.visibilityOf(ai.toastcrossone()));
+   ai.toastcrossone().click();
+   w.until(ExpectedConditions.visibilityOf(ai.LLM_editbutton()));
+   ai.LLM_editbutton().click();
+   w.until(ExpectedConditions.visibilityOf(ai.rechoose()));
+   ai.rechoose().click();  
    w.until(ExpectedConditions.visibilityOf(ai.LLMoption()));
    ai.LLMoption().click();
-  w.until(ExpectedConditions.visibilityOf(ai.LLMsavebutton()));
-  ai.LLMsavebutton().click();
-  w.until(ExpectedConditions.visibilityOf(ai.LLMsuccess_message()));
-  
-  w.until(ExpectedConditions.visibilityOf(ai.toastcrosstwo()));
-  
-  w.until(ExpectedConditions.visibilityOf(ai.Chatoption_in_menu()));
-  ai.Chatoption_in_menu().click();
-  w.until(ExpectedConditions.visibilityOf(ai.Modelbutton()));
-  ai.Modelbutton().click();
-  d.navigate().refresh();
+   w.until(ExpectedConditions.visibilityOf(ai.LLMsavebutton()));
+   ai.LLMsavebutton().click();
+   w.until(ExpectedConditions.visibilityOf(ai.LLMsuccess_message()));
+   w.until(ExpectedConditions.visibilityOf(ai.toastcrosstwo()));
+   w.until(ExpectedConditions.visibilityOf(ai.Chatoption_in_menu()));
+   ai.Chatoption_in_menu().click();
+   w.until(ExpectedConditions.visibilityOf(ai.Modelbutton()));
+   ai.Modelbutton().click();
+   d.navigate().refresh();
 
 }
 

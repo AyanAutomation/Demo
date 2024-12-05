@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Logoutxpaths {
     
-    @FindBy(xpath="//div[@class='MuiStack-root css-2pxfmk']//i")
+    @FindBy(xpath="//span[@class='MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1l6c7y9']//i")
     public WebElement Profileicon;
     @FindBy(xpath="//p[contains(text(),'Logout')]")
     public WebElement logoutoption;

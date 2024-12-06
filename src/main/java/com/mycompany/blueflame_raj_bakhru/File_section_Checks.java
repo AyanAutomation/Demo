@@ -342,23 +342,15 @@ String addSuccesstoast ="//div[contains(text(),'A Nexus data set is not setup fo
        Actions a = new Actions(d);
        
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(file_card)));
-        a.moveToElement(d.findElement(By.xpath(file_card)));
-        
+       a.moveToElement(d.findElement(By.xpath(file_card)));
        a.contextClick(d.findElement(By.xpath(file_card))).build().perform();
-       
-       
-      
-       
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Menu_list)));
        
        List <WebElement> Filemenuoptions = d.findElements(By.xpath(Menu_items));
        
-       
        for (WebElement Filemenuoption : Filemenuoptions ){
        
       // System.out.println(Filemenuoption.getText());
-       
-       
        if(Filemenuoption.getText().equalsIgnoreCase(nexusoption)){
        System.out.println(Filemenuoption.getText());
        Filemenuoption.click();
@@ -392,7 +384,6 @@ WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
        
        Robot r = new Robot();
-       
        r.mouseWheel(-16);
        
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfiles_select_box))); 
@@ -401,26 +392,20 @@ WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
        Actions a = new Actions(d);
        
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(file_card)));
-        a.moveToElement(d.findElement(By.xpath(file_card)));
-        
+       a.moveToElement(d.findElement(By.xpath(file_card)));
        a.contextClick(d.findElement(By.xpath(file_card))).build().perform();
-       
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Menu_list)));
        
        List <WebElement> menuoptions = d.findElements(By.xpath(Menu_items));
-       
        
        for (WebElement menuoption : menuoptions ){
        
        //System.out.println(menuoption.getText());
        
-       
-       if(menuoption.getText().equalsIgnoreCase(chatoption)){
+        if(menuoption.getText().equalsIgnoreCase(chatoption)){
        
        menuoption.click();
-       
-       break;
-       }}
+       break;}}
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchat_banner)));
 
 }
@@ -430,9 +415,6 @@ WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
 
 public void file_to_QnA() throws AWTException, InterruptedException{
 
-    
-    
-    
     String filecard = "(//div[@class='MuiBox-root css-kr2xbr'])[1]";
     String Menulist = "//div[@role='menu']";
     String Menuitems = "//div[@role='menu']//div[@role='menuitem']";
@@ -447,14 +429,11 @@ public void file_to_QnA() throws AWTException, InterruptedException{
         
         d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
         
-         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(filecard)));
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(filecard)));
         a.moveToElement(d.findElement(By.xpath(filecard))).build().perform();
-        
-       a.contextClick(d.findElement(By.xpath(filecard))).build().perform();
-       
-        
-         List <WebElement> menu_options = d.findElements(By.xpath(Menuitems));
-       
+        a.contextClick(d.findElement(By.xpath(filecard))).build().perform();
+         
+        List <WebElement> menu_options = d.findElements(By.xpath(Menuitems));
        
        for (WebElement menu_option : menu_options ){
        
@@ -464,9 +443,7 @@ public void file_to_QnA() throws AWTException, InterruptedException{
        if(menu_option.getText().equalsIgnoreCase(qaoption)){
        
        menu_option.click();
-      break;
-       
-       }  }
+      break;}}
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Qabannertext)));
 
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchbutton))); 
@@ -571,21 +548,14 @@ List <WebElement> opn = d.findElements(By.xpath(allmenuoptions));
 //d.switchTo().alert().dismiss();
  }
  
-
-
 public void file_datetime_infocheck() throws AWTException, InterruptedException{
 
-    
-    
     String infobutton = "(//div[@class='MuiBox-root css-1qq0lyx']//button)[1]";
     String createdsection = "(//div[@class='MuiBox-root css-1wdu9wv']//p)[11]";
     String Lastloadtimesection = "(//div[@class='MuiBox-root css-1wdu9wv']//p)[9]";
 
-    
       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
-
       Actions a = new Actions(d);
-        
       d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
         
   
@@ -604,7 +574,6 @@ public void videofile_loader_check() throws InterruptedException{
 
     
         String videofilepageURL = "https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder/For%20Uploads/for%20uploading";
-       
         String videoFileCard = "//div[@class='MuiBox-root css-xi606m']//p[@aria-label='What If We Become a Type 1 Civilization_.mp4']";
         String videopopup = "//div[@data-testid='video-player']";
         String Videoplaybutton = "//button[@title='Play Video']";
@@ -613,14 +582,9 @@ public void videofile_loader_check() throws InterruptedException{
         Actions a = new Actions(d);
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
         TakesScreenshot shot = (TakesScreenshot)d;
-        
-        
-        
+         
          d.navigate().to(videofilepageURL);
-         
-         
-         
-         
+          
          w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(videoFileCard)));
          a.moveToElement(d.findElement(By.xpath(videoFileCard))).build().perform();
          a.moveToElement(d.findElement(By.xpath(videoFileCard))).click().build().perform();
@@ -678,22 +642,14 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
         Thread.sleep(2800);
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(crossbutton))); 
         d.findElement(By.xpath(crossbutton)).click();
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(crossbuttontwo))); 
         d.findElement(By.xpath(crossbuttontwo)).click();
-        
-        
-        
         js.executeScript("window.scrollTo(0, 0);");
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
         w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(odtfilecard))); 
         d.findElement(By.cssSelector(odtfilecard)).click();
         
         Thread.sleep(3500);
-
-        
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(crossbutton))); 
         d.findElement(By.xpath(crossbutton)).click();
         /*
@@ -726,20 +682,15 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(file_card)));
     /* w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfiles_select_box))); 
       d.findElement(By.xpath(allfiles_select_box)).click(); */
-    
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(file_card)));
       a.moveToElement(d.findElement(By.xpath(file_card)));
-        
-       a.contextClick(d.findElement(By.xpath(file_card))).build().perform();
+      a.contextClick(d.findElement(By.xpath(file_card))).build().perform();
        
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allmenuoptions)));
        
        List <WebElement> menuoptions = d.findElements(By.xpath(allmenuoptions));
-       
-       
        for (WebElement menuoption : menuoptions ){
        
-      
        if(menuoption.getText().equalsIgnoreCase(reindex)){
        //System.out.println(menuoption.getText());
        menuoption.click();
@@ -754,7 +705,6 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       }
 
       public void content_viewer_pagecheck() throws InterruptedException{
-      
       
       String pageUrl = "https://app-dev.blueflame.ai/dashboard/file-management/details/b6379b53-6890-4826-b9b3-45e0aeda32c0";
       String downloadfilebutton = "button[aria-label='Download file']";
@@ -785,44 +735,30 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
      String inputPopupbox = "//body/div[4]/div[3]/div[1]";
      String cancelButton = "//body/div[4]/div[3]/div[1]/div[2]/button[1]";
      
-     
-     
       Actions a = new Actions(d);
       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100)); 
       
       d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
       
-      
-      
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext))); 
-
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(file_card)));
       a.moveToElement(d.findElement(By.xpath(file_card)));
-        
-       a.contextClick(d.findElement(By.xpath(file_card))).build().perform();
+      a.contextClick(d.findElement(By.xpath(file_card))).build().perform();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allmenuoptions)));
+      List <WebElement> menoptions = d.findElements(By.xpath(allmenuoptions));
        
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allmenuoptions)));
-       
-       List <WebElement> menoptions = d.findElements(By.xpath(allmenuoptions));
-       
-       
-       for (WebElement menoption : menoptions ){
+ for (WebElement menoption : menoptions ){
 
        if(menoption.getText().equalsIgnoreCase(runBluePrint)){
        
        System.out.println(menoption.getText());    
-           
        menoption.click();
        
        }}
-       
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(runBlueprintsubMenu)));
-       
        List <WebElement> submenoptns = d.findElements(By.xpath(runBlueprintsubMenu_optns));
-       
        for(WebElement suboptn : submenoptns ){
-       
-       System.out.println(suboptn.getText());    
+        System.out.println(suboptn.getText());    
   }
      w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(playButton)));  
      d.findElement(By.cssSelector(playButton)).click();
@@ -830,25 +766,18 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cancelButton))); 
      d.findElement(By.xpath(cancelButton)).click();
      
-     Thread.sleep(2200);
-}
-      
+     Thread.sleep(2200);}
       
       
       
       public void filemultideleteCheck() throws InterruptedException{
       
-          
-    
-
     String filecard = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/span[1]/div[1]/button[1]/div[2]";
     String menulist = "//div[@role='menu']";
     String allmenuoptions = "//div[@class='ContextMenuItem']";
     String deleteOption = "Delete";
     String yesConfirmmessage = "//p[contains(text(),'Yes')]";
     
-      
-      
     Actions a = new Actions(d);
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     JavascriptExecutor js = (JavascriptExecutor)d;
@@ -858,12 +787,10 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfiles_select_box)));
      d.findElement(By.xpath(allfiles_select_box)).click();
-     
      a.contextClick(d.findElement(By.xpath(filecard))).build().perform();      
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(menulist))); 
      
      List <WebElement> options = d.findElements(By.xpath(allmenuoptions));
-     
      
      for(WebElement optnss : options ){
      
@@ -872,11 +799,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
      if(optnss.getText().equalsIgnoreCase(deleteOption)){
      
          optnss.click();
-         break;
-     
-     }
-     
-     }
+         break; }}
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(yesConfirmmessage)));
      d.findElement(By.xpath(yesConfirmmessage)).click();
      

@@ -39,9 +39,7 @@ public class Type {
         String Aimodeltab = "//button[@aria-label='BlueFlame AI Agent']";
         String defaultModel = "//*[@aria-label='You can change your default in the settings']";
         String Export_button = "//div[@class='MuiStack-root css-7iwxlc']//button[@type='button']";
-        
-    Tilereplace rp = new Tilereplace(d);
-        
+              
    void SendMessage() throws InterruptedException{
     
        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
@@ -49,33 +47,26 @@ public class Type {
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
         
         d.findElement(By.xpath(Editor_Box)).sendKeys("PitchBook");
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prompt_option))); 
         d.findElement(By.xpath(prompt_option)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(parameterbox))); 
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(parameterbox))); 
         d.findElement(By.xpath(parameterbox)).sendKeys("LMT");
         d.findElement(By.xpath(Send)).click();
-        
         Thread.sleep(1000); 
     d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
         
     }
-   
-   
    
    void typeafter_apptag() throws InterruptedException{
    
 
         String appbutton ="//*[@aria-label='Apps']";
         String prompt_option ="//p[contains(text(),'SalesForce')]";
-        
         String Textbox = "//div[@contenteditable='true']";
         
-        
-     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
+        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
      
-     
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
         d.findElement(By.xpath(newchatbutton)).click();
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
         d.findElement(By.xpath(Editor_Box)).click();
@@ -92,17 +83,11 @@ public class Type {
    
    void Parameterbox_enter_send_check() throws InterruptedException{
    
-        
-      
         String prompt_option ="//p[contains(text(),'@Pitchbook Show me a profile on {company}')]";
         String parameterbox = "//textarea[@aria-invalid='false']";
         
-
-        
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
         Actions a = new Actions(d);
-     
-        
         
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
         d.findElement(By.xpath(newchatbutton)).click();
@@ -131,12 +116,7 @@ public class Type {
 
         String prompt_option ="//p[contains(text(),'@Pitchbook Show me a profile on {company}')]";
         String parameterbox = "//textarea[@aria-invalid='false']";
-        
-        
         String outsideparameterbox = "//*[@id=\"chat_write_area\"]/div/div[2]/div[3]/div/div/div[3]/div/p/span[2]/span/span[2]";
-        
-        
-        
         
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
         Actions a = new Actions(d);
@@ -145,17 +125,12 @@ public class Type {
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(newchatbutton))); 
         d.findElement(By.xpath(newchatbutton)).click();
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
-        
         d.findElement(By.xpath(Editor_Box)).sendKeys("PitchBook Show me a profile");
-              
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prompt_option))); 
         d.findElement(By.xpath(prompt_option)).click();
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(parameterbox)));
-        
-      
-           d.findElement(By.xpath(parameterbox)).sendKeys(Keys.ENTER);
-           d.findElement(By.xpath("//div[@contenteditable='true']")).sendKeys(Keys.ENTER);
+        d.findElement(By.xpath(parameterbox)).sendKeys(Keys.ENTER);
+        d.findElement(By.xpath("//div[@contenteditable='true']")).sendKeys(Keys.ENTER);
            
       
    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Export_button)));
@@ -646,10 +621,8 @@ public class Type {
     d.findElement(By.xpath(SeeMore_button)).click();
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BlueFlameOption)));
     d.findElement(By.xpath(BlueFlameOption)).click();
-   
-    }
-
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(insidechat)));
+   }
+    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(insidechat)));
      a.moveToElement(d.findElement(By.xpath(insidechat))).build().perform(); 
      js.executeScript("arguments[0].scrollIntoView(true)", d.findElement(By.xpath(copybutton))); 
      Thread.sleep(1500);
@@ -686,18 +659,12 @@ public class Type {
       d.findElement(By.xpath(imageremovebutton)).click();
     
       Thread.sleep(500);
-     } 
-     
-     
-     d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
-     
+     }d.navigate().to("https://app-dev.blueflame.ai/dashboard/chat");
      Switch.switchingTodefaultAimodel();
      
    }
    
 public void multiple_qa_answerinchat_showsource_check() throws AWTException, InterruptedException{
-
-
 
    String Autocomplete_box = "//input[@aria-autocomplete = 'list']";
    String Autocomplete_list = "//ul[@role='listbox']";
@@ -707,9 +674,6 @@ public void multiple_qa_answerinchat_showsource_check() throws AWTException, Int
    String option_to_be_choosen_one = " //li[contains(text(),'PRF/BlueFlame Test Cases/Front-End Pipeline Management/Mandrake Capital Real Estate Fund II_February 2024.pdf')]";
    String option_to_be_choosen_two = "//li[contains(text(),'AYn Demo Folder/Economics/Shadow Oil Fleet Funding War Laid Bare - Newsweek.pdf')]";
    String option_to_be_choosen_three = "//li[contains(text(),'AYn Demo Folder/Viability_of_a_Dyson_Swarm_as_a_Form_of_Dyson_Sphe.pdf')]";  
-
-   
-   
    String optionisselected = "//*[@id=\"chat_write_area\"]/div/div[2]/div[3]/div/div/div[3]/div/p/span/span/div/div/div[2]/div/div/div/span/div/p";
    String Lastbutton_showsource = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/i[1]";    
    String Second_last_button_showsource = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/i[1]";
@@ -792,13 +756,9 @@ public void multiple_qa_answerinchat_showsource_check() throws AWTException, Int
      
 public void parameterPlacereplaceCheck() throws AWTException, InterruptedException{
 
-
-     
-    
     String Send = "//i[@class='ico1']";
     String prompt_option ="//p[contains(text(),'@SFDC Add note to the contact {name} that: {notes}')]";
     String parameterbox = "//textarea[@aria-invalid='false']";
-    
     String nameparameterinprompt = "//p[text()='name']";
     String notes_parameter_inPrompt = "//p[contains(text(),'notes')]";
     

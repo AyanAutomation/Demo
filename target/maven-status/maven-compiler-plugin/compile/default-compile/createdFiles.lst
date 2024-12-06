@@ -39,6 +39,7 @@ com\bfagent\pom\UsageAnalysisPaths.class
 com\mycompany\blueflame_raj_bakhru\System_AdminModule.class
 com\mycompany\blueflame_raj_bakhru\Template.class
 com\mycompany\blueflame_raj_bakhru\chat_like_dislike.class
+com\bfagent\pom\Blueprints_xpaths.class
 com\bfagent\pom\TilerReplaceCheck.class
 com\mycompany\blueflame_raj_bakhru\LigthmodeSwitch.class
 com\bfagent\pom\Delete_Xpaths.class

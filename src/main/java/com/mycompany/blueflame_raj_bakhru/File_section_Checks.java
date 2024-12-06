@@ -479,8 +479,7 @@ public void file_to_QnA() throws AWTException, InterruptedException{
 public void non_indexfilechecks() throws InterruptedException{
 
     String foldertext = "//h3[contains(text(),'Folders')]";
-
-    String filecard = "//p[contains(text(),'APPLE_20230804_0000.pdf')]";
+    String filecard = "(//*[@class='MuiBox-root css-xi606m']//p)[2]";
     String menulist = "//div[@role='menu']";
     String allmenuoptions = "//div[@class='ContextMenuItem']";
     String qnaerrormessage = "//div[contains(text(),'This file was not yet indexed for Q&A. Please wait')]";
@@ -488,28 +487,20 @@ public void non_indexfilechecks() throws InterruptedException{
     String ScanErrormessage = "//div[contains(text(),'This file was not yet indexed for scan. Please wai')]";
     String qnaoption = "Q&A";
     String chatoption = "Chat";
-    String toast = "//body/div[@id='root']/section[1]/ol[1]/li[1]";
-    
+    String toast = "//li[@aria-live='polite']";
     String File_option_menu_Localised = "//span[contains(text(),'Files')]";
     
-    
-    
-    
+   
     Actions a = new Actions(d);
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     JavascriptExecutor js = (JavascriptExecutor)d;
 
-     d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AAPL/Sell%20Side%20Research");
+     d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");
 
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
-     
-     
      js.executeScript("arguments[0].scrollIntoView(true);",d.findElement(By.xpath(filecard)));
-     
-     
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(filecard)));
      a.contextClick(d.findElement(By.xpath(filecard))).build().perform();
-     
      
      /*
      List <WebElement> optns = d.findElements(By.xpath(allmenuoptions));
@@ -517,17 +508,11 @@ public void non_indexfilechecks() throws InterruptedException{
 
      for( WebElement opt : optns){ 
 
-         
-         
          for(int i=0 ; i<3 ; i++){
          
          if(opt.getText().contains(alloptions[i])){
              
-             
-         opt.click();
-         
-         
-         }
+          opt.click(); }
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toast_messagecancel_button)));
      d.findElement(By.xpath(toast_messagecancel_button)).click();
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
@@ -537,21 +522,13 @@ public void non_indexfilechecks() throws InterruptedException{
          }
          
   } */
-
-
-       List <WebElement> optns = d.findElements(By.xpath(allmenuoptions));
-      
-       for(WebElement optn : optns){
-         
+     List <WebElement> optns = d.findElements(By.xpath(allmenuoptions));
+      for(WebElement optn : optns){
          //System.out.println(optn.getText());
-         
-         if(optn.getText().equalsIgnoreCase(scanoption)){
+          if(optn.getText().equalsIgnoreCase(scanoption)){
          
          optn.click();
-         
-         break;
-     }
-  }
+         break; }}
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ScanErrormessage)));
      System.out.println(d.findElement(By.xpath(toast)).getText());
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toast_messagecancel_button)));
@@ -561,19 +538,13 @@ public void non_indexfilechecks() throws InterruptedException{
      a.contextClick(d.findElement(By.xpath(filecard))).build().perform();
     
      List <WebElement> optn = d.findElements(By.xpath(allmenuoptions));
-     
-     
-  for(WebElement optna : optn){
+      for(WebElement optna : optn){
          
       //   System.out.println(optna.getText());
-         
         if(optna.getText().equalsIgnoreCase(chatoption)){
          
          optna.click();
-         
-         break;
-     } 
-  }
+          break; }}
  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(chaterrorMessageText)));
  System.out.println(d.findElement(By.xpath(toast)).getText());
  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toast_messagecancel_button)));
@@ -583,10 +554,7 @@ public void non_indexfilechecks() throws InterruptedException{
  a.contextClick(d.findElement(By.xpath(filecard))).build().perform();
     
 List <WebElement> opn = d.findElements(By.xpath(allmenuoptions)); 
-  
- 
-  
-  for(WebElement optnb : opn){
+   for(WebElement optnb : opn){
          
          System.out.println(optnb.getText());
          
@@ -595,15 +563,12 @@ List <WebElement> opn = d.findElements(By.xpath(allmenuoptions));
          optnb.click();
          
          break;
-     }
-  }
+     }}
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(qnaerrormessage)));
   System.out.println(d.findElement(By.xpath(toast)).getText());
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toast_messagecancel_button)));
 
-
- 
- //d.switchTo().alert().dismiss();
+//d.switchTo().alert().dismiss();
  }
  
 
@@ -617,25 +582,20 @@ public void file_datetime_infocheck() throws AWTException, InterruptedException{
     String Lastloadtimesection = "(//div[@class='MuiBox-root css-1wdu9wv']//p)[9]";
 
     
-    
-   
-    
       WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
 
-        Actions a = new Actions(d);
+      Actions a = new Actions(d);
         
-       d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
+      d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management?path=AYn%20Demo%20Folder");
         
   
-        
-         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(infobutton)));
-         a.moveToElement(d.findElement(By.xpath(infobutton))).build().perform();
-         a.moveToElement(d.findElement(By.xpath(infobutton))).click().build().perform();
-         
-         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(createdsection)));
-         System.out.println(d.findElement(By.xpath(createdsection)).getText()); 
-         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Lastloadtimesection)));
-         System.out.println(d.findElement(By.xpath(Lastloadtimesection)).getText());
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(infobutton)));
+      a.moveToElement(d.findElement(By.xpath(infobutton))).build().perform();
+      a.moveToElement(d.findElement(By.xpath(infobutton))).click().build().perform();
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(createdsection)));
+      System.out.println(d.findElement(By.xpath(createdsection)).getText()); 
+      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Lastloadtimesection)));
+      System.out.println(d.findElement(By.xpath(Lastloadtimesection)).getText());
 
 
 }
@@ -694,7 +654,6 @@ public void videofile_loader_check() throws InterruptedException{
 public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
    
     
-       
        String pyFileCard = "p[aria-label='sample1.py']";
        String Folder_to_choose = "//p[contains(text(),'AYn Demo Folder')]";
        String crossbutton = "//div[@class='MuiStack-root css-5vauxo']//button";
@@ -713,14 +672,10 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
          
       
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(allfilestext)));
-      
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-      
         w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(pyFileCard))); 
         d.findElement(By.cssSelector(pyFileCard)).click();
-
         Thread.sleep(2800);
-        
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(crossbutton))); 
         d.findElement(By.xpath(crossbutton)).click();
         
@@ -973,8 +928,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
       
      public void folder_create(){
       
-       
-         d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");
+        d.navigate().to("https://app-dev.blueflame.ai/dashboard/file-management");
          Actions a = new Actions(d);
          WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
          JavascriptExecutor js = (JavascriptExecutor)d;

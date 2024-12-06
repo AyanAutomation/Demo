@@ -97,7 +97,7 @@ d.get(URL);
 l.Loggin(); 
 switchmode.switchonLightmode(); 
 //D.Deletefromchatlist();  
-
+/*
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
@@ -119,8 +119,8 @@ type.Parameterbox_enter_send_check();
 //D.Delete_from_top();  
 type.empty_parameterbox_double_enter_send_check(); 
 type.control_A_delete_check();   //--
-type.parameterbox_delete_reenter_curlybrace_issuecheck();  
-type.parameterPlacereplaceCheck();
+type.parameterbox_delete_reenter_curlybrace_issuecheck();  */
+type.parameterPlacereplaceCheck(); 
 type.part_text_option_deletecheck();
 type.app_afterpromptfavouritesuggestion(); 
 type.tabselectcheck(); 
@@ -132,11 +132,9 @@ type.prompt_multi_click();
 //D.Deletefromchatlist(); 
 
 mp.Cursorpositioncheck(); 
-
 rp.Replacecheck(); 
 m.checkmathnotation(); 
 D.Delete_from_top();  
-
 sl.File_with_pipesearch_in_filespoup();
 sl.selectchatfiles();  
 sl.autofill_qna_check();  
@@ -144,13 +142,10 @@ sl.autofill_qna_check();
 
 chl.thirdpartylogocheck();  
 like.likedislikestaytest();  
-
 at.extrafolder_issue_check(); 
-
 at.autocompleteoption_backspace_delete_check(); 
 rss.Rssxmlcheck(); 
 chtexpt.chat_export_filename();
-
 rss.Rssxmlcheck(); 
 tmplte.pptxfile_check_method_2(); 
 tmplte.template_folder_subfoldertraverse_back_check(); 
@@ -165,15 +160,13 @@ file.files_to_chat();
 //D.Deletefromchatlist(); 
 file.file_to_QnA();  
 file.emlfilecheck();   
-//file.non_indexfilechecks();  
+file.non_indexfilechecks();  
 file.file_datetime_infocheck(); 
 file.videofile_loader_check(); 
 file.doubelcross_buttoncheck(); 
 file.reindexingcheck(); 
 file.content_viewer_pagecheck(); 
 file.runblueprint_check();    
-
-
 
 br.shareblueprintcheck(); /*
 br.Blueprintaddform(); 

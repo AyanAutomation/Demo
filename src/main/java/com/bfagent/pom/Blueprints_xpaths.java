@@ -150,7 +150,12 @@ public class Blueprints_xpaths {
         @FindBy(xpath="//button[@aria-label='Close toast']")
         private WebElement shareToastcrossbutton;
         @FindBy(xpath="//a[@href='/dashboard/blueprints/editor']")
-        private WebElement Create_BlueprntButton; /*
+        private WebElement Create_BlueprntButton; 
+        @FindBy(css="input[placeholder='search']")
+        private WebElement blueprintListsearch;
+        @FindBy(xpath="//div[@class='MuiBox-root css-ehlpcq']")
+        public List <WebElement> shareLibaryOptions_GenericXpath;
+        /*
         @FindBy(xpath="")
         private WebElement gearButton;
         @FindBy(xpath="")
@@ -199,8 +204,7 @@ public class Blueprints_xpaths {
         private WebElement generateTextButton;
         @FindBy(xpath="")
         private WebElement sideDrawerclose_button;
-        @FindBy(css="")
-        private WebElement blueprintListsearch;
+
         @FindBy(xpath="")
         private WebElement Librarysearch;
         @FindBy(xpath="")
@@ -288,8 +292,6 @@ public class Blueprints_xpaths {
         @FindBy(xpath="")
         private WebElement scheduletimeOkButton;
         @FindBy(xpath="")
-        private WebElement shareLibaryOptions_GenericXpath;
-        @FindBy(xpath="")
         private WebElement library_DemoLinked_recipeXpath;
         @FindBy(xpath="")
         private WebElement Library_DemoRecipe_Bottom_section;
@@ -368,7 +370,7 @@ public class Blueprints_xpaths {
          return shareToastcrossbutton; }
         public WebElement Create_BlueprntButton(){
          return  Create_BlueprntButton;}
-      /*  public {
-         return  } */
+        public WebElement blueprintListsearch(){
+         return blueprintListsearch; } 
         
 }

@@ -1,6 +1,7 @@
 
 package com.mycompany.blueflame_raj_bakhru;
 
+import com.bfagent.pom.Blueprints_xpaths;
 import java.awt.AWTException;
 import java.awt.Robot;
 import static java.lang.Thread.sleep;
@@ -21,282 +22,130 @@ public class Blueprintrun {
     
     WebDriver d;
     
-
 public Blueprintrun(WebDriver  d){
-
 
 this.d = d;
 
 }
-
-
-        
-        String menu_option = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]";
-        String Blueprint_option = "//a[@href='/dashboard/blueprints']";
-        String run_Button = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/button[2]";
-        String Chatlist = "//div[@id='chat_list_ced1482c-d5b7-4eaf-a365-ff648f8fb64d']";
-        String Chat_option = "//span[contains(text(),'Chat')]";
-        String RunnedBlueprintchat = "//p[contains(text(),'Recipe: Pitchbook Bl...')]";
-        String Firstmessage = "//p[contains(text(),'company: 64559-62')]";
-        String likebutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/button[2]/*[1]";
-        String secondmessage = "//p[contains(text(),'company: 109347-13')]";       
-        String advancedViewbutton = "(//li[@class='MuiListItem-root MuiListItem-gutters css-1tpp0wj'])[2]"; 
-        String threedot = "(//div[@class='MuiBox-root css-1y4lkn8'])[1]//button[@type='button']";
-        
-        String sidedropdownmenu = "//div[@tabindex='-1']";
-        String allmenuitems = "//div[@tabindex='-1']//li[@role='menuitem']";
-        String shareOption = "Share";
-        String addtoLibraryOption = "//p[contains(text(),'Select Library')]";
-        String accountOption ="//div[contains(text(),'Select Account')]";
-        String popOutModal = "//div[@role='dialog']";
-        String promptlockButton = "";
-        String accountList = "//body/div[@id='menu-']/div[3]";
-        String blueflameaiOption = "//li[@data-value='c0639d2d-d3ba-4418-840d-a68c988723db']";
-        String selectUser = "//body/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]";
-        String webSkitterdevoption = "Webskitters test Dev";
-        String popovercloser = "//p[text()='Share Company Research on {company name}']";
-        String shareButton = "//div[text()='Share']";
-        String shareSuccessMessage = "//li[@aria-live='polite']";
-        String shareToastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-        String Create_BlueprntButton = "//div[text()='Create New']";
-        //body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]
-        String gearButton = "(//button[@type='button'])[7]";
-        String addprmtbt = "//button[text()='Add prompt']";
-        String prmptbox = "//div[@contenteditable='true']//p[@class='is-empty is-editor-empty']";
-        String promptboxWithcontent = "//div[@class='tiptap ProseMirror _tiptap_editor']";
-        String lightMode = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/button[1]"; 
-        String summarytoggle = "//input[@aria-label ='controlled']";
-        String summarizeResultboxCssselector = "customValues.summarizeText";
-        String saveButtonone = "//div[text()='Save']";
-        String saveButtontwo = "//div[text()='Save']";
-        String settingsSlidedrawer = "//div[@class='MuiBox-root css-41in74']//button[@type='button']";
-        String moveInsideform = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]";        
-        String BlueprintnameField = "//textarea[@placeholder='Blueprint name *']";
-        String BlueprintDescription_Field = "//textarea[@name='description']";
-        String savesuccessToast = "//div[contains(text(),'Recipe: Blueprint name created successfully')]";        
-        String savesuccessToastcrossbutton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]";
-        String createdBlueprintName = "//*[@id=\"root\"]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div[1]/div[1]/nav/ol/li[3]/div/p";
-        String blueprintitlename = "//h1[contains(text(),'Blueprints')]";
-        String deleteOption = "Delete";
-        String blueprintnametitle = "//*[@placeholder='Blueprint name *']";
-        String descriptionNametitle = "//textarea[@placeholder='Write what this Blueprint is supposed to do here...']";
-        String promptDeletebutton = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1mknrun'])[1]";
-        String generateTextbox = "//textarea[@placeholder='Write what this Blueprint is supposed to do here...']";
-        String generateTextButton = "//*[contains(text(),'Generate')]";
-        String sideDrawerclose_button = "/html/body/div[4]/div[3]/div/div[1]/button";
-        String blueprintListsearch = "input[placeholder='search']";
-        String Librarysearch = "//input[@placeholder='Search']";
-        String searchboxpost_with_searchword = "input[value='World News Summary']";
-        String deleOk = "//div[text()='Yes']";
-        String recipedeleteSuccessToast = "//div[contains(text(),'Blueprint Deleted Successfully.')]";
-        String deleteToastcrossButton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-        String deleteOptn = "//p[contains(text(),'Delete')]";
-        String ChooseUser = "//p[contains(text(),'Search by name')]";
-        String addtoLibraryButton = "//button[contains(text(),'Add from library')]";
-        String addlibraryPopupTitle = "//p[contains(text(),'Add from library')]";
-        String insideRecipeList = "//body/div[2]/div[3]/div[1]/div[2]/div[1]/div[2]/div[2]";
-        String bottomsectionofLibraryCard = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1594mfo'])[2]";
-        String importSuccessToast = "//div[contains(text(),'Recipe: Global Blueprint imported successfully')]";
-        String libraryPopupCloseButton = "//body/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]";
-        String primartBlueprintListTitle = "//h1[contains(text(),'Blueprints')]";
-        String importedBlueprintName = "//body/div[2]/div[3]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]";
-        String toastCrossButton = "//body/div[@id='root']/section[1]/ol[1]/li[1]/button[1]/*[1]";
-         
-        String linkedBlueprintCard = "(//h3[text()='Demo Recipe linked'])[1]";
-        String viewonlyinfotext = "//div[contains(text(),'Linked Blueprint View only')]";
-        String threedtbutton = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/button[1]";
-        String importButton = "(//button[text()='Import'])[2]"; 
-        String alloptsn = "//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1deb5uc']";
-        String okconfirmaction = "//div[text()='Yes']";
-        String deltoast = "//body/div[@id='root']/section[1]/ol[1]/li[1]";
-        String userinputField = "//div[@role='button']//span[contains(text(),'company name')]";
-        String userinputEditButton = "//div[@role='button']//span[contains(text(),'company name')]//button[@type='button'][1]";        
-        String userinputeditbox = "//input[@aria-invalid='false']";
-        String outsideuserinputform = "//body/div[4]";        
-        String editeduserinput = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]";
-        String userinputDeleteButton = "//span[contains(text(),'company')]//button[@type='button'][2]";
-        String userinputdelconfirm = "//button[contains(text(),'Delete all')]";
-        String runprompt = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]";
-        String parameterinputBoxforrun = "//input[@placeholder='Type here']";
-        String runButton_inside_confirmationPopUp = "/html/body/div[4]/div[3]/div/div/div[2]/button[2]";
-        String previewChat_generated = "//p[contains(text(),'Today')]";
-        String addscheduleButton = "//button[text()='Add Schedule']";
-        String popupScheduleForm = "//body/div[@id='schedule-list-add']/div[3]/div[1]";
-        String timeClockIcon = "//body/div[@id='schedule-list-add']/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/*[1]";
-        String scheduleFrequencyButton = "//div[@id='mui-component-select-frequency']";
-        String weeklyOption = "//li[@data-value='WEEKLY']";       
-        String weeklyoptionGenericXpath = "//li[@class='MuiListItem-root MuiListItem-gutters css-1tpp0wj']";
-        String monDay = "Mo";        
-        String scheduleSaveButton = "//div[@class='MuiStack-root css-1b138w3']//button[contains(text(),'Save')]";
-        String scheduletimeval = "//body/div[6]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[7]";
-        String scheduletimeOkButton = "//button[text()='OK']";
-        String shareLibaryOptions_GenericXpath = "//div[@class='MuiBox-root css-ehlpcq']";
-        String shareLib_seconduserOption = "(//div[@class='MuiBox-root css-1qdy2zr']//div[@class='MuiBox-root css-ehlpcq']//button[@type='button']//p[@class='MuiTypography-root MuiTypography-body1 css-newj2o'])[2]";
-        String AccountLiboption = "Account Library";
-        String userforSharing = "Webskitters test Dev";
-        String library_DemoLinked_recipeXpath = "//h3[text()='Demo Recipe linked']";
-        String Library_DemoRecipe_Bottom_section = "//body/div[2]/div[3]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]";
-        String demoLinked_recipeImportButton = "//button[text()='Import']";
-        String noBlueprint_FoundText = "//h1[text()='No blueprint found']";
-
-        
-        
+       
 public void Run_Blueprint() throws AWTException, InterruptedException{
     
         WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
         Actions a = new Actions(d);
+        Blueprints_xpaths pth = new Blueprints_xpaths(d);
 
- w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(menu_option)));
-        
-        
-        
-        a.moveToElement(d.findElement(By.xpath(menu_option)));
+        w.until(ExpectedConditions.visibilityOf(pth.menu_option()));
+        a.moveToElement(pth.menu_option());
         
         Robot r = new Robot();
-        
         r.mouseWheel(-200);
         
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Blueprint_option))); 
-        d.findElement(By.xpath(Blueprint_option)).click(); 
+        w.until(ExpectedConditions.visibilityOf(pth.Blueprint_option())); 
+        pth.Blueprint_option().click(); 
         Thread.sleep(1200);
         
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(run_Button))); 
-        d.findElement(By.xpath(run_Button)).click(); 
+        w.until(ExpectedConditions.visibilityOf(pth.run_Button())); 
+        pth.run_Button().click(); 
         Thread.sleep(1200);
-       
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(menu_option)));
-       a.moveToElement(d.findElement(By.xpath(menu_option)));
-       
+        w.until(ExpectedConditions.visibilityOf(pth.menu_option()));
+        a.moveToElement(pth.menu_option());
         r.mouseWheel(200);
         Thread.sleep(1200);
-        
-       
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Chat_option)));
-        d.findElement(By.xpath(Chat_option)).click(); 
-        
+        w.until(ExpectedConditions.visibilityOf(pth.Chat_option()));
+        pth.Chat_option().click(); 
         r.mouseWheel(-200);
-        
-        
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Chatlist))); 
-        
-        a.moveToElement(d.findElement(By.xpath(Chatlist))).build().perform(); 
-    
-
+        w.until(ExpectedConditions.visibilityOf(pth.Chatlist())); 
+        a.moveToElement(pth.Chatlist()).build().perform(); 
         r.mouseWheel(-30);
-        
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(RunnedBlueprintchat))); 
-        d.findElement(By.xpath(RunnedBlueprintchat)).click(); 
-        
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Firstmessage))); 
-        
-        a.moveToElement(d.findElement(By.xpath(Firstmessage))).build().perform();
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(secondmessage)));
-        
+        w.until(ExpectedConditions.visibilityOf(pth.RunnedBlueprintchat())); 
+        pth.RunnedBlueprintchat().click(); 
+        w.until(ExpectedConditions.visibilityOf(pth.Firstmessage())); 
+        a.moveToElement(pth.Firstmessage()).build().perform();
         r.mouseWheel(-3);
         r.mouseWheel(3);
-        
-
-      Thread.sleep(1200);
-  
-       
-
-
-}
+        Thread.sleep(1200);
+  }
  
    public void shareblueprintcheck() throws InterruptedException{
 
 
-       String selectUserList = "//body/div[@id='menu-']/div[3]";
-       String allUserFetchingGenericXpath = "//ul[@role='listbox']//li[@role='option']";
+     String selectUserList = "//body/div[@id='menu-']/div[3]";
+     String allUserFetchingGenericXpath = "//ul[@role='listbox']//li[@role='option']";
+     Blueprints_xpaths p = new Blueprints_xpaths(d);
        
-       
-        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
-        Actions a = new Actions(d);
-      d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(advancedViewbutton))); 
-     d.findElement(By.xpath(advancedViewbutton)).click(); 
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(blueprintListsearch))); 
-     d.findElement(By.cssSelector(blueprintListsearch)).sendKeys("Company Research"); 
-      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedot))); 
-     d.findElement(By.xpath(threedot)).click(); 
+     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
+     Actions a = new Actions(d);
+     d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
+     w.until(ExpectedConditions.visibilityOf(p.advancedViewbutton())); 
+     p.advancedViewbutton().click(); 
+     w.until(ExpectedConditions.visibilityOf(p.blueprintListsearch())); 
+     p.blueprintListsearch().sendKeys("Company Research"); 
+     w.until(ExpectedConditions.visibilityOf(p.threedot())); 
+     p.threedot().click(); 
      
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sidedropdownmenu)));
+     w.until(ExpectedConditions.visibilityOf(p.sidedropdownmenu()));
      
-     List <WebElement> items = d.findElements(By.xpath(allmenuitems));
+     List <WebElement> items = p.allmenuitems;
      
      for (WebElement item:items ){
     //System.out.println(item.getText());
      
-     if(item.getText().equalsIgnoreCase(shareOption)){
+     if(item.getText().equalsIgnoreCase(p.shareOption())){
      
      item.click();
-      
-    break;
-
-     }}
+     break;}}
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popOutModal)));
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addtoLibraryOption)));
-     d.findElement(By.xpath(addtoLibraryOption)).click();
+     w.until(ExpectedConditions.visibilityOf(p.popOutModal()));
+     w.until(ExpectedConditions.visibilityOf(p.addtoLibraryOption()));
+     p.addtoLibraryOption().click();
      
-      List <WebElement> LibraryOptions = d.findElements(By.xpath(shareLibaryOptions_GenericXpath));
-      
+      List <WebElement> LibraryOptions = p.shareLibaryOptions_GenericXpath;
       
       for(WebElement libops : LibraryOptions){
       
       //System.out.println(libops.getText());
       
-      if(libops.getText().equalsIgnoreCase(AccountLiboption)){
+      if(libops.getText().equalsIgnoreCase(p.AccountLiboption())){
       
       //System.out.println(libops.getText());    
       libops.click();
-      break;
-      
-      
-      }
-      
-      } 
+      break;}} 
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='BlueFlame AI']")));
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ChooseUser)));
-     d.findElement(By.xpath(ChooseUser)).click();
-      a.moveToElement(d.findElement(By.xpath("//input[@placeholder='Search']"))).build().perform();
+     w.until(ExpectedConditions.visibilityOf(p.selectUser()));
+     p.selectUser().click();
+     a.moveToElement(d.findElement(By.xpath("//input[@placeholder='Search']"))).build().perform();
      d.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("Web");
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(shareLibaryOptions_GenericXpath)));
-     List <WebElement> userOptions = d.findElements(By.xpath(shareLibaryOptions_GenericXpath));
+     w.until(ExpectedConditions.visibilityOfAllElements(p.shareLibaryOptions_GenericXpath));
+     List <WebElement> userOptions = p.shareLibaryOptions_GenericXpath;
      
       for(WebElement userOpts : userOptions){
       
       System.out.println(userOpts.getText());
           
-     if(userOpts.getText().equalsIgnoreCase(userforSharing)){
+     if(userOpts.getText().equalsIgnoreCase(p.userforSharing())){
       
       System.out.println(userOpts.getText());   
       userOpts.click();
       break;
    }
        }
+     w.until(ExpectedConditions.visibilityOf(p.popovercloser()));
+     p.popovercloser().click();
+     w.until(ExpectedConditions.visibilityOf(p.shareButton()));
+     p.shareButton().click();
+     w.until(ExpectedConditions.visibilityOf(p.shareSuccessMessage()));
+     System.out.println(p.shareSuccessMessage().getText());
      
-      
-     
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popovercloser)));
-     d.findElement(By.xpath(popovercloser)).click();
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(shareButton)));
-     d.findElement(By.xpath(shareButton)).click();
-     
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(shareSuccessMessage)));
-      System.out.println(d.findElement(By.xpath(shareSuccessMessage)).getText());
-     
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(shareToastcrossbutton)));
-     d.findElement(By.xpath(shareToastcrossbutton)).click();
+     w.until(ExpectedConditions.visibilityOf(p.shareToastcrossbutton()));
+     p.shareToastcrossbutton().click();
 
      Thread.sleep(2800); 
      }
    
    
    
-   
+   /*
    
    public void Blueprintaddform() throws InterruptedException, AWTException{
    
@@ -343,12 +192,12 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       d.findElement(By.name("customValues.summarizeText")).click();
       d.findElement(By.name("customValues.summarizeText")).sendKeys("This is for checking text color");  */
    
-   
+   /*
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(saveButtonone)));
       d.findElement(By.xpath(saveButtonone)).click();
       /*w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(settingsSlidedrawer)));
       d.findElement(By.xpath(settingsSlidedrawer)).click();
-      // filling Blueprint name field*/
+      // filling Blueprint name field*//*
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(blueprintnametitle)));
       a.moveToElement(d.findElement(By.xpath(blueprintnametitle))).build().perform();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BlueprintnameField)));
@@ -392,7 +241,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       
 /*      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sideDrawerclose_button)));
       d.findElement(By.xpath(sideDrawerclose_button)).click();
-      */
+      *//*
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(generateTextbox)));
       d.findElement(By.xpath(generateTextbox)).sendKeys("world news");
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(generateTextButton)));
@@ -528,13 +377,13 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
         System.out.println(blueprintname);
         
       /*  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bottomsectionofLibraryCard)));
-        a.moveToElement(d.findElement(By.xpath(bottomsectionofLibraryCard))).build().perform(); */
+        a.moveToElement(d.findElement(By.xpath(bottomsectionofLibraryCard))).build().perform(); 
         js.executeScript("arguments[0].scrollIntoView", d.findElement(By.xpath(bottomsectionofLibraryCard)));
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importButton))); 
         d.findElement(By.xpath(importButton)).click(); /*
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importSuccessToast)));
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastCrossButton))); 
-        d.findElement(By.xpath(toastCrossButton)).click(); */
+        d.findElement(By.xpath(toastCrossButton)).click(); 
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(libraryPopupCloseButton)));
         d.findElement(By.xpath(libraryPopupCloseButton)).click(); 
        
@@ -596,7 +445,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
          
          System.out.println(d.findElement(By.xpath(deltoast)).getText());
          
-         d.navigate().refresh(); */
+         d.navigate().refresh(); *//*
          d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addtoLibraryButton))); 
         d.findElement(By.xpath(addtoLibraryButton)).click(); 
@@ -685,7 +534,7 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       
  }
    
-   }
+  */ } 
 
 
 

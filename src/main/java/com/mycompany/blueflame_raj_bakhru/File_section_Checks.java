@@ -458,7 +458,7 @@ public void non_indexfilechecks() throws InterruptedException{
     String foldertext = "//h3[contains(text(),'Folders')]";
     String filecard = "(//*[@class='MuiBox-root css-xi606m']//p)[2]";
     String menulist = "//div[@role='menu']";
-    String allmenuoptions = "//div[@class='ContextMenuItem']";
+    String allmenuoptions = "//div[@role='menuitem']";
     String qnaerrormessage = "//div[contains(text(),'This file was not yet indexed for Q&A. Please wait')]";
     String scanoption = "Scan";
     String ScanErrormessage = "//div[contains(text(),'This file was not yet indexed for scan. Please wai')]";
@@ -501,9 +501,9 @@ public void non_indexfilechecks() throws InterruptedException{
   } */
      List <WebElement> optns = d.findElements(By.xpath(allmenuoptions));
       for(WebElement optn : optns){
-         //System.out.println(optn.getText());
-          if(optn.getText().equalsIgnoreCase(scanoption)){
          
+          if(optn.getText().equalsIgnoreCase(scanoption)){
+         System.out.println(optn.getText());
          optn.click();
          break; }}
      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ScanErrormessage)));
@@ -550,7 +550,7 @@ List <WebElement> opn = d.findElements(By.xpath(allmenuoptions));
  
 public void file_datetime_infocheck() throws AWTException, InterruptedException{
 
-    String infobutton = "(//div[@class='MuiBox-root css-1qq0lyx']//button)[1]";
+    String infobutton = "(//span[@data-state='closed']//button)[2]";
     String createdsection = "(//div[@class='MuiBox-root css-1wdu9wv']//p)[11]";
     String Lastloadtimesection = "(//div[@class='MuiBox-root css-1wdu9wv']//p)[9]";
 
@@ -621,7 +621,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
        String pyFileCard = "p[aria-label='sample1.py']";
        String Folder_to_choose = "//p[contains(text(),'AYn Demo Folder')]";
        String crossbutton = "//div[@class='MuiStack-root css-5vauxo']//button";
-       String crossbuttontwo = "(//*[@class='MuiBox-root css-1o4wo1x'])[3]";
+       String crossbuttontwo = "//div[@role='presentation']//div[@class='MuiBox-root css-498t0c']//button";
        String odtfilecard = "p[aria-label='file-sample_500kB.odt']";
        
 
@@ -870,8 +870,7 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CreateButton))); 
        d.findElement(By.xpath(CreateButton)).click();
        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Folder_Created_Confirmation)));
-        }
-  }
+        }}
       
 
 

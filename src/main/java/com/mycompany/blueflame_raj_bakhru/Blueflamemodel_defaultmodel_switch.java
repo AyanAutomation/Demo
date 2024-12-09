@@ -26,8 +26,24 @@ String Aigpt4tab = "//*[@aria-label='GPT-4 (OpenAI)']";
 String Light_mode = "//img[@src='/assets/images/lightButton.svg']";
 String defaultmodel = "//*[@aria-label='You can change your default in the settings']";
 String defaultModelSearchBox = "//input[@placeholder='Search']";
-
-
+String Profileicon = "//span[@class='MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1l6c7y9']//i";
+String Profileoption = "//p[text()='Profile']";
+String Default_model_editbutton = "(//p[text()='Edit'])[2]";
+String Defaultoption = "//p[@class='MuiTypography-root MuiTypography-body1 css-vw0zfu']";
+String defaultListOptions = "//div[@class='MuiBox-root css-evipjh']//div[@data-testid='flex-box']//div[@class='MuiBox-root css-ehlpcq']//button[@type='button']//div[@class='MuiBox-root css-1o4wo1x']//p[@class='MuiTypography-root MuiTypography-body1 css-newj2o']";
+String blueFlameoption = "BlueFlame AI Agent";
+String blueFlameoption_xpath = "//p[text()='BlueFlame AI Agent']";
+String Savebutton = "//p[text()='Save']";
+String savesuccessmessage = "//div[contains(text(),'Default Web Chat Model Updated Successfully.')]";
+String toastcrossone = "//button[@aria-label='Close toast']";
+String LLM_editbutton = "//*[@id=\"default-direct\"]/td[3]/button";      
+String gptLLmoption = "GPT-4 (OpenAI)";
+String llmOption = "//tbody/tr[@id='default-direct']/td[2]/div[1]/div[1]";
+String LLMsuccess_message = "//div[contains(text(),'Direct LLM Updated Successfully.')]";
+String toastcrosstwo = "//button[@aria-label='Close toast']";
+String llmsavebutton = "//tbody/tr[@id='default-direct']/td[3]/div[1]/button[1]";
+String tablebodyxpath = "//table[@aria-label='account-table']";
+String value_of_DefaultWebChatModel = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1uz0oep'])[10]";
 
     public Blueflamemodel_defaultmodel_switch(WebDriver d){
     
@@ -35,7 +51,6 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
     
 }
     public void switchingTodefaultAimodel() throws InterruptedException, AWTException{
-    
     
      WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(30));
      JavascriptExecutor js = (JavascriptExecutor)d;
@@ -45,7 +60,6 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Aimodeltab)));
       d.findElement(By.xpath(Aimodeltab)).click();
       Thread.sleep(500);
-     
       String defaultModelPresent = d.findElement(By.xpath(defaultmodel)).getText();
     
     //System.out.println(defaultModelPresent);
@@ -63,31 +77,8 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
         Actions a = new Actions(d);
         Robot r = new Robot();
         
-        
-        
   
   d.navigate().refresh();
-  String Profileicon = "//div[@class='MuiBox-root css-teec7v']";
-  String Profileoption = "//p[text()='Profile']";
-  String Default_model_editbutton = "(//p[text()='Edit'])[2]";
-  String Defaultoption = "//p[@class='MuiTypography-root MuiTypography-body1 css-vw0zfu']";
-  String defaultListOptions = "//div[@class='MuiBox-root css-evipjh']//div[@data-testid='flex-box']//div[@class='MuiBox-root css-ehlpcq']//button[@type='button']//div[@class='MuiBox-root css-1o4wo1x']//p[@class='MuiTypography-root MuiTypography-body1 css-newj2o']";
-  String blueFlameoption = "BlueFlame AI Agent";
-  String blueFlameoption_xpath = "//p[text()='BlueFlame AI Agent']";
-  String Savebutton = "//p[text()='Save']";
-  String savesuccessmessage = "//div[contains(text(),'Default Web Chat Model Updated Successfully.')]";
-  String toastcrossone = "//button[@aria-label='Close toast']";
-  String LLM_editbutton = "//*[@id=\"default-direct\"]/td[3]/button";      
-  String gptLLmoption = "GPT-4 (OpenAI)";
-  String llmOption = "//tbody/tr[@id='default-direct']/td[2]/div[1]/div[1]";
-  String LLMsuccess_message = "//div[contains(text(),'Direct LLM Updated Successfully.')]";
-  String toastcrosstwo = "//button[@aria-label='Close toast']";
-  String llmsavebutton = "//tbody/tr[@id='default-direct']/td[3]/div[1]/button[1]";
-  String tablebodyxpath = "//table[@aria-label='account-table']";
-  String value_of_DefaultWebChatModel = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1uz0oep'])[10]";
-  
-  
-  
   LigthmodeSwitch mode = new LigthmodeSwitch(d);
   
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Profileicon)));
@@ -105,16 +96,13 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(defaultModelSearchBox)));
   d.findElement(By.xpath(defaultModelSearchBox)).sendKeys(blueFlameoption);
   
-  
-    List <WebElement> alldeflautoptions =  d.findElements(By.xpath(defaultListOptions));
+   List <WebElement> alldeflautoptions =  d.findElements(By.xpath(defaultListOptions));
     
     for(WebElement defaultopt : alldeflautoptions ){
    
     if(defaultopt.getText().equalsIgnoreCase(blueFlameoption)){
-        
      System.out.println(defaultopt.getText());
-    
-    defaultopt.click();
+     defaultopt.click();
     break;
     }
    }
@@ -124,8 +112,7 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
     d.findElement(By.xpath(Savebutton)).click();
     Thread.sleep(1800);
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(savesuccessmessage)));
-   
-    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastcrossone)));
+   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastcrossone)));
     d.findElement(By.xpath(toastcrossone)).click(); 
     mode.switchonLightmode();
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(value_of_DefaultWebChatModel)));
@@ -149,15 +136,12 @@ String defaultModelSearchBox = "//input[@placeholder='Search']";
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(llmOption)));
     d.findElement(By.xpath(llmOption)).click(); 
     
-    
-    List <WebElement> allLMoptions =  d.findElements(By.xpath(defaultListOptions));
+     List <WebElement> allLMoptions =  d.findElements(By.xpath(defaultListOptions));
     
     for(WebElement llmtopt : allLMoptions ){
     
     if(llmtopt.getText().equalsIgnoreCase(gptLLmoption)){
-        
-        System.out.println(llmtopt.getText());
-    
+    System.out.println(llmtopt.getText());
     llmtopt.click();
     break;
     }

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Timezone_xpaths {
     
-@FindBy(xpath="//div[@class='MuiBox-root css-teec7v']")
+@FindBy(xpath="//span[@class='MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1l6c7y9']//i")
  private WebElement Profileicon;
 @FindBy(xpath="//p[text()='Profile']")
  private WebElement Profileoption;

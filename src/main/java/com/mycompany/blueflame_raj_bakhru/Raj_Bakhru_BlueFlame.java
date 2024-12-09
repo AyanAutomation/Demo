@@ -119,7 +119,7 @@ type.Parameterbox_enter_send_check();
 //D.Delete_from_top();  
 type.empty_parameterbox_double_enter_send_check(); 
 type.control_A_delete_check();   //--
-type.parameterbox_delete_reenter_curlybrace_issuecheck();  */
+type.parameterbox_delete_reenter_curlybrace_issuecheck();  
 type.parameterPlacereplaceCheck(); 
 type.part_text_option_deletecheck();
 type.app_afterpromptfavouritesuggestion(); 
@@ -159,7 +159,7 @@ file.add_to_nexus();
 file.files_to_chat(); 
 //D.Deletefromchatlist(); 
 file.file_to_QnA();  
-file.emlfilecheck();   
+file.emlfilecheck();   */
 file.non_indexfilechecks();  
 file.file_datetime_infocheck(); 
 file.videofile_loader_check(); 

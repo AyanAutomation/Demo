@@ -456,7 +456,7 @@ public void file_to_QnA() throws AWTException, InterruptedException{
 public void non_indexfilechecks() throws InterruptedException{
 
     String foldertext = "//h3[contains(text(),'Folders')]";
-    String filecard = "(//*[@class='MuiBox-root css-xi606m']//p)[2]";
+    String filecard = "//*[text()='Fully Executed Side Letter - First Energ...']";
     String menulist = "//div[@role='menu']";
     String allmenuoptions = "//div[@role='menuitem']";
     String qnaerrormessage = "//div[contains(text(),'This file was not yet indexed for Q&A. Please wait')]";

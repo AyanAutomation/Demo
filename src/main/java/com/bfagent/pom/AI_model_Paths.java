@@ -18,7 +18,7 @@ public WebElement Aimodeltab;
 public WebElement  Aigpt4tab;
 @FindBy(xpath="//img[@src='/assets/images/lightButton.svg']")
 public WebElement Light_mode;
-@FindBy(xpath="//div[@class='MuiBox-root css-teec7v']")
+@FindBy(xpath="//span[@class='MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1l6c7y9']//i")
 public WebElement Profileicon;
 @FindBy(xpath="//p[text()='Profile']")
 public WebElement Profileoption;

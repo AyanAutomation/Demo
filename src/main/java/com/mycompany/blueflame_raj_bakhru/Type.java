@@ -339,19 +339,12 @@ public class Type {
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(chatboxwithcontent)));
         a.moveToElement(d.findElement(By.xpath(chatboxwithcontent))).build().perform();
         
-         
-        Thread.sleep(1400);
-       
+            Thread.sleep(1400);
         
-        
-        
-
-   }
+     }
    
     public void app_afterpromptfavouritesuggestion() throws InterruptedException{
     
-    
-
     String PlusButton = "//div[@class='MuiBox-root css-rm2j0s']//button[@type='button']";
     String App_option = "//button[text()='Use Apps']";
     String FMPappoption_in_list = "//p[contains(text(),'FMP')]";

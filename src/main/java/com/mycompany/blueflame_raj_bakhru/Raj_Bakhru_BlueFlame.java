@@ -97,7 +97,7 @@ d.get(URL);
 l.Loggin(); 
 switchmode.switchonLightmode(); 
 //D.Deletefromchatlist();  
-/*
+
 swtch.switchingTodefaultAimodel(); 
 switchmode.switchOFFLightmode(); 
 aptg.alphabetically_app_name();
@@ -159,7 +159,7 @@ file.add_to_nexus();
 file.files_to_chat(); 
 //D.Deletefromchatlist(); 
 file.file_to_QnA();  
-file.emlfilecheck();   */
+file.emlfilecheck();   
 file.non_indexfilechecks();  
 file.file_datetime_infocheck(); 
 file.videofile_loader_check(); 

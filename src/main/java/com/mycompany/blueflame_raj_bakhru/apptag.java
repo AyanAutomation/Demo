@@ -18,13 +18,8 @@ public class apptag {
     
     public apptag(WebDriver d){
     
-    
-    this.d = d;
-    
-    
-    
-    
-    }
+        this.d = d;
+     }
     
   public void alphabetically_app_name() throws InterruptedException, AWTException{
   
@@ -36,16 +31,11 @@ public class apptag {
         
         String prompt_option ="//p[normalize-space()='DealCloud']";
         String Keyword = "@D";
-        
-        
-        
-        
-    WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
+    
+        WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
        
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Editor_Box))); 
-        
     d.findElement(By.xpath(Editor_Box)).sendKeys(Keyword);
-        
     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prompt_option))); 
     d.findElement(By.xpath(prompt_option)).click();
  }  

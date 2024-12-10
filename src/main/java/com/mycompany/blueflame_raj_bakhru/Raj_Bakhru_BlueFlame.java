@@ -69,7 +69,7 @@ AI_model ai = new AI_model(d);
 Type type = new Type(d); 
 Multiparameter mp = new Multiparameter(d);
 Tilereplace rp = new Tilereplace(d);
-Mathnotation m = new Mathnotation(d);
+Mathnotation m = new Mathnotation(d);   
 RSSfeedtest rss = new RSSfeedtest(d);
 Chat_file_export chtexpt = new Chat_file_export(d);
 Selectfiles sl = new Selectfiles(d);
@@ -168,11 +168,11 @@ file.reindexingcheck();
 file.content_viewer_pagecheck(); 
 file.runblueprint_check();    
 
-br.shareblueprintcheck(); /*
+br.shareblueprintcheck(); 
 br.Blueprintaddform(); 
 br.blueprintDelete(); 
 br.blueprint_delete_without_webElementList_method(); 
-br.importblueprintCheck(); 
+br.importblueprintCheck(); /* 
 br.linkedrecipeEdit_and_Deletecheck();  
 br.Blueprint_addGeneration_with_parameterCheck();  */
 

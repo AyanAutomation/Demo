@@ -82,8 +82,6 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
      p.blueprintListsearch().sendKeys("Company Research"); 
      w.until(ExpectedConditions.visibilityOf(p.threedot())); 
      p.threedot().click(); 
-     
-     
      w.until(ExpectedConditions.visibilityOf(p.sidedropdownmenu()));
      
      List <WebElement> items = p.allmenuitems;
@@ -118,34 +116,24 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
      d.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("Web");
      w.until(ExpectedConditions.visibilityOfAllElements(p.shareLibaryOptions_GenericXpath));
      List <WebElement> userOptions = p.shareLibaryOptions_GenericXpath;
-     
-      for(WebElement userOpts : userOptions){
-      
+     for(WebElement userOpts : userOptions){
       System.out.println(userOpts.getText());
-          
-     if(userOpts.getText().equalsIgnoreCase(p.userforSharing())){
+      if(userOpts.getText().equalsIgnoreCase(p.userforSharing())){
       
       System.out.println(userOpts.getText());   
       userOpts.click();
-      break;
-   }
-       }
+      break;}}
      w.until(ExpectedConditions.visibilityOf(p.popovercloser()));
      p.popovercloser().click();
      w.until(ExpectedConditions.visibilityOf(p.shareButton()));
      p.shareButton().click();
      w.until(ExpectedConditions.visibilityOf(p.shareSuccessMessage()));
      System.out.println(p.shareSuccessMessage().getText());
-     
      w.until(ExpectedConditions.visibilityOf(p.shareToastcrossbutton()));
      p.shareToastcrossbutton().click();
 
      Thread.sleep(2800); 
      }
-   
-   
-   
-   /*
    
    public void Blueprintaddform() throws InterruptedException, AWTException{
    
@@ -153,203 +141,142 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
         Actions a = new Actions(d);
         JavascriptExecutor js = (JavascriptExecutor)d;
         Robot r = new Robot();
+        Blueprints_xpaths p = new Blueprints_xpaths(d);
    
-     d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
+        d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
     
-       
-       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Create_BlueprntButton)));
-      d.findElement(By.xpath(Create_BlueprntButton)).click();
+      w.until(ExpectedConditions.visibilityOf(p.Create_BlueprntButton()));
+      p.Create_BlueprntButton().click();
         
       //confirmation that we have entered the add create Blueprint form  
-      
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gearButton)));
-      
-      // Clicking add prompt Button 
+        // Clicking add prompt Button 
      
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addprmtbt)));
-      d.findElement(By.xpath(addprmtbt)).click();
+      w.until(ExpectedConditions.visibilityOf(p.addprmtbt()));
+      p.addprmtbt().click();
       
       // Confirming prompt box has opened and clicking inside
       
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prmptbox)));
-      d.findElement(By.xpath(prmptbox)).click();
+      w.until(ExpectedConditions.visibilityOf(p.prmptbox()));
+      p.prmptbox().click();
         
       // Checking whether curly brace parameter box color in white background
       
-      d.findElement(By.xpath(prmptbox)).sendKeys("{Parameter A} {Demo B} {Company} { Parameter B }");
+      p.prmptbox().sendKeys("{Parameter A} {Demo B} {Company} { Parameter B }");
+      a.moveToElement(p.promptboxWithcontent()).sendKeys(Keys.ENTER).build().perform();
+      w.until(ExpectedConditions.visibilityOf(p.promptDeletebutton()));
+      p.promptDeletebutton().click();
       
-      a.moveToElement(d.findElement(By.xpath(promptboxWithcontent))).sendKeys(Keys.ENTER).build().perform();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promptDeletebutton)));
-      d.findElement(By.xpath(promptDeletebutton)).click();
+     // Summary section in add form is currently hidden
       
- 
-   
-      // Summary section in add form is currently hidden
-      
-      /*   d.findElement(By.xpath(summarytoggle)).click();
+      /*d.findElement(By.xpath(summarytoggle)).click();
       w.until(ExpectedConditions.visibilityOfElementLocated(By.name("customValues.summarizeText")));
       d.findElement(By.name("customValues.summarizeText")).click();
       d.findElement(By.name("customValues.summarizeText")).sendKeys("This is for checking text color");  */
-   
-   /*
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(saveButtonone)));
-      d.findElement(By.xpath(saveButtonone)).click();
-      /*w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(settingsSlidedrawer)));
-      d.findElement(By.xpath(settingsSlidedrawer)).click();
-      // filling Blueprint name field*//*
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(blueprintnametitle)));
-      a.moveToElement(d.findElement(By.xpath(blueprintnametitle))).build().perform();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BlueprintnameField)));
-      d.findElement(By.xpath(BlueprintnameField)).sendKeys("Blueprint name");
+      w.until(ExpectedConditions.visibilityOf(p.saveButtonone()));
+      p.saveButtonone().click();
+      w.until(ExpectedConditions.visibilityOf(p.settingsSlidedrawer()));
+      p.settingsSlidedrawer().click();
+      // filling Blueprint name field/
+      w.until(ExpectedConditions.visibilityOf(p.blueprintnametitle()));
+      a.moveToElement(p.blueprintnametitle()).build().perform();
+      w.until(ExpectedConditions.visibilityOf(p.BlueprintnameField()));
+      p.BlueprintnameField().sendKeys("Blueprint name");
       
        // filling description field
     
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BlueprintDescription_Field)));
-      d.findElement(By.xpath(BlueprintDescription_Field)).sendKeys("blueprint description");
-      js.executeScript("arguments[0].scrollIntoView(true);", d.findElement(By.xpath(addscheduleButton)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addscheduleButton)));
-      d.findElement(By.xpath(addscheduleButton)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popupScheduleForm)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(scheduleFrequencyButton)));
-      d.findElement(By.xpath(scheduleFrequencyButton)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(weeklyOption)));
-      d.findElement(By.xpath(weeklyOption)).click();
+      w.until(ExpectedConditions.visibilityOf(p.BlueprintDescription_Field()));
+      p.BlueprintDescription_Field().sendKeys("blueprint description");
+      js.executeScript("arguments[0].scrollIntoView(true);", p.addscheduleButton());
+      w.until(ExpectedConditions.visibilityOf(p.addscheduleButton()));
+      p.addscheduleButton().click();
+      w.until(ExpectedConditions.visibilityOf(p.popupScheduleForm()));
+      w.until(ExpectedConditions.visibilityOf(p.scheduleFrequencyButton()));
+      p.scheduleFrequencyButton().click();
+      w.until(ExpectedConditions.visibilityOf(p.weeklyOption()));
+      p.weeklyOption().click();
       
-      List <WebElement> weekopts = d.findElements(By.xpath(weeklyoptionGenericXpath));
-      
+      List <WebElement> weekopts = p.weeklyoptionGenericXpath;
       for(WebElement day:weekopts){
-      
-      if(day.getText().equalsIgnoreCase(monDay)){
+      if(day.getText().equalsIgnoreCase(p.monDay())){
       
       day.click();
-      break;
-      }}
-      
-      
-      
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(timeClockIcon)));
-      d.findElement(By.xpath(timeClockIcon)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(scheduletimeOkButton)));
-      d.findElement(By.xpath(scheduletimeOkButton)).click(); 
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(scheduleSaveButton)));
-      d.findElement(By.xpath(scheduleSaveButton)).click(); 
-      
-        
+      break;}} 
+      w.until(ExpectedConditions.visibilityOf(p.timeClockIcon()));
+      p.timeClockIcon().click();
+      w.until(ExpectedConditions.visibilityOf(p.scheduletimeOkButton()));
+      p.scheduletimeOkButton().click(); 
+      w.until(ExpectedConditions.visibilityOf(p.scheduleSaveButton()));
+      p.scheduleSaveButton().click(); 
       // hitting side Drawer close button and regenerating prompt 
-      
-      
-/*      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sideDrawerclose_button)));
-      d.findElement(By.xpath(sideDrawerclose_button)).click();
-      *//*
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(generateTextbox)));
-      d.findElement(By.xpath(generateTextbox)).sendKeys("world news");
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(generateTextButton)));
-      d.findElement(By.xpath(generateTextButton)).click();
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promptboxWithcontent)));
-      
+      w.until(ExpectedConditions.visibilityOf(p.generateTextbox()));
+      p.generateTextbox().sendKeys("world news");
+      w.until(ExpectedConditions.visibilityOf(p.generateTextButton()));
+      p.generateTextButton().click();
+      w.until(ExpectedConditions.visibilityOf(p.promptboxWithcontent()));
       // hitting save button after filling mandatory fields 
-      
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(saveButtontwo)));
-      d.findElement(By.xpath(saveButtontwo)).click();
-      
-      
-//      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(savesuccessToast)));
-      w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(savesuccessToastcrossbutton)));
-      d.findElement(By.xpath(savesuccessToastcrossbutton)).click();
-      
-   
-      
-      //going to Blueprint list through breadcrumbs path
-      
-       
-       
- }
-   
-   
-   
-   public void blueprintDelete() throws InterruptedException{
-   
+      w.until(ExpectedConditions.visibilityOf(p.saveButtonone()));
+      p.saveButtonone().click();
+     
+//    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(savesuccessToast)));
+}
+    public void blueprintDelete() throws InterruptedException{
    
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(40));
     Actions a = new Actions(d);
-   
+    Blueprints_xpaths p = new Blueprints_xpaths(d);
     d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
     
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(blueprintListsearch))); 
-     d.findElement(By.cssSelector(blueprintListsearch)).sendKeys("World News Summary"); 
-      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(advancedViewbutton))); 
-     d.findElement(By.xpath(advancedViewbutton)).click(); 
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedot))); 
-     d.findElement(By.xpath(threedot)).click(); 
+     w.until(ExpectedConditions.visibilityOf(p.blueprintListsearch())); 
+     p.blueprintListsearch().sendKeys("World News Summary"); 
+     w.until(ExpectedConditions.visibilityOf(p.advancedViewbutton())); 
+     p.advancedViewbutton().click(); 
+     w.until(ExpectedConditions.visibilityOf(p.threedot())); 
+     p.threedot().click(); 
+     w.until(ExpectedConditions.visibilityOf(p.sidedropdownmenu()));
      
-     
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sidedropdownmenu)));
-     
-     List <WebElement> items = d.findElements(By.xpath(allmenuitems));
-    
-  
-     
-     for (WebElement item:items ){
-    
-  
-
-     if(item.getText().equalsIgnoreCase(deleteOption)){
-     
+     List <WebElement> items = p.allmenuitems;
+    for (WebElement item:items ){
+    if(item.getText().equalsIgnoreCase(p.Deleteoption())){
      item.click();
-      Thread.sleep(1850);
-}
+      Thread.sleep(1850);}
 
      }
- w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deleOk))); 
-     d.findElement(By.xpath(deleOk)).click();
-   w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(recipedeleteSuccessToast)));
-    w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deleteToastcrossButton))); 
-     d.findElement(By.xpath(deleteToastcrossButton)).click();
+     w.until(ExpectedConditions.visibilityOf(p.deleOk())); 
+     p.deleOk().click();
+     w.until(ExpectedConditions.visibilityOf(p.recipedeleteSuccessToast()));
+     w.until(ExpectedConditions.visibilityOf(p.deleteToastcrossButton())); 
+     p.deleteToastcrossButton().click();
      Thread.sleep(2000);
 }
    
    public void blueprint_delete_without_webElementList_method(){
    
-   
    WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(40));
    Actions a = new Actions(d);
-
-     
-  
+   Blueprints_xpaths p = new Blueprints_xpaths(d);
    for(int k=0; k<3;k++){  
      
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(blueprintListsearch))); 
-     d.findElement(By.cssSelector(blueprintListsearch)).sendKeys("World News Summary");  
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(advancedViewbutton))); 
-     d.findElement(By.xpath(advancedViewbutton)).click(); 
+     w.until(ExpectedConditions.visibilityOf(p.blueprintListsearch())); 
+     p.blueprintListsearch().sendKeys("World News Summary"); 
+     w.until(ExpectedConditions.visibilityOf(p.advancedViewbutton())); 
+     p.advancedViewbutton().click(); 
      
      // If all blueprint are deleted Noblueprintfound is Displayed the loop will break
      
-     WebElement Noblueprintfound = d.findElement(By.xpath(noBlueprint_FoundText));
-     
-     if(Noblueprintfound.isDisplayed()){
-         
-     break;
-     
-    }
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(threedot))); 
-     d.findElement(By.xpath(threedot)).click(); 
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deleteOptn))); 
-     d.findElement(By.xpath(deleteOptn)).click(); 
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deleOk))); 
-     d.findElement(By.xpath(deleOk)).click();
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(recipedeleteSuccessToast)));
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deleteToastcrossButton))); 
-     d.findElement(By.xpath(deleteToastcrossButton)).click();
-     w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addtoLibraryButton))); 
-     d.findElement(By.xpath(addtoLibraryButton)).click(); 
-
-     
-     
-     
-         }
+     if(p.noBlueprint_FoundText().isDisplayed()){
+      break;
+     }
+     w.until(ExpectedConditions.visibilityOf(p.threedot())); 
+     p.threedot().click(); 
+     w.until(ExpectedConditions.visibilityOf(p.deleteOptn())); 
+     p.deleteOptn().click(); 
+     w.until(ExpectedConditions.visibilityOf(p.deleOk())); 
+     p.deleOk().click();
+     w.until(ExpectedConditions.visibilityOf(p.recipedeleteSuccessToast()));
+     w.until(ExpectedConditions.visibilityOf(p.deleteToastcrossButton())); 
+     p.deleteToastcrossButton().click();
+     w.until(ExpectedConditions.visibilityOf(p.addtoLibraryButton())); 
+     p.addtoLibraryButton().click();  }
      
    }
    
@@ -360,42 +287,39 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
         Actions a = new Actions(d);
         JavascriptExecutor js = (JavascriptExecutor)d;
         Robot r = new Robot();
+        Blueprints_xpaths p = new Blueprints_xpaths(d);
         d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
         
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addtoLibraryButton))); 
-        d.findElement(By.xpath(addtoLibraryButton)).click(); 
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addlibraryPopupTitle)));
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(insideRecipeList)));
-        a.moveToElement(d.findElement(By.xpath(insideRecipeList))).build().perform();
+        w.until(ExpectedConditions.visibilityOf(p.addtoLibraryButton())); 
+        p.addtoLibraryButton().click();
+        w.until(ExpectedConditions.visibilityOf(p.addlibraryPopupTitle()));
+        w.until(ExpectedConditions.visibilityOf(p.insideRecipeList()));
+        a.moveToElement(p.insideRecipeList()).build().perform();
         
         //js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         
        // r.mouseWheel(-500);
         
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importedBlueprintName)));
-        String blueprintname = d.findElement(By.xpath(importedBlueprintName)).getText();
+        w.until(ExpectedConditions.visibilityOf(p.importedBlueprintName()));
+        String blueprintname = p.importedBlueprintName().getText();
         System.out.println(blueprintname);
-        
-      /*  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bottomsectionofLibraryCard)));
-        a.moveToElement(d.findElement(By.xpath(bottomsectionofLibraryCard))).build().perform(); 
-        js.executeScript("arguments[0].scrollIntoView", d.findElement(By.xpath(bottomsectionofLibraryCard)));
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importButton))); 
-        d.findElement(By.xpath(importButton)).click(); /*
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(importSuccessToast)));
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(toastCrossButton))); 
-        d.findElement(By.xpath(toastCrossButton)).click(); 
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(libraryPopupCloseButton)));
-        d.findElement(By.xpath(libraryPopupCloseButton)).click(); 
-       
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(primartBlueprintListTitle)));
-       
-       w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(blueprintListsearch))); 
-       d.findElement(By.cssSelector(blueprintListsearch)).sendKeys(blueprintname);
-       
-       Thread.sleep(2200);
+        w.until(ExpectedConditions.visibilityOf(p.bottomsectionofLibraryCard()));
+        a.moveToElement(p.bottomsectionofLibraryCard()).build().perform(); 
+        js.executeScript("arguments[0].scrollIntoView", p.bottomsectionofLibraryCard());
+        w.until(ExpectedConditions.visibilityOf(p.importButton())); 
+        p.importButton().click(); 
+        w.until(ExpectedConditions.visibilityOf(p.importSuccessToast()));
+        w.until(ExpectedConditions.visibilityOf(p.toastCrossButton())); 
+        p.toastCrossButton().click(); 
+        w.until(ExpectedConditions.visibilityOf(p.libraryPopupCloseButton()));
+        p.libraryPopupCloseButton().click(); 
+        w.until(ExpectedConditions.visibilityOf(p.primartBlueprintListTitle()));
+        w.until(ExpectedConditions.visibilityOf(p.blueprintListsearch())); 
+        p.blueprintListsearch().sendKeys(blueprintname);
+        Thread.sleep(2200);
        
    }
-   
+   /*
    public void linkedrecipeEdit_and_Deletecheck() throws InterruptedException{
    
    
@@ -441,11 +365,11 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
          
          w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(okconfirmaction)));
          d.findElement(By.xpath(okconfirmaction)).click();
-/*         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deltoast)));
+         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(deltoast)));
          
          System.out.println(d.findElement(By.xpath(deltoast)).getText());
          
-         d.navigate().refresh(); *//*
+         d.navigate().refresh(); 
          d.navigate().to("https://app-dev.blueflame.ai/dashboard/blueprints");
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(addtoLibraryButton))); 
         d.findElement(By.xpath(addtoLibraryButton)).click(); 
@@ -533,8 +457,8 @@ public void Run_Blueprint() throws AWTException, InterruptedException{
       w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(previewChat_generated)));
       
  }
-   
-  */ } 
+   */
+  } 
 
 
 

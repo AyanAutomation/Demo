@@ -38,6 +38,7 @@ public void Loggin() throws IOException{
      
      w.until(ExpectedConditions.visibilityOf(path.Email_id_Field()));
      creds.setEmail(f.getPropertyData("emailid"));
+     w.until(ExpectedConditions.visibilityOf(path.Email_submit_button()));
      path.Email_submit_button().click();
      w.until(ExpectedConditions.visibilityOf(path.Password_field()));
      creds.setPassword(f.getPropertyData("password"));

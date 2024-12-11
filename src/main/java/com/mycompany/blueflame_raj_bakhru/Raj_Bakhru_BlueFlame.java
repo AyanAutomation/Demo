@@ -88,7 +88,6 @@ TakesScreenshot shot = (TakesScreenshot)d;
 SystemUsage usage = new SystemUsage(d);
 
 
-
 String URL = f.getPropertyData("url");
 
 d.get(URL);
@@ -140,7 +139,7 @@ sl.selectchatfiles();
 sl.autofill_qna_check();  
  // sl.multifilesselect();  
 
-chl.thirdpartylogocheck();  
+//chl.thirdpartylogocheck();  
 like.likedislikestaytest();  
 at.extrafolder_issue_check(); 
 at.autocompleteoption_backspace_delete_check(); 

@@ -878,4 +878,3 @@ public void doubelcross_buttoncheck() throws AWTException, InterruptedException{
 
   
     
-

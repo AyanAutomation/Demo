@@ -36,18 +36,12 @@ String Pitchbooklogo = "//p[contains(text(),'Model changed to BlueFlame AI Agent
                      //p[contains(text(),'@Pitchbook lightning summary on company: Rostec')]
 String capIQInside_ChatElement_xpath = "//*[@id=\"f541d944-8953-461e-ad1a-3368f65e16a7_panel\"]/div/div/div/div/div[4]/div[1]/div/div/button[1]";
                      
-                     
-
-        
-        
-        
-        
     WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(100));
     Actions a = new Actions(d);
     Robot r = new Robot();
     JavascriptExecutor js = (JavascriptExecutor)d;
    
-    d.navigate().refresh();
+ d.navigate().refresh();
  w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gratachat)));
  d.findElement(By.xpath(gratachat)).click();
  Thread.sleep(3400);
